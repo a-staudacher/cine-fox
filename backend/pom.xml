@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>cineFoxDB</name>
+    <rating>cineFoxDB</rating>
     <description>FH Joanneum SWENGS Project</description>
 
     <parent>
