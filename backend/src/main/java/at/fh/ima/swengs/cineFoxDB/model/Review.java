@@ -23,6 +23,8 @@ public class Review {
     @OneToMany(mappedBy = "user", fetch=FetchType.EAGER)
     private Set<User> user;
 
+    @ManyToOne
+    private Serie serie;
 
     @Version
     @JsonIgnore
@@ -75,6 +77,14 @@ public class Review {
 
     public void setVersion(long version) {
         this.version = version;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
     }
 
     @Override
