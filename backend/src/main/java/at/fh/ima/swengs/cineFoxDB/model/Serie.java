@@ -40,8 +40,12 @@ public class Serie {
     @ManyToOne
     private Kategorie kategorie;
 
-    @ManyToOne
-    private Favorit favorit;
+
+    @ManyToMany
+    @JoinTable(name = "serie_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "serie_id")
+    )
 
 
     @Version
@@ -113,15 +117,7 @@ public class Serie {
     public void setKategorie(Kategorie kategorie) {
         this.kategorie = kategorie;
     }
-
-    public Favorit getFavorit() {
-        return favorit;
-    }
-
-    public void setFavorit(Favorit favorit) {
-        this.favorit = favorit;
-    }
-
+    
     public long getVersion() {
         return version;
     }
