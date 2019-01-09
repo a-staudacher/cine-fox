@@ -20,6 +20,12 @@ public class User {
     private String password;
     private boolean admin;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "serie_user",
+            joinColumns = @JoinColumn(name = "serie_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<Serie> favorite;
+
     public boolean isAdmin() {
         return admin;
     }
