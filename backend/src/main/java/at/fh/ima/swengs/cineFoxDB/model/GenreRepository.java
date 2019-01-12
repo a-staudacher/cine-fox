@@ -9,6 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RepositoryRestResource
 @Transactional(isolation = Isolation.READ_COMMITTED)
-public interface GenreRepository extends PagingAndSortingRepository<User, Long>, JpaRepository<User, Long>, CrudRepository<User, Long> {
+public interface GenreRepository extends PagingAndSortingRepository<Genre, Long>, JpaRepository<Genre, Long>, CrudRepository<Genre, Long> {
 
 }

@@ -26,13 +26,14 @@ public class Serie {
 
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date release;
+    private Date releaseDate;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "genre_serie",
             joinColumns = @JoinColumn(name = "serie_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
+    private Set<Genre> genres;
 
     @ManyToOne
     private Hersteller hersteller;
@@ -41,11 +42,18 @@ public class Serie {
     private Kategorie kategorie;
 
 
-    @ManyToMany
+    @OneToMany(mappedBy = "serie")
+    private Set<Serien_Rating> serien_ratings;
+
+    // Users that have this series as favorite
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "serie_user",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "serie_id")
-    )
+            joinColumns = @JoinColumn(name = "serie_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private Set<User> fav_users;
+
+    @OneToMany(mappedBy = "serie")
+    private Set<Review> reviews;
 
 
     @Version
@@ -55,11 +63,11 @@ public class Serie {
     public Serie() {
     }
 
-    public Serie(String name, String trailer, Integer anzahl, Date release) {
+    public Serie(String name, String trailer, Integer anzahl, Date releaseDate) {
         this.name = name;
         this.trailer = trailer;
         this.anzahl = anzahl;
-        this.release = release;
+        this.releaseDate = releaseDate;
     }
 
     public long getId() {
@@ -94,12 +102,12 @@ public class Serie {
         this.anzahl = anzahl;
     }
 
-    public Date getRelease() {
-        return release;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease(Date release) {
-        this.release = release;
+    public void setReleaseDate(Date release) {
+        this.releaseDate = release;
     }
 
     public Hersteller getHersteller() {
@@ -146,7 +154,7 @@ public class Serie {
                 ", name='" + name + '\'' +
                 ", trailer='" + trailer + '\'' +
                 ", anzahl='" + anzahl + '\'' +
-                ", release='" + release + '\'' +
+                ", release='" + releaseDate + '\'' +
                 ", version=" + version +
                 '}';
     }

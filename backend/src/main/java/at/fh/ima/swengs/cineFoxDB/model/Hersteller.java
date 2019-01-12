@@ -11,6 +11,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Hersteller {
 
     @Id
@@ -19,8 +23,7 @@ public class Hersteller {
 
     private String bezeichnung;
 
-    @OneToMany(mappedBy= "series", fetch=FetchType.EAGER)
-    //@Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy= "hersteller", fetch=FetchType.EAGER)
     private Set<Serie> series;
 
     @Version

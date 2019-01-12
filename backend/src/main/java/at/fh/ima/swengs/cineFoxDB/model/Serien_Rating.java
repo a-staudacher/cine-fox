@@ -22,10 +22,11 @@ public class Serien_Rating {
     private Integer rating;
 
     @ManyToOne
-    private Serie Serie;
+    private Serie serie;
+
 
     @ManyToOne
-    private User User;
+    private User user;
 
 
     @Version
@@ -56,19 +57,19 @@ public class Serien_Rating {
     }
 
     public at.fh.ima.swengs.cineFoxDB.model.Serie getSerie() {
-        return Serie;
+        return serie;
     }
 
     public void setSerie(at.fh.ima.swengs.cineFoxDB.model.Serie serie) {
-        Serie = serie;
+        serie = serie;
     }
 
     public at.fh.ima.swengs.cineFoxDB.model.User getUser() {
-        return User;
+        return user;
     }
 
     public void setUser(at.fh.ima.swengs.cineFoxDB.model.User user) {
-        User = user;
+        user = user;
     }
 
     public long getVersion() {
@@ -84,8 +85,8 @@ public class Serien_Rating {
         return "Serien_Rating{" +
                 "id=" + id +
                 ", rating=" + rating +
-                ", Serie=" + Serie +
-                ", User=" + User +
+                ", Serie=" + serie +
+                ", User=" + user +
                 ", version=" + version +
                 '}';
     }

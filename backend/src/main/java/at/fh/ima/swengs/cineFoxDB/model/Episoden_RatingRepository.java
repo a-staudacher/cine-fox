@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RepositoryRestResource
 @Transactional(isolation = Isolation.READ_COMMITTED)
-public interface Episoden_RatingRepository extends PagingAndSortingRepository<User, Long>, JpaRepository<User, Long>, CrudRepository<User, Long> {
+public interface Episoden_RatingRepository extends PagingAndSortingRepository<Episoden_Rating, Long>, JpaRepository<Episoden_Rating, Long>, CrudRepository<Episoden_Rating, Long> {
     
 
 }

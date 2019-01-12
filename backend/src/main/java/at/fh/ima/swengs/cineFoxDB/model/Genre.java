@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Genre {
 
     @Id
@@ -25,7 +29,6 @@ public class Genre {
     @JoinTable(name = "Serie_has_Genre",
             joinColumns = @JoinColumn(name = "genre_id"),
             inverseJoinColumns = @JoinColumn(name = "serie_id"))
-
     private Set<Serie> series;
 
     public Genre () {

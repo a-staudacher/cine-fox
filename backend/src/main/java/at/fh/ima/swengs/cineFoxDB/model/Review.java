@@ -25,8 +25,8 @@ public class Review {
     private String titel;
     private String reviewText;
 
-    @OneToMany(mappedBy = "user", fetch=FetchType.EAGER)
-    private Set<User> user;
+    @ManyToOne
+    private User user;
 
     @ManyToOne
     private Serie serie;
@@ -68,11 +68,11 @@ public class Review {
         this.reviewText = reviewText;
     }
 
-    public Set<User> getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Set<User> user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

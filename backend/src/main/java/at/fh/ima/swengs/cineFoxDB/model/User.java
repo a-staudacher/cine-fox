@@ -27,6 +27,12 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<Serie> favorite;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Serien_Rating> serien_ratings;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Review> reviews;
+
     public boolean isAdmin() {
         return admin;
     }

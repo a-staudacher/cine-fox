@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+@Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Kategorie {
 
     @Id
@@ -17,8 +21,7 @@ public class Kategorie {
 
     private String bezeichnung;
 
-    @OneToMany(mappedBy= "series", fetch=FetchType.EAGER)
-    //@Fetch(value = FetchMode.SUBSELECT)
+    @OneToMany(mappedBy= "kategorie", fetch=FetchType.EAGER)
     private Set<Serie> series;
 
     @Version

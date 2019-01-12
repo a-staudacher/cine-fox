@@ -9,6 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RepositoryRestResource
 @Transactional(isolation = Isolation.READ_COMMITTED)
-public interface HerstellerRepository extends PagingAndSortingRepository<User, Long>, JpaRepository<User, Long>, CrudRepository<User, Long> {
+public interface HerstellerRepository extends PagingAndSortingRepository<Hersteller, Long>, JpaRepository<Hersteller, Long>, CrudRepository<Hersteller, Long> {
 
 }

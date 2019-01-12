@@ -9,6 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RepositoryRestResource
 @Transactional(isolation = Isolation.READ_COMMITTED)
-public interface KategorieRepository extends PagingAndSortingRepository<User, Long>, JpaRepository<User, Long>, CrudRepository<User, Long> {
+public interface KategorieRepository extends PagingAndSortingRepository<Kategorie, Long>, JpaRepository<Kategorie, Long>, CrudRepository<Kategorie, Long> {
 
 }
