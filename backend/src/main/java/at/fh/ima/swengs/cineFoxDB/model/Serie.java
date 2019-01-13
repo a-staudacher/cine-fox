@@ -41,9 +41,14 @@ public class Serie {
     @ManyToOne
     private Kategorie kategorie;
 
-
     @OneToMany(mappedBy = "serie")
     private Set<Serien_Rating> serien_ratings;
+
+    @OneToMany(mappedBy = "serie")
+    private Set<Charakter> charakters;
+
+    @OneToMany(mappedBy = "serie")
+    private Set<Director> directors;
 
     // Users that have this series as favorite
     @ManyToMany(cascade = CascadeType.ALL)

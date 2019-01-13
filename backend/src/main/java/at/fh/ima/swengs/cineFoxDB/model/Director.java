@@ -18,7 +18,13 @@ public class Director {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //...
+    // Attributes to be added if needed (right now just m:n)
+
+    @ManyToOne
+    private Person person;
+
+    @ManyToOne
+    private Serie serie;
 
     @Version
     @JsonIgnore
@@ -27,7 +33,9 @@ public class Director {
     public Director() {
     }
 
-    public Director(String firstName, String lastName, Date dayOfBirth) {
+    public Director(Person person, Serie serie) {
+        this.person = person;
+        this.serie = serie;
     }
 
     public long getId() {
@@ -46,6 +54,22 @@ public class Director {
         this.version = version;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,8 +85,10 @@ public class Director {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Director{" +
                 "id=" + id +
+                ", person=" + person +
+                ", serie=" + serie +
                 ", version=" + version +
                 '}';
     }

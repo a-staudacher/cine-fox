@@ -18,7 +18,15 @@ public class Charakter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //...
+    private String name;
+
+    // Additonal attributes like age, backstory, titel ... could follow
+
+    @ManyToOne
+    private Person person;
+
+    @ManyToOne
+    private Serie serie;
 
     @Version
     @JsonIgnore
@@ -27,7 +35,10 @@ public class Charakter {
     public Charakter() {
     }
 
-    public Charakter(String firstName, String lastName, Date dayOfBirth) {
+    public Charakter(String name, Person person, Serie serie) {
+        this.name = name;
+        this.person = person;
+        this.serie = serie;
     }
 
     public long getId() {
@@ -46,6 +57,30 @@ public class Charakter {
         this.version = version;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -61,8 +96,11 @@ public class Charakter {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Charakter{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
+                ", person=" + person +
+                ", serie=" + serie +
                 ", version=" + version +
                 '}';
     }

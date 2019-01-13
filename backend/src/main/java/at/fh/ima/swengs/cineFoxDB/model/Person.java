@@ -17,7 +17,17 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //...
+    private String vorname;
+    private String nachname;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dayOfBirth;
+
+    @OneToMany(mappedBy = "person")
+    private Set<Charakter> charakters;
+
+    @OneToMany(mappedBy = "person")
+    private Set<Director> directors;
 
     @Version
     @JsonIgnore
@@ -26,7 +36,10 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, Date dayOfBirth) {
+    public Person(String vorname, String nachname, Date dayOfBirth) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.dayOfBirth = dayOfBirth;
     }
 
     public long getId() {
@@ -43,6 +56,46 @@ public class Person {
 
     public void setVersion(long version) {
         this.version = version;
+    }
+
+    public Set<Charakter> getCharakters() {
+        return charakters;
+    }
+
+    public void setCharakters(Set<Charakter> charakters) {
+        this.charakters = charakters;
+    }
+
+    public Set<Director> getDirectors() {
+        return directors;
+    }
+
+    public void setDirectors(Set<Director> directors) {
+        this.directors = directors;
+    }
+
+    public String getVorname() {
+        return vorname;
+    }
+
+    public void setVorname(String vorname) {
+        this.vorname = vorname;
+    }
+
+    public String getNachname() {
+        return nachname;
+    }
+
+    public void setNachname(String nachname) {
+        this.nachname = nachname;
+    }
+
+    public Date getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public void setDayOfBirth(Date dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
     }
 
     @Override
@@ -62,6 +115,11 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "id=" + id +
+                ", vorname='" + vorname + '\'' +
+                ", nachname='" + nachname + '\'' +
+                ", dayOfBirth=" + dayOfBirth +
+                ", charakters=" + charakters +
+                ", directors=" + directors +
                 ", version=" + version +
                 '}';
     }
