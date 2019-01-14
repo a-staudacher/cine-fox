@@ -308,10 +308,12 @@ ul.colors li:hover p {
 }
 .prs_logo_main_wrapper{
 	float:left;
-	padding-top: 30px;
-    padding-bottom: 30px;
+	padding-top: 5px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    width: 43%;
 	position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 .prs_menu_main_wrapper{
 	float:left;
