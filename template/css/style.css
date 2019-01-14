@@ -1411,7 +1411,7 @@ body.active #mobile-nav {
 	right:0%;
 	top:0%;
 	bottom:0%;
-	background:rgba(0,0,0,0.8);
+	background:rgba(0,0,0,0.4);
 }
 .metis.tparrows{
 	width:50px;
@@ -7329,3 +7329,7 @@ body.active #mobile-nav {
     -moz-border-top-left-radius: 10px;
     border-top-left-radius: 10px;
 }
+
+.organgebox{
+    background-color: #fe4c1c;
+} 
