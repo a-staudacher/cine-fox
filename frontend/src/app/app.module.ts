@@ -22,6 +22,7 @@ import {ErrorInterceptor} from './httpinterceptor/error.interceptor';
 import { PersonFormComponent } from './person-form/person-form.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FootbarComponent } from './footbar/footbar.component';
 
 defineLocale('de', deLocale);
 
@@ -41,7 +42,8 @@ export const httpInterceptorProviders = [
     LogoutComponent,
     PersonFormComponent,
     MovieFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    FootbarComponent
   ],
   imports: [
     BrowserModule,
