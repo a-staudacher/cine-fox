@@ -15,36 +15,29 @@ public class PersonFacade {
     private PersonService personService;
     /*
         @Autowired
-        private MovieService movieSvice;
-    /*
-        void mapDtoToEntity(at.fh.ima.swengs.moviedbv3.dto.PersonDTO dto, at.fh.ima.swengs.moviedbv3.model.Person entity) {
-            entity.setFirstName(dto.getFirstName());
-            entity.setLastName(dto.getLastName());
-            entity.setAlive(dto.isAlive());
-            entity.setRating(dto.getRating());
-            entity.setGender(dto.getGender());
+        private MovieService movieSvice;*/
+
+        void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, at.fh.ima.swengs.cineFoxDB.model.Person entity) {
+            entity.setVorname(dto.getVorname());
+            entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
-            entity.setMovies(movieService.getMovies(dto.getMovies()));
         }
 
-        private void mapEntityToDto(at.fh.ima.swengs.moviedbv3.model.Person entity, at.fh.ima.swengs.moviedbv3.dto.PersonDTO dto) {
+        private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Person entity, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
             dto.setId(entity.getId());
-            dto.setFirstName(entity.getFirstName());
-            dto.setLastName(entity.getLastName());
-            dto.setAlive(entity.isAlive());
-            dto.setRating(entity.getRating());
-            dto.setGender(entity.getGender());
+            dto.setVorname(entity.getVorname());
+            dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
-            dto.setMovies(entity.getMovies().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
+
         }
 
-        public at.fh.ima.swengs.moviedbv3.dto.PersonDTO update(Long id, at.fh.ima.swengs.moviedbv3.dto.PersonDTO dto) {
-            at.fh.ima.swengs.moviedbv3.model.Person entity = actorService.findById(id).get();
+        public at.fh.ima.swengs.cineFoxDB.dto.PersonDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
+            at.fh.ima.swengs.cineFoxDB.model.Person entity = personService.findById(id).get();
             mapDtoToEntity(dto, entity);
-            mapEntityToDto(actorService.save(entity), dto);
+            mapEntityToDto(personService.save(entity), dto);
             return dto;
         }
-    */
+
     public at.fh.ima.swengs.cineFoxDB.dto.PersonDTO create(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
         at.fh.ima.swengs.cineFoxDB.model.Person entity = new at.fh.ima.swengs.cineFoxDB.model.Person();
         mapDtoToEntity(dto, entity);
