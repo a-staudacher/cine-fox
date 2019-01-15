@@ -1,0 +1,49 @@
+<form [formGroup]="personForm" (ngSubmit)="savePerson()">
+
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="vorname">First name:</label>
+        <input id="vorname" type="text" name="vorname" formControlName="vorname" class="form-control"/>
+        <div *ngIf="personForm.controls.vorname.invalid && (personForm.controls.vorname.dirty || personForm.controls.vorname.touched)"
+             class="alert alert-danger">
+          <div *ngIf="personForm.controls.vorname.errors.required">
+            Name is required.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <label for="nachname">Last name:</label>
+      <input id="nachname" type="text" name="nachname" formControlName="nachname" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <!-- <div class="col">
+      <label for="movies">Movies:</label>
+      <ngx-select id="movies" [items]="movieOptions" name="movies" [multiple]="true"
+                  formControlName="movies" optionTextField="title"></ngx-select>
+    </div> -->
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="dayOfBirth">Day of birth:</label>
+      <input id="dayOfBirth" type="text" bsDatepicker name="dayOfBirth" formControlName="dayOfBirth" class="form-control"/>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
+      Save
+    </button>
+    <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
+      Save and Back
+    </button>
+    <button type="submit" (click)="navigateToList()" class="btn btn-primary">
+      Back without saving
+    </button>
+  </div>
+
+</form>
