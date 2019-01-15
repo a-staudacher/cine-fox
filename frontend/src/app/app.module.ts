@@ -20,6 +20,8 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ErrorInterceptor} from './httpinterceptor/error.interceptor';
 import { PersonFormComponent } from './person-form/person-form.component';
+import { MovieFormComponent } from './movie-form/movie-form.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 defineLocale('de', deLocale);
 
@@ -37,7 +39,9 @@ export const httpInterceptorProviders = [
     AppComponent,
     LoginComponent,
     LogoutComponent,
-    PersonFormComponent
+    PersonFormComponent,
+    MovieFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

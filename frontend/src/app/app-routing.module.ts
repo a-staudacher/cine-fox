@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {PersonFormComponent} from './person-form/person-form.component';
+import {MovieFormComponent} from './movie-form/movie-form.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'person', redirectTo: '/person-form' // , canActivate: [AuthGuard]
+  },
+  {
+    path: 'movie-form', component: MovieFormComponent
   },
   {
     path: 'login', component: LoginComponent
