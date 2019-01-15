@@ -19,6 +19,7 @@ import {environment} from '../environments/environment';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ErrorInterceptor} from './httpinterceptor/error.interceptor';
+import { PersonFormComponent } from './person-form/person-form.component';
 
 defineLocale('de', deLocale);
 
@@ -35,7 +36,8 @@ export const httpInterceptorProviders = [
   declarations: [
     AppComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    PersonFormComponent
   ],
   imports: [
     BrowserModule,

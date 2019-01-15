@@ -19,8 +19,8 @@ public class PersonController {
 
     @PostMapping("/dto/actors")
     at.fh.ima.swengs.cineFoxDB.dto.PersonDTO create(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
-        // return personFacade.create(dto);
-        return null;
+        return personFacade.create(dto);
+        //return null;
     }
 
     @PutMapping("/dto/actors/{id}")
