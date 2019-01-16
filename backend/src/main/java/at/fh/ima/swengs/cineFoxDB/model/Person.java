@@ -19,6 +19,7 @@ public class Person {
 
     private String vorname;
     private String nachname;
+    private String beschreibung;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dayOfBirth;
@@ -43,6 +44,13 @@ public class Person {
         this.vorname = vorname;
         this.nachname = nachname;
         this.dayOfBirth = dayOfBirth;
+    }
+
+    public Person(String vorname, String nachname, Date dayOfBirth, String beschreibung) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.dayOfBirth = dayOfBirth;
+        this.beschreibung = beschreibung;
     }
 
     public long getId() {
@@ -107,6 +115,14 @@ public class Person {
 
     public void setPictures(Set<Media> pictures) {
         this.pictures = pictures;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
     @Override
