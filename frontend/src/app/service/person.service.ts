@@ -13,7 +13,7 @@ export class PersonService {
   }
 
   getById(id: string) {
-    return this.http.get('/api/persons/' + id).pipe(map((res: any) => {
+    return this.http.get('/api/person/' + id).pipe(map((res: any) => {
       if (res.dayOfBirth) {
         res.dayOfBirth = new Date(res.dayOfBirth);
       }
@@ -22,7 +22,7 @@ export class PersonService {
   }
 
   getAll() {
-    return this.http.get('/api/persons').pipe(
+    return this.http.get('/api/person').pipe(
       map((response: any) => {
         return response._embedded.persons;
       })

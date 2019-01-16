@@ -23,6 +23,15 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FootbarComponent } from './footbar/footbar.component';
+import { MediainputComponent } from './mediainput/mediainput.component';
+import {FileUploadModule} from 'ng2-file-upload';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { RegistryComponent } from './registry/registry.component';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { PersonShowComponent } from './person-show/person-show.component';
+import {ProfileComponent} from './profile/profile.component';
+import { SearchResultsPageComponent } from './search-results-page/search-results-page.component';
+
 
 defineLocale('de', deLocale);
 
@@ -43,13 +52,21 @@ export const httpInterceptorProviders = [
     PersonFormComponent,
     MovieFormComponent,
     NavbarComponent,
-    FootbarComponent
+    MediainputComponent,
+    FootbarComponent,
+    LandingpageComponent,
+    RegistryComponent,
+    ImpressumComponent,
+    PersonShowComponent,
+    ProfileComponent,
+    SearchResultsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

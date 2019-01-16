@@ -28,15 +28,14 @@
               "src/manifest.json"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css" // try adding '../' if you're using angular cli before 6
             ],
             "scripts": [
               "src/assets/js/jquery_min.js",
-              "src/assets/js/bootstrap.js",
               "src/assets/js/modernizr.js",
+              "src/assets/js/bootstrap.js",
               "src/assets/js/owl.carousel.js",
               "src/assets/js/jquery.dlmenu.js",
               "src/assets/js/jquery.sticky.js",
@@ -46,9 +45,11 @@
               "src/assets/js/venobox.min.js",
               "src/assets/js/smothscroll_part1.js",
               "src/assets/js/smothscroll_part2.js",
+
               "src/assets/js/jquery.countTo.js",
               "src/assets/js/jquery.inview.min.js",
               "src/assets/js/jquery.shuffle.min.js",
+
               "src/assets/js/plugin/rs_slider/jquery.themepunch.revolution.min.js",
               "src/assets/js/plugin/rs_slider/jquery.themepunch.tools.min.js",
               "src/assets/js/plugin/rs_slider/revolution.addon.snow.min.js",
