@@ -24,6 +24,8 @@ import { MovieFormComponent } from './movie-form/movie-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FootbarComponent } from './footbar/footbar.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { RegistryComponent } from './registry/registry.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 defineLocale('de', deLocale);
 
@@ -46,6 +48,8 @@ export const httpInterceptorProviders = [
     NavbarComponent,
     FootbarComponent,
     LandingpageComponent
+    RegistryComponent,
+    ImpressumComponent
   ],
   imports: [
     BrowserModule,

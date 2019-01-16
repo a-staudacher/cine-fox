@@ -5,6 +5,8 @@ import {AuthGuard} from './auth.guard';
 import {PersonFormComponent} from './person-form/person-form.component';
 import {MovieFormComponent} from './movie-form/movie-form.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
+import {RegistryComponent} from './registry/registry.component';
+import {ImpressumComponent} from './impressum/impressum.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,12 @@ const routes: Routes = [
   {
     path: 'index', component: LandingpageComponent
   },
+  {
+    path: 'registry', component: RegistryComponent
+  },
+  {
+    path: 'impressum', component: ImpressumComponent
+  }
 ];
 
 @NgModule({
