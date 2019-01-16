@@ -1,49 +1,106 @@
 <form [formGroup]="personForm" (ngSubmit)="savePerson()">
 
-  <div class="row">
-    <div class="col">
-      <div class="form-group">
-        <label for="vorname">First name:</label>
-        <input id="vorname" type="text" name="vorname" formControlName="vorname" class="form-control"/>
-        <div *ngIf="personForm.controls.vorname.invalid && (personForm.controls.vorname.dirty || personForm.controls.vorname.touched)"
-             class="alert alert-danger">
-          <div *ngIf="personForm.controls.vorname.errors.required">
-            Name is required.
+  <div class="prs_title_main_sec_wrapper">
+    <div class="prs_title_img_overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="prs_title_heading_wrapper">
+            <h2>Person erstellen / bearbeiten</h2>
+            <ul>
+              <li><a href="#">Home</a>
+              </li>
+              <li>&nbsp;&nbsp; >&nbsp;&nbsp; Person erstellen / bearbeiten</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="col">
-      <label for="nachname">Last name:</label>
-      <input id="nachname" type="text" name="nachname" formControlName="nachname" class="form-control"/>
+  </div>
+
+  <div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+          <div class="hs_blog_left_sidebar_main_wrapper">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="hs_blog_box1_main_wrapper">
+                  <div class="hs_blog_box1_img_wrapper">
+                    <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                  </div>
+                  <div class="hs_blog_box1_cont_main_wrapper">
+
+                    <div class="row">
+                      <div class="col">
+                        <app-mediainput name="picture"
+                                        formControlName="picture"></app-mediainput>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                            <label for="vorname">First name:</label>
+                            <input id="vorname" type="text" name="vorname" formControlName="vorname" class="form-control"/>
+                            <div *ngIf="personForm.controls.vorname.invalid && (personForm.controls.vorname.dirty || personForm.controls.vorname.touched)"
+                                 class="alert alert-danger">
+                              <div *ngIf="personForm.controls.vorname.errors.required">
+                                Name is required.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col">
+                          <label for="nachname">Last name:</label>
+                          <input id="nachname" type="text" name="nachname" formControlName="nachname" class="form-control"/>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col">
+                          <label for="dayOfBirth">Day of birth:</label>
+                          <input id="dayOfBirth" type="text" bsDatepicker name="dayOfBirth" formControlName="dayOfBirth" class="form-control"/>
+                        </div>
+                      </div>
+
+                      <!--<div class=""row>
+                        <div class="col">
+                          <label for="charakter">Character:</label>
+                          <ngx-select id="charakter" [items]="charakterOptions" name="charakter" [multiple]="true"
+                                      formControlName="charakter" optionTextField="title"></ngx-select>
+                        </div>
+                      </div>
+
+                      <div class=""row>
+                        <div class="col">
+                          <label for="director">Directed:</label>
+                          <ngx-select id="director" [items]="directorOptions" name="director" [multiple]="true"
+                                      formControlName="director" optionTextField="title"></ngx-select>
+                        </div>
+                      </div>-->
+
+                      <div class="btn-group">
+                        <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
+                          Save
+                        </button>
+                        <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
+                          Save and Back
+                        </button>
+                        <button type="submit" (click)="navigateToList()" class="btn btn-primary">
+                          Back without saving
+                        </button>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="row">
-
-    <!-- <div class="col">
-      <label for="movies">Movies:</label>
-      <ngx-select id="movies" [items]="movieOptions" name="movies" [multiple]="true"
-                  formControlName="movies" optionTextField="title"></ngx-select>
-    </div> -->
-  </div>
-  <div class="row">
-    <div class="col">
-      <label for="dayOfBirth">Day of birth:</label>
-      <input id="dayOfBirth" type="text" bsDatepicker name="dayOfBirth" formControlName="dayOfBirth" class="form-control"/>
-    </div>
-  </div>
-
-  <div class="btn-group">
-    <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
-      Save
-    </button>
-    <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
-      Save and Back
-    </button>
-    <button type="submit" (click)="navigateToList()" class="btn btn-primary">
-      Back without saving
-    </button>
   </div>
 
 </form>
