@@ -1150,17 +1150,6 @@ body.active #mobile-nav {
     background-position: right;
     background-size: cover;
     z-index: 2;
-=======
-  position: absolute;
-  content: '';
-  bottom: 0;
-  right: -25px;
-  height: 100%;
-  width: 50%;
-  background: url(../images/header/toggle-nav-bg-2.png) no-repeat;
-  background-position: right;
-  background-size: cover;
-  z-index: 1;
 }
 
 .mobile-logo {
