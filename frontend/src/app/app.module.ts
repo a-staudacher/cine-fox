@@ -23,6 +23,7 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FootbarComponent } from './footbar/footbar.component';
+import { RegistryComponent } from './registry/registry.component';
 
 defineLocale('de', deLocale);
 
@@ -43,7 +44,8 @@ export const httpInterceptorProviders = [
     PersonFormComponent,
     MovieFormComponent,
     NavbarComponent,
-    FootbarComponent
+    FootbarComponent,
+    RegistryComponent
   ],
   imports: [
     BrowserModule,

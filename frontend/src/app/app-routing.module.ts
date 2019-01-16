@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {PersonFormComponent} from './person-form/person-form.component';
 import {MovieFormComponent} from './movie-form/movie-form.component';
+import {RegistryComponent} from './registry/registry.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
+  {
+    path: 'registry', component: RegistryComponent
+  }
 ];
 
 @NgModule({
