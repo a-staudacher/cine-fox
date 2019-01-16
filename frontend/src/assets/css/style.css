@@ -1148,7 +1148,7 @@ body.active #mobile-nav {
     background: url(../images/header/toggle-nav-bg-2.png) no-repeat;
     background-position: right;
     background-size: cover;
-    z-index: 1;
+    z-index: 2;
 }
 
 .mobile-logo {
