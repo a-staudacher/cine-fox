@@ -25,6 +25,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FootbarComponent } from './footbar/footbar.component';
 import {MediainputComponent} from './mediainput/mediainput.component';
 import {FileUploadModule} from 'ng2-file-upload';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { RegistryComponent } from './registry/registry.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 
 defineLocale('de', deLocale);
 
@@ -47,6 +50,10 @@ export const httpInterceptorProviders = [
     NavbarComponent,
     MediainputComponent,
     FootbarComponent
+    FootbarComponent,
+    LandingpageComponent,
+    RegistryComponent,
+    ImpressumComponent
   ],
   imports: [
     BrowserModule,

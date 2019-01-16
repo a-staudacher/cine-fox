@@ -1,12 +1,13 @@
 <!-- prs title wrapper Start -->
 <div class="prs_title_main_sec_wrapper">
-  <div></div>
   <div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2" >
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
         <div class="prs_title_heading_wrapper">
-          <h3 style="color: black">Login</h3>
+          <h3 style="color: black">Registrierung</h3>
           <br>
+
           <form (ngSubmit)="login()">
             <label>
               Username:
@@ -20,12 +21,15 @@
             </label>
             <br>
             <br>
+            <label>
+              Password:
+              <input type="text" name="password" [(ngModel)]="user.password"/>
+            </label>
+            <br>
+            <br>
             <button type="submit">
-              Login
+              Registrieren
             </button>
-            <br>
-            <br>
-            <a href="" >Registrieren</a>
           </form>
         </div>
       </div>
@@ -34,5 +38,3 @@
 </div>
 <!-- prs title wrapper End -->
 <!-- hs sidebar Start -->
-
-
