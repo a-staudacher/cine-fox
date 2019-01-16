@@ -25,6 +25,9 @@ export class PersonFormComponent implements OnInit {
       'id': new FormControl(),
       'vorname': new FormControl(),
       'nachname': new FormControl(),
+      'character': new FormControl(),
+      'director': new FormControl(),
+      'picture': new FormControl(),
       // 'movies': new FormControl(),
       'dayOfBirth': new FormControl()
     });

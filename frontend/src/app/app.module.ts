@@ -23,6 +23,8 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { MovieFormComponent } from './movie-form/movie-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FootbarComponent } from './footbar/footbar.component';
+import {MediainputComponent} from './mediainput/mediainput.component';
+import {FileUploadModule} from 'ng2-file-upload';
 
 defineLocale('de', deLocale);
 
@@ -43,6 +45,7 @@ export const httpInterceptorProviders = [
     PersonFormComponent,
     MovieFormComponent,
     NavbarComponent,
+    MediainputComponent,
     FootbarComponent
   ],
   imports: [
@@ -50,6 +53,7 @@ export const httpInterceptorProviders = [
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
