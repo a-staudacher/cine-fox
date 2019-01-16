@@ -5,20 +5,25 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="prs_title_heading_wrapper">
+          <h3 style="color: black">Login</h3>
+          <br>
           <form (ngSubmit)="login()">
             <label>
               Username:
               <input type="text" name="username" [(ngModel)]="user.username"/>
             </label>
             <br>
+            <br>
             <label>
               Password:
               <input type="text" name="password" [(ngModel)]="user.password"/>
             </label>
             <br>
+            <br>
             <button type="submit">
               Login
             </button>
+            <br>
             <br>
             <a href="" >Registrieren</a>
           </form>
