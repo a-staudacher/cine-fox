@@ -6,11 +6,11 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="prs_title_heading_wrapper">
-            <h2>Person erstellen / bearbeiten</h2>
+            <h2>Create / edit person</h2>
             <ul>
               <li><a href="#">Home</a>
               </li>
-              <li>&nbsp;&nbsp; >&nbsp;&nbsp; Person erstellen / bearbeiten</li>
+              <li>&nbsp;&nbsp; >&nbsp;&nbsp; Create / edit person</li>
             </ul>
           </div>
         </div>
@@ -55,6 +55,12 @@
                         <div class="col">
                           <label for="nachname">Last name:</label>
                           <input id="nachname" type="text" name="nachname" formControlName="nachname" class="form-control"/>
+                          <div *ngIf="personForm.controls.nachname.invalid && (personForm.controls.nachname.dirty || personForm.controls.nachname.touched)"
+                               class="alert alert-danger">
+                            <div *ngIf="personForm.controls.nachname.errors.required">
+                              Name is required.
+                            </div>
+                          </div>
                         </div>
                       </div>
 
@@ -65,6 +71,13 @@
                         </div>
                       </div>
 
+                    <div class="row">
+                      <div class="col">
+                        <label for="beschreibung">Description:</label>
+                        <textarea rows="10" id="beschreibung" type="text" name="beschreibung" formControlName="beschreibung" class="form-control">
+                        </textarea>
+                      </div>
+                  </div>
                       <!--<div class=""row>
                         <div class="col">
                           <label for="charakter">Character:</label>

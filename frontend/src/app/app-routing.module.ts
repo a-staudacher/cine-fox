@@ -8,10 +8,16 @@ import {LandingpageComponent} from './landingpage/landingpage.component';
 import {RegistryComponent} from './registry/registry.component';
 import {ImpressumComponent} from './impressum/impressum.component';
 import {ProfileComponent} from './profile/profile.component';
+import {PersonShowComponent} from './person-show/person-show.component';
 
 const routes: Routes = [
   {
     path: 'person-form', component: PersonFormComponent // , canActivate: [AuthGuard]
+  },
+  {
+    //path: 'person-show/:id', component: PersonShowComponent // , canActivate: [AuthGuard]
+
+    path: 'person-show', component: PersonShowComponent // , canActivate: [AuthGuard]
   },
   {
     path: 'person', redirectTo: '/person-form' // , canActivate: [AuthGuard]
