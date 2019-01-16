@@ -7,6 +7,7 @@ import {MovieFormComponent} from './movie-form/movie-form.component';
 import {LandingpageComponent} from './landingpage/landingpage.component';
 import {RegistryComponent} from './registry/registry.component';
 import {ImpressumComponent} from './impressum/impressum.component';
+import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'impressum', component: ImpressumComponent
+  },
+  {
+    path: 'profile', component: ProfileComponent
   }
 ];
 

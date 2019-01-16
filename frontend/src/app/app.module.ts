@@ -28,8 +28,13 @@ import {FileUploadModule} from 'ng2-file-upload';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegistryComponent } from './registry/registry.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+<<<<<<< HEAD
 import { PersonShowComponent } from './person-show/person-show.component';
+=======
+import {ProfileComponent} from './profile/profile.component';
+>>>>>>> b33eceb02875df2e7b121bc4643a610f30ed4d78
 import { SearchResultsPageComponent } from './search-results-page/search-results-page.component';
+
 
 defineLocale('de', deLocale);
 
@@ -55,7 +60,11 @@ export const httpInterceptorProviders = [
     LandingpageComponent,
     RegistryComponent,
     ImpressumComponent,
+<<<<<<< HEAD
     PersonShowComponent,
+=======
+    ProfileComponent,
+>>>>>>> b33eceb02875df2e7b121bc4643a610f30ed4d78
     SearchResultsPageComponent
   ],
   imports: [
