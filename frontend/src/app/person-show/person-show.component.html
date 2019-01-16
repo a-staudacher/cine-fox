@@ -1,3 +1,81 @@
-<p>
-  person-show works!
-</p>
+<div class="prs_title_main_sec_wrapper">
+  <div class="prs_title_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="prs_title_heading_wrapper">
+          <h2>Actor / Director</h2>
+          <ul>
+            <li><a href="#">Home</a>
+            </li>
+            <li>&nbsp;&nbsp; >&nbsp;&nbsp; Actor / Director</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="hs_blog_left_sidebar_main_wrapper">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="hs_blog_box1_main_wrapper">
+                <div class="hs_blog_box1_img_wrapper">
+                  <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                </div>
+                <div class="hs_blog_box1_cont_main_wrapper">
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="vorname">First name:</label>
+                        <div id="vorname" *ngFor="let person of persons"> {{person.vorname}}</div>
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <label for="nachname">Last name:</label>
+                      <div id="nachname" *ngFor="let person of persons"> {{person.nachname}}</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <label for="dayOfBirth">Day of birth:</label>
+                      <div id="dayOfBirth" *ngFor="let person of persons"> {{person.dayOfBirth}}</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <label for="beschreibung">Description:</label>
+                      <div id="beschreibung" *ngFor="let person of persons"> {{person.beschreibung}}</div>
+                    </div>
+                  </div>
+
+                  <!--<div class="row">
+                    <div class="col">
+                      <label for="characters">Played characters:</label>
+                      <div id="characters" *ngFor="let person of persons"> {{person.charakters}}</div>
+                    </div>
+                  </div>
+
+                  <div *ngIf="person.director != null" class="row">
+                    <div class="col">
+                      <label for="director">Directed:</label>
+                      <div id="director" *ngFor="let person of persons"> {{person.directors}}</div>
+                    </div>
+                  </div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
