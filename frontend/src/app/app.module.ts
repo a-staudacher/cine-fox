@@ -47,7 +47,7 @@ export const httpInterceptorProviders = [
     MovieFormComponent,
     NavbarComponent,
     FootbarComponent,
-    LandingpageComponent
+    LandingpageComponent,
     RegistryComponent,
     ImpressumComponent
   ],
