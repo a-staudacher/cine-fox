@@ -3,4 +3,5 @@ export interface Person {
   vorname: string;
   nachname: string;
   dayOfBirth?: Date;
+  beschreibung?: string;
 }
