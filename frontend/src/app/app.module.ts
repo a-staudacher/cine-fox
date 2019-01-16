@@ -26,6 +26,7 @@ import { FootbarComponent } from './footbar/footbar.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { RegistryComponent } from './registry/registry.component';
 import { ImpressumComponent } from './impressum/impressum.component';
+import {ProfileComponent} from './profile/profile.component';
 
 defineLocale('de', deLocale);
 
@@ -49,7 +50,8 @@ export const httpInterceptorProviders = [
     FootbarComponent,
     LandingpageComponent,
     RegistryComponent,
-    ImpressumComponent
+    ImpressumComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
