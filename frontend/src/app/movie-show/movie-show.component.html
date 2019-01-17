@@ -1,0 +1,141 @@
+<div class="prs_title_main_sec_wrapper">
+  <div class="prs_title_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="prs_title_heading_wrapper">
+          <h2>MovieTitel</h2>
+          <ul>
+            <li><a href="#">Home</a>
+            </li>
+            <li>&nbsp;&nbsp; >&nbsp;&nbsp; MovieTitel</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="hs_blog_left_sidebar_main_wrapper">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="hs_blog_box1_main_wrapper">
+                <div class="hs_blog_box1_img_wrapper">
+                  <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                </div>
+                <div class="hs_blog_box1_cont_main_wrapper">
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="titel">Titel:</label>
+                        <div id="titel">MovieTitel</div>
+                      </div>
+                    </div>
+                    <br>
+
+                    <div class="col">
+                      <label for="description">Beschreibung:</label>
+                      <div id="description">Bla bla toller Film</div>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
+                    <div class="col">
+                      <label for="avgRating">Average Rating:</label><br>
+                      <rating id="avgRating" type="text" name="avgRating" [max]="10"></rating>
+                    </div>
+                  </div>
+                  <br>
+
+                  <form [formGroup]="movieRateForm" (ngSubmit)="rateMovie()">
+                    <div class="row">
+                      <div class="col">
+                        <label for="rating">Your Rating:</label><br>
+                        <rating id="rating" type="text" name="rating" [max]="10" formControlName="rating"></rating>
+                      </div>
+                    </div>
+                    <br>
+                  </form>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="titel">Actors:</label>
+                        <table class="table table-striped">
+                          <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Actor</th>
+                            <th scope="col">Character</th>
+                            <th scope="col">Actions</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Gartner</td>
+                            <td>Der Bettler</td>
+                            <td>
+                              <button type="submit" (click)="deleteChar()" class="btn btn-primary">Delete</button>
+                              <button type="submit" (click)="deleteChar()" class="btn btn-primary">Edit</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Georg</td>
+                            <td>Der Gesuchte</td>
+                            <td>
+                              <button type="submit" (click)="deleteChar()" class="btn btn-primary">Delete</button>
+                              <button type="submit" (click)="deleteChar()" class="btn btn-primary">Edit</button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <br>
+
+                        <h2>Add new Actor</h2>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="form-group"><!--input-group-->
+                              Character Name:
+                              <input type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                          </div><!-- /.col-lg-6 -->
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              Actor:
+                              <input type="text" class="form-control" aria-label="...">
+                            </div><!-- /input-group -->
+                          </div><!-- /.col-lg-6 -->
+                        </div>
+                        <button type="submit" (click)="editMovie()" class="btn btn-primary">EditMovie</button>
+                      </div>
+                    </div>
+                    <!--<div class="row">
+                      <div class="col">
+                        <label for="characters">Played characters:</label>
+                        <div id="characters" *ngFor="let person of persons"> {{person.charakters}}</div>
+                      </div>
+                    </div>
+
+                    <div *ngIf="person.director != null" class="row">
+                      <div class="col">
+                        <label for="director">Directed:</label>
+                        <div id="director" *ngFor="let person of persons"> {{person.directors}}</div>
+                      </div>
+                    </div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

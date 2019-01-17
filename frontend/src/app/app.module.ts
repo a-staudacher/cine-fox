@@ -31,6 +31,7 @@ import { ImpressumComponent } from './impressum/impressum.component';
 import { PersonShowComponent } from './person-show/person-show.component';
 import {ProfileComponent} from './profile/profile.component';
 import { SearchResultsPageComponent } from './search-results-page/search-results-page.component';
+import { MovieShowComponent } from './movie-show/movie-show.component';
 
 
 defineLocale('de', deLocale);
@@ -59,7 +60,8 @@ export const httpInterceptorProviders = [
     ImpressumComponent,
     PersonShowComponent,
     ProfileComponent,
-    SearchResultsPageComponent
+    SearchResultsPageComponent,
+    MovieShowComponent
   ],
   imports: [
     BrowserModule,
