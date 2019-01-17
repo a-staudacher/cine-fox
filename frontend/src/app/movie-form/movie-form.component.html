@@ -31,7 +31,12 @@
                 </div>
                 <div class="hs_blog_box1_cont_main_wrapper">
                   <div class="hs_blog_cont_heading_wrapper">
-                    Bild hochladen <br><br>
+                    <div class="row">
+                      <div class="col">
+                        <app-mediainput name="picture"
+                                        formControlName="picture"></app-mediainput>
+                      </div>
+                    </div>
                     <!--<input [id]="'field_' + name" type="file" ng2FileSelect [uploader]="uploader" [multiple]="true"/>-->
                     <br>
                     <h2>Name</h2>
@@ -56,6 +61,19 @@
                     <h2>Direktor</h2>
                     <!--Direktor auswahl-->
                     <input id="direktor" type="text" name="direktor" formControlName="direktor" class="form-control"/>
+                    <br>
+                    <div class="btn-group">
+                      <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
+                        Save
+                      </button>
+                      <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
+                        Save and Back
+                      </button>
+                      <button type="submit" (click)="navigateToList()" class="btn btn-primary">
+                        Back without saving
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
