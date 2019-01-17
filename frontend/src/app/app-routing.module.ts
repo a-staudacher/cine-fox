@@ -9,6 +9,7 @@ import {RegistryComponent} from './registry/registry.component';
 import {ImpressumComponent} from './impressum/impressum.component';
 import {SearchResultsPageComponent} from './search-results-page/search-results-page.component';
 import {ProfileComponent} from './profile/profile.component';
+import {ProfileEditComponent} from './profile-edit/profile-edit.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent
+  },
+  {
+    path: 'profile-edit', component: ProfileEditComponent
   }
 ];
 
