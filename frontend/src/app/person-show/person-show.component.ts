@@ -16,7 +16,7 @@ export class PersonShowComponent implements OnInit {
 
   ngOnInit() {
 
-    this.personShow = new FormGroup({
+   /* this.personShow = new FormGroup({
       'id': new FormControl(),
       'vorname': new FormControl(),
       'nachname': new FormControl(),
@@ -25,13 +25,13 @@ export class PersonShowComponent implements OnInit {
       'picture': new FormControl(),
       // 'movies': new FormControl(),
       'dayOfBirth': new FormControl()
-    });
+    });*/
 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.personService.getById(id)
         .subscribe((response) => {
-          this.personShow.setValue(response);
+          this.router.navigate(['/person-show', response.id]);
         });
     }
   }
