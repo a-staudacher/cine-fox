@@ -15,7 +15,7 @@
     </div>
     <div class="prs_navi_left_main_wrapper">
       <div class="prs_logo_main_wrapper">
-        <a href="index.html">
+        <a [routerLink]="'index.html'">
           <img src="assets/images/header/logo.png" alt="logo" />
         </a>
       </div>
@@ -29,13 +29,13 @@
             </div>
             <div class="clearfix"></div>
             <ul class="dl-menu">
-              <li class="parent organgebox"><a href="index">OverView</a>
+              <li class="parent organgebox"><a [routerLink]="'/index'">OverView</a>
               </li>
               <li class="parent megamenu organgebox"><a>movie</a>
                 <ul class="lg-submenu">
                   <li><a>Popular Movies</a>
                     <ul class="lg-submenu">
-                      <li class="ar_left"><i class="fa fa-film"></i><a href="movie-show">Lorem Ipsum Movie</a>
+                      <li class="ar_left"><i class="fa fa-film"></i><a [routerLink]="'/movie-show'">Lorem Ipsum Movie</a>
                       </li>
                       <li class="ar_left"><i class="fa fa-film"></i><a href="#">Drishyam</a>
                       </li>
@@ -144,7 +144,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a href="profile">Profile</a>
+              <li class="parent organgebox"><a [routerLink]="'/profile'">Profile</a>
 
               </li>
               <li class="parent megamenu organgebox"><a href="#">video</a>
@@ -203,7 +203,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="parent"><a href="person-form">Create Person</a>
+                  <li class="parent"><a [routerLink]="'/person-form'">Create Person</a>
                     <ul class="lg-submenu">
                     </ul>
                   </li>
@@ -214,7 +214,8 @@
                       <li><a href="profile.html">Event-Single</a>
                       </li>
                     </ul>
-                  <li class="parent"><a href="profile">Profile</a>
+                  <li class="parent"><a [routerLink]="'/profile'">Profile</a>
+                  <li class="parent"><a href="profile-edit">Profile Edit</a>
                   </li>
                   <li class="parent"><a href="#">Movie</a>
                     <ul class="lg-submenu">
@@ -228,7 +229,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a href="impressum">Contact</a>
+              <li class="parent organgebox"><a [routerLink]="'/impressum'">Contact</a>
               </li>
             </ul>
           </div>
@@ -245,7 +246,7 @@
       <div class="prs_top_login_btn_wrapper">
         <div class="prs_animate_btn1">
           <ul>
-            <li><a href="login" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
+            <li><a  type="submit" [routerLink]="'/login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
             </li>
           </ul>
         </div>
@@ -282,19 +283,20 @@
           <a class="manu-close"><i class="fa fa-times"></i></a>
         </div>
         <ul class="mobile-list-nav">
-          <li><a href="index">OVERVIEW</a>
+          <li><a [routerLink]="'/index'">OVERVIEW</a>
           </li>
-          <li><a href="movie-show">MOVIE</a>
+          <li><a [routerLink]="'/movie-show'">MOVIE</a>
           </li>
-          <li><a href="person-form">CREATE PERSON</a>
+          <li><a [routerLink]="'/person-form'">CREATE PERSON</a>
           </li>
-          <li><a href="profile">PROFIL</a>
+          <li><a [routerLink]="'/profile'">PROFIL</a>
+          <li><a href="profile-edit">PROFIL EDIT </a>
           </li>
           <li><a href="gallery.html">GALLERY</a>
           </li>
           <li><a href="blog_single.html">BLOG</a>
           </li>
-          <li><a href="impressum">CONTACT</a>
+          <li><a [routerLink]="'/impressum'">CONTACT</a>
           </li>
         </ul>
         <div class="product-heading prs_slidebar_searchbar_wrapper">
@@ -315,7 +317,7 @@
         <div class="prs_top_login_btn_wrapper prs_slidebar_searchbar_btn_wrapper">
           <div class="prs_animate_btn1">
             <ul>
-              <li><a *ngIf="!userService.isLoggedIn" [routerLink]="'login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
+              <li><a *ngIf="!userService.isLoggedIn" [routerLink]="'/login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
                 <a *ngIf="userService.isLoggedIn" (click)="logout()" class="button button--tamaya" data-text="Logout"><span>Logout</span></a>
               </li>
             </ul>
