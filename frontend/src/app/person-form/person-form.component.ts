@@ -29,7 +29,6 @@ export class PersonFormComponent implements OnInit {
       'directors': new FormControl(),
       'beschreibung': new FormControl(),
       'picture': new FormControl(),
-      // 'movies': new FormControl(),
       'dayOfBirth': new FormControl()
     });
   }
@@ -58,10 +57,6 @@ export class PersonFormComponent implements OnInit {
         });
     }
   }
-
-  /*navigateToPerson() {
-    this.router.navigate(['/person-show' + person.id]);
-  }*/
 
   setShouldNavigateToList() {
     this.shouldNavigateToList = true;
