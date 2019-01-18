@@ -15,7 +15,7 @@
     </div>
     <div class="prs_navi_left_main_wrapper">
       <div class="prs_logo_main_wrapper">
-        <a [routerLink]="'index.html'">
+        <a onclick="reload_js()" [routerLink]="'/index'">
           <img src="assets/images/header/logo.png" alt="logo" />
         </a>
       </div>
@@ -29,7 +29,7 @@
             </div>
             <div class="clearfix"></div>
             <ul class="dl-menu">
-              <li class="parent organgebox"><a [routerLink]="'/index'">OverView</a>
+              <li class="parent organgebox"><a onclick="reload_js()" [routerLink]="'/index'">OverView</a>
               </li>
               <li class="parent megamenu organgebox"><a>movie</a>
                 <ul class="lg-submenu">
@@ -144,7 +144,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a [routerLink]="'/profile'">Profile</a>
+              <li class="parent organgebox"><a [routerLink]="'/profile-edit'">Profile Edit</a>
 
               </li>
               <li class="parent megamenu organgebox"><a href="#">video</a>
@@ -207,15 +207,7 @@
                     <ul class="lg-submenu">
                     </ul>
                   </li>
-                  <li class="parent"><a href="#">Event</a>
-                    <ul class="lg-submenu">
-                      <li><a href="event_category.html">Event-Category</a>
-                      </li>
-                      <li><a href="profile.html">Event-Single</a>
-                      </li>
-                    </ul>
-                  <li class="parent"><a [routerLink]="'/profile'">Profile</a>
-                  <li class="parent"><a href="profile-edit">Profile Edit</a>
+                  <li class="parent"><a [routerLink]="'/profile-edit'">Profile Edit</a>
                   </li>
                   <li class="parent"><a href="#">Movie</a>
                     <ul class="lg-submenu">
@@ -284,14 +276,13 @@
           <a class="manu-close"><i class="fa fa-times"></i></a>
         </div>
         <ul class="mobile-list-nav">
-          <li><a [routerLink]="'/index'">OVERVIEW</a>
+          <li><a onclick="reload_js()" [routerLink]="'/index'">OVERVIEW</a>
           </li>
           <li><a [routerLink]="'/movie-show'">MOVIE</a>
           </li>
           <li><a [routerLink]="'/person-form'">CREATE PERSON</a>
           </li>
-          <li><a [routerLink]="'/profile'">PROFIL</a>
-          <li><a href="profile-edit">PROFIL EDIT </a>
+          <li><a onclick="reload_js()" [routerLink]="'/profile-edit'">PROFIL EDIT </a>
           </li>
           <li><a href="gallery.html">GALLERY</a>
           </li>
