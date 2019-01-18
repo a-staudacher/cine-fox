@@ -11,6 +11,7 @@ import {SearchResultsPageComponent} from './search-results-page/search-results-p
 import {ProfileComponent} from './profile/profile.component';
 import {ProfileEditComponent} from './profile-edit/profile-edit.component';
 import {PersonShowComponent} from './person-show/person-show.component';
+import {MovieShowComponent} from './movie-show/movie-show.component';
 
 
 
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'movie-form', component: MovieFormComponent
+  },
+  {
+    path: 'movie-show', component: MovieShowComponent
   },
   {
     path: 'login', component: LoginComponent
