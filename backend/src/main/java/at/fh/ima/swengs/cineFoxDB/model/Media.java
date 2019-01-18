@@ -28,6 +28,9 @@ public class Media implements Serializable {
     @ManyToOne
     private Person person;
 
+    @ManyToOne
+    private Serie serie;
+
     public Long getId() {
         return id;
     }

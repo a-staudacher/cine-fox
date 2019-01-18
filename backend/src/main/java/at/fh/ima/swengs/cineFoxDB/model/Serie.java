@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -59,6 +60,10 @@ public class Serie {
 
     @OneToMany(mappedBy = "serie")
     private Set<Review> reviews;
+
+
+    @OneToMany(mappedBy = "serie")
+    private Set<Media> pictures = new HashSet<>();
 
 
     @Version
@@ -137,6 +142,62 @@ public class Serie {
 
     public void setVersion(long version) {
         this.version = version;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
+    }
+
+    public Set<Serien_Rating> getSerien_ratings() {
+        return serien_ratings;
+    }
+
+    public void setSerien_ratings(Set<Serien_Rating> serien_ratings) {
+        this.serien_ratings = serien_ratings;
+    }
+
+    public Set<Charakter> getCharakters() {
+        return charakters;
+    }
+
+    public void setCharakters(Set<Charakter> charakters) {
+        this.charakters = charakters;
+    }
+
+    public Set<Director> getDirectors() {
+        return directors;
+    }
+
+    public void setDirectors(Set<Director> directors) {
+        this.directors = directors;
+    }
+
+    public Set<User> getFav_users() {
+        return fav_users;
+    }
+
+    public void setFav_users(Set<User> fav_users) {
+        this.fav_users = fav_users;
+    }
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Set<Media> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(Set<Media> pictures) {
+        this.pictures = pictures;
     }
 
     @Override
