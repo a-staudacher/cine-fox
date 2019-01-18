@@ -26,9 +26,9 @@ export class ProfileEditComponent implements OnInit {
 
   saveProfile() {
 
-    const actor = this.profileeditForm.value;
-    if (actor.id) {
-      this.profileeditService.update(actor)
+    const profile = this.profileeditForm.value;
+    if (profile.id) {
+      this.profileeditService.update(profile)
         .subscribe((response) => {
           alert('updated successfully');
           this.profileeditForm.setValue(response);
@@ -37,7 +37,7 @@ export class ProfileEditComponent implements OnInit {
           }*/
         });
     } else {
-      this.profileeditService.create(actor)
+      this.profileeditService.create(profile)
         .subscribe((response: any) => {
           alert('created successfully');
           /*if (this.shouldNavigateToList) {

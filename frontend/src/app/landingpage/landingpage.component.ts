@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-landingpage',
@@ -8,9 +9,18 @@ import {Router} from '@angular/router';
 })
 export class LandingpageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  landingpageForm;
+  moviename = 'Tarzan the Ape Man'
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
+
+    this.landingpageForm = new FormGroup({
+      'id': new FormControl(),
+      'name': new FormControl()
+    });
+
   }
 
 }
