@@ -1,4 +1,4 @@
-
+<form [formGroup]="personShow">
   <div class="prs_title_main_sec_wrapper">
     <div class="prs_title_img_overlay"></div>
     <div class="container">
@@ -39,8 +39,10 @@
                       </div>
 
                       <div class="col">
+                        <div class="col">
                         <label for="nachname">Last name:</label>
                         <div id="nachname"> {{person.nachname}}</div>
+                      </div>
                       </div>
                     </div>
 
@@ -58,33 +60,20 @@
                       </div>
                     </div>
 
-                    <div class="row" *ngIf="person.director">
+                    <div class="row" *ngIf="person.directors">
                       <div class="col">
                         <label for="director">Movies directed:</label>
-                        <div id="director" *ngFor="let director of person.director"> {{director.serie.name}}</div>
+                        <div id="director" *ngFor="let directors of person.directors"> {{directors.serie.name}}</div>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
                         <label for="characters">Characters played:</label>
-                        <div id="characters" *ngFor="let character of person.character"> {{character.name}}</div>
+                        <div id="characters" *ngFor="let charakter of person.charakter"> {{charakter.name}}</div>
                       </div>
                     </div>
 
-                    <!--<div class="row">
-                      <div class="col">
-                        <label for="characters">Played characters:</label>
-                        <div id="characters" *ngFor="let person of persons"> {{person.charakters}}</div>
-                      </div>
-                    </div>
-
-                    <div *ngIf="person.director != null" class="row">
-                      <div class="col">
-                        <label for="director">Directed:</label>
-                        <div id="director" *ngFor="let person of persons"> {{person.directors}}</div>
-                      </div>
-                    </div>-->
                   </div>
                 </div>
               </div>
@@ -94,4 +83,4 @@
       </div>
     </div>
   </div>
-
+</form>
