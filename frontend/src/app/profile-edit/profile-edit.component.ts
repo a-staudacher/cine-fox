@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ProfileEditService} from '../service/profile-edit.service';
 
 @Component({
   selector: 'app-profile-edit',
@@ -12,7 +13,7 @@ export class ProfileEditComponent implements OnInit {
   profileeditForm;
   username = 'Max Mustermann'
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private profileeditService: ProfileEditService) { }
 
   ngOnInit() {
 
