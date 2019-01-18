@@ -1,8 +1,11 @@
 package at.fh.ima.swengs.cineFoxDB.controller;
 
+import at.fh.ima.swengs.cineFoxDB.dto.PersonDTO;
+import at.fh.ima.swengs.cineFoxDB.model.Person;
 import at.fh.ima.swengs.cineFoxDB.facade.PersonFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 import javax.validation.Valid;
 
@@ -13,20 +16,18 @@ public class PersonController {
     private PersonFacade personFacade;
 
     @GetMapping("/dto/person/{id}")
-    at.fh.ima.swengs.cineFoxDB.dto.PersonDTO getById(@PathVariable Long id) {
+    PersonDTO getById(@PathVariable Long id) {
         return personFacade.getById(id);
     }
 
     @PostMapping("/dto/person")
-    at.fh.ima.swengs.cineFoxDB.dto.PersonDTO create(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
+    PersonDTO create(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
         return personFacade.create(dto);
-        //return null;
     }
 
     @PutMapping("/dto/person/{id}")
-    at.fh.ima.swengs.cineFoxDB.dto.PersonDTO update(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, @PathVariable Long id) {
-        // return personFacade.update(id, dto);
-        return null;
+    PersonDTO update(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, @PathVariable Long id) {
+        return personFacade.update(id, dto);
     }
 
 }
