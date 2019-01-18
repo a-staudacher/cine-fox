@@ -36,35 +36,35 @@ export class PersonFormComponent implements OnInit {
 
   savePerson() {
 
-    const actor = this.personForm.value;
-    if (actor.id) {
-      this.personService.update(actor)
+    const person = this.personForm.value;
+    if (person.id) {
+      this.personService.update(person)
         .subscribe((response) => {
           alert('updated successfully');
           this.personForm.setValue(response);
-          /*if (this.shouldNavigateToList) {
-            this.navigateToList();
-          }*/
+          if (this.shouldNavigateToList) {
+            this.navigateToPerson();
+          }
         });
     } else {
-      this.personService.create(actor)
+      this.personService.create(person)
         .subscribe((response: any) => {
           alert('created successfully');
-          /*if (this.shouldNavigateToList) {
-            this.navigateToList();
+          if (this.shouldNavigateToList) {
+            this.navigateToPerson();
           } else {
-            this.router.navigate(['/person-form', response.id]);
-          }*/
+            this.router.navigate(['/person-show', response.id]);
+          }
         });
     }
   }
 
-  navigateToList() {
+  navigateToPerson() {
     this.router.navigate(['/person-form']);
   }
 
-  /*setShouldNavigateToList() {
+  setShouldNavigateToList() {
     this.shouldNavigateToList = true;
-  }*/
+  }
 
 }

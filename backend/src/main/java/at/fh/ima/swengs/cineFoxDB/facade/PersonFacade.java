@@ -15,12 +15,13 @@ public class PersonFacade {
     private PersonService personService;
     /*
         @Autowired
-        private MovieService movieSvice;*/
+        private MovieService movieService;*/
 
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, at.fh.ima.swengs.cineFoxDB.model.Person entity) {
             entity.setVorname(dto.getVorname());
             entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
+            entity.setBeschreibung(dto.getBeschreibung());
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Person entity, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
@@ -28,6 +29,7 @@ public class PersonFacade {
             dto.setVorname(entity.getVorname());
             dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
+            dto.setBeschreibung(entity.getBeschreibung());
 
         }
 
@@ -46,10 +48,9 @@ public class PersonFacade {
     }
 
     public at.fh.ima.swengs.cineFoxDB.dto.PersonDTO getById(Long id) {
-        // at.fh.ima.swengs.cineFoxDB.model.Person entity = actorService.findById(id).get();
-        // at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto = new at.fh.ima.swengs.moviedbv3.dto.PersonDTO();
-        // mapEntityToDto(entity, dto);
-        // return dto;
-        return null;
+        at.fh.ima.swengs.cineFoxDB.model.Person entity = personService.findById(id).get();
+        at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto = new at.fh.ima.swengs.cineFoxDB.dto.PersonDTO();
+        mapEntityToDto(entity, dto);
+        return dto;
     }
 }

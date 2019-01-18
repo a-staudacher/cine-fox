@@ -9,6 +9,7 @@ public class PersonDTO {
     private String vorname;
     private String nachname;
     private Date dayOfBirth;
+    private String beschreibung;
 
     public Long getId() {
         return id;
@@ -40,5 +41,13 @@ public class PersonDTO {
 
     public void setDayOfBirth(Date dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 }
