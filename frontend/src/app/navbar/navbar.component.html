@@ -144,9 +144,6 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a [routerLink]="'/profile-edit'">Profile Edit</a>
-
-              </li>
               <li class="parent megamenu organgebox"><a href="#">video</a>
                 <ul class="lg-submenu prs_navi_video_wrapper">
                   <li>
@@ -193,15 +190,10 @@
                   </li>
                 </ul>
               </li>
+
               <li class="parent organgebox"><a href="#">pages</a>
                 <ul class="lg-submenu">
-                  <li class="parent"><a href="#">Blog</a>
-                    <ul class="lg-submenu">
-                      <li><a href="blog_category.html">Blog-Category</a>
-                      </li>
-                      <li><a href="blog_single.html">Blog-Single</a>
-                      </li>
-                    </ul>
+                  <li class="parent"><a [routerLink]="'/search-results'">Search A Movie</a>
                   </li>
                   <li class="parent"><a [routerLink]="'/person-form'">Create Person</a>
                     <ul class="lg-submenu">
@@ -209,19 +201,9 @@
                   </li>
                   <li class="parent"><a [routerLink]="'/profile-edit'">Profile Edit</a>
                   </li>
-                  <li class="parent"><a href="#">Movie</a>
-                    <ul class="lg-submenu">
-                      <li><a href="movie_category.html">Movie-Category</a>
-                      </li>
-                      <li><a href="movie_single.html">Movie-Single</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a href="gallery.html">Gallery</a>
-                  </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a [routerLink]="'/impressum'">Contact</a>
+              <li class="parent organgebox"><a [routerLink]="'/impressum'">Impressum</a>
               </li>
             </ul>
           </div>
@@ -277,17 +259,13 @@
         <ul class="mobile-list-nav">
           <li><a onclick="reload_js()" [routerLink]="'/index'">OVERVIEW</a>
           </li>
-          <li><a [routerLink]="'/movie-show'">MOVIE</a>
+          <li><a [routerLink]="'/search-results'">SEARCH A MOVIE</a>
           </li>
           <li><a [routerLink]="'/person-form'">CREATE PERSON</a>
           </li>
           <li><a onclick="reload_js()" [routerLink]="'/profile-edit'">PROFIL EDIT </a>
           </li>
-          <li><a href="gallery.html">GALLERY</a>
-          </li>
-          <li><a href="blog_single.html">BLOG</a>
-          </li>
-          <li><a [routerLink]="'/impressum'">CONTACT</a>
+          <li><a [routerLink]="'/impressum'">IMPRESSUM</a>
           </li>
         </ul>
         <div class="product-heading prs_slidebar_searchbar_wrapper">
