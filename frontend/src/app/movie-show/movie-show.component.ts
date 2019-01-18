@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-movie-show',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class MovieShowComponent implements OnInit {
   movieRateForm;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.movieRateForm = new FormGroup({
@@ -18,5 +19,10 @@ export class MovieShowComponent implements OnInit {
   }
 
   rateMovie() { }
+
+  editMovie()
+  {
+    this.router.navigate(['/movie-form']);
+  }
 
 }

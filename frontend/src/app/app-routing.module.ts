@@ -17,15 +17,15 @@ import {MovieShowComponent} from './movie-show/movie-show.component';
 
 const routes: Routes = [
   {
-    path: 'person-form', component: PersonFormComponent // , canActivate: [AuthGuard]
+    path: 'person-form', component: PersonFormComponent , canActivate: [AuthGuard]
   },
   {
-    //path: 'person-show/:id', component: PersonShowComponent // , canActivate: [AuthGuard]
+    path: 'person-show/:id', component: PersonShowComponent // , canActivate: [AuthGuard]
 
-    path: 'person-show', component: PersonShowComponent // , canActivate: [AuthGuard]
+    //path: 'person-show', component: PersonShowComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'person', redirectTo: '/person-form' // , canActivate: [AuthGuard]
+    path: 'person', redirectTo: '/person-form' , canActivate: [AuthGuard]
   },
   {
     path: 'movie-form', component: MovieFormComponent

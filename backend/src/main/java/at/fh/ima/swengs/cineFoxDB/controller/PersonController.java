@@ -12,18 +12,18 @@ public class PersonController {
     @Autowired
     private PersonFacade personFacade;
 
-    @GetMapping("/dto/actors/{id}")
+    @GetMapping("/dto/person/{id}")
     at.fh.ima.swengs.cineFoxDB.dto.PersonDTO getById(@PathVariable Long id) {
         return personFacade.getById(id);
     }
 
-    @PostMapping("/dto/actors")
+    @PostMapping("/dto/person")
     at.fh.ima.swengs.cineFoxDB.dto.PersonDTO create(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
         return personFacade.create(dto);
         //return null;
     }
 
-    @PutMapping("/dto/actors/{id}")
+    @PutMapping("/dto/person/{id}")
     at.fh.ima.swengs.cineFoxDB.dto.PersonDTO update(@RequestBody @Valid at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, @PathVariable Long id) {
         // return personFacade.update(id, dto);
         return null;

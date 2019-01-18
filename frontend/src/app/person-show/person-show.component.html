@@ -1,4 +1,4 @@
-<form [formGroup]="personShow">
+
   <div class="prs_title_main_sec_wrapper">
     <div class="prs_title_img_overlay"></div>
     <div class="container">
@@ -61,14 +61,14 @@
                     <div class="row" *ngIf="person.director">
                       <div class="col">
                         <label for="director">Movies directed:</label>
-                        <div id="director" *ngFor="let director of person"> {{person.director}}</div>
+                        <div id="director" *ngFor="let director of person.director"> {{director.serie.name}}</div>
                       </div>
                     </div>
 
                     <div class="row">
                       <div class="col">
                         <label for="characters">Characters played:</label>
-                        <div id="characters" *ngFor="let character of person"> {{person.character}}</div>
+                        <div id="characters" *ngFor="let character of person.character"> {{character.name}}</div>
                       </div>
                     </div>
 
@@ -94,4 +94,4 @@
       </div>
     </div>
   </div>
-</form>
+

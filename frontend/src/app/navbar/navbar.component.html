@@ -29,13 +29,13 @@
             </div>
             <div class="clearfix"></div>
             <ul class="dl-menu">
-              <li class="parent organgebox"><a href="about.html">OverView</a>
+              <li class="parent organgebox"><a href="index">OverView</a>
               </li>
-              <li class="parent megamenu organgebox"><a href="#">movie</a>
+              <li class="parent megamenu organgebox"><a>movie</a>
                 <ul class="lg-submenu">
-                  <li><a>Popular Hindi Movies</a>
+                  <li><a>Popular Movies</a>
                     <ul class="lg-submenu">
-                      <li class="ar_left"><i class="fa fa-film"></i><a href="#">Bajiro Mastani</a>
+                      <li class="ar_left"><i class="fa fa-film"></i><a href="movie-show">Lorem Ipsum Movie</a>
                       </li>
                       <li class="ar_left"><i class="fa fa-film"></i><a href="#">Drishyam</a>
                       </li>
@@ -144,16 +144,8 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a href="#">tv show</a>
-                <ul class="lg-submenu">
-                  <li><a href="#">Star Plus</a></li>
-                  <li><a href="#">Star Jalsha</a></li>
-                  <li><a href="#">Star Gold</a></li>
-                  <li><a href="#">Sony TV</a></li>
-                  <li><a href="#">Sab TV</a></li>
-                  <li><a href="#">Sony Pal</a></li>
-                  <li><a href="#">Set Max</a></li>
-                </ul>
+              <li class="parent organgebox"><a href="profile">Profile</a>
+
               </li>
               <li class="parent megamenu organgebox"><a href="#">video</a>
                 <ul class="lg-submenu prs_navi_video_wrapper">
@@ -229,7 +221,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="parent organgebox"><a href="contact.html">Contact</a>
+              <li class="parent organgebox"><a href="impressum">Contact</a>
               </li>
             </ul>
           </div>
@@ -283,9 +275,9 @@
           <a class="manu-close"><i class="fa fa-times"></i></a>
         </div>
         <ul class="mobile-list-nav">
-          <li><a href="about.html">OVERVIEW</a>
+          <li><a href="index">OVERVIEW</a>
           </li>
-          <li><a href="movie_single.html">MOVIE</a>
+          <li><a href="movie-show">MOVIE</a>
           </li>
           <li><a href="person-form">CREATE PERSON</a>
           </li>
@@ -316,7 +308,7 @@
         <div class="prs_top_login_btn_wrapper prs_slidebar_searchbar_btn_wrapper">
           <div class="prs_animate_btn1">
             <ul>
-              <li><a href="login" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
+              <li><a [routerLink]="'login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
               </li>
             </ul>
           </div>
