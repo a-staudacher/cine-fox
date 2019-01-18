@@ -1,5 +1,8 @@
 package at.fh.ima.swengs.cineFoxDB.dto;
 
+import at.fh.ima.swengs.cineFoxDB.model.Charakter;
+import at.fh.ima.swengs.cineFoxDB.model.Director;
+
 import java.util.Date;
 import java.util.Set;
 
@@ -10,6 +13,8 @@ public class PersonDTO {
     private String nachname;
     private Date dayOfBirth;
     private String beschreibung;
+    private Set<Director> directors;
+    private Set<Charakter> charakters;
 
     public Long getId() {
         return id;
@@ -49,5 +54,21 @@ public class PersonDTO {
 
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
+    }
+
+    public Set<Director> getDirectors() {
+        return directors;
+    }
+
+    public void setDirectors(Set<Director> directors) {
+        this.directors = directors;
+    }
+
+    public Set<Charakter> getCharakters() {
+        return charakters;
+    }
+
+    public void setCharakters(Set<Charakter> charakters) {
+        this.charakters = charakters;
     }
 }

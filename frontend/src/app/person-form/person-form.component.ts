@@ -25,8 +25,8 @@ export class PersonFormComponent implements OnInit {
       'id': new FormControl(),
       'vorname': new FormControl(),
       'nachname': new FormControl(),
-      'character': new FormControl(),
-      'director': new FormControl(),
+      'charakter': new FormControl(),
+      'directors': new FormControl(),
       'beschreibung': new FormControl(),
       'picture': new FormControl(),
       // 'movies': new FormControl(),
@@ -43,7 +43,7 @@ export class PersonFormComponent implements OnInit {
           alert('updated successfully');
           this.personForm.setValue(response);
           if (this.shouldNavigateToList) {
-            this.navigateToPerson();
+            this.router.navigate(['/person-show' + person.id]);
           }
         });
     } else {
@@ -51,7 +51,7 @@ export class PersonFormComponent implements OnInit {
         .subscribe((response: any) => {
           alert('created successfully');
           if (this.shouldNavigateToList) {
-            this.navigateToPerson();
+            this.router.navigate(['/person-show' + person.id]);
           } else {
             this.router.navigate(['/person-show', response.id]);
           }
@@ -59,9 +59,9 @@ export class PersonFormComponent implements OnInit {
     }
   }
 
-  navigateToPerson() {
-    this.router.navigate(['/person-form']);
-  }
+  /*navigateToPerson() {
+    this.router.navigate(['/person-show' + person.id]);
+  }*/
 
   setShouldNavigateToList() {
     this.shouldNavigateToList = true;
