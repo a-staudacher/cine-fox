@@ -246,7 +246,8 @@
       <div class="prs_top_login_btn_wrapper">
         <div class="prs_animate_btn1">
           <ul>
-            <li><a  type="submit" [routerLink]="'/login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
+            <li><a *ngIf="!userService.isLoggedIn" [routerLink]="'/login'" class="button button--tamaya" data-text="sign up"><span>sign up</span></a>
+              <a *ngIf="userService.isLoggedIn" (click)="logout()" class="button button--tamaya" data-text="Logout"><span>Logout</span></a>
             </li>
           </ul>
         </div>
