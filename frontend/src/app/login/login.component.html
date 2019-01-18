@@ -9,7 +9,7 @@
         <div class="prs_title_heading_wrapper">
           <h2>LOGIN</h2>
           <ul>
-            <li><a href="#">Home</a>
+            <li><a [routerLink]="'/index'">Home</a>
             </li>
             <li>&nbsp;&nbsp; >&nbsp;&nbsp; LOGIN</li>
           </ul>
@@ -22,36 +22,55 @@
 <div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
   <div class="container">
     <div class="row">
-      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" >
         <div class="hs_blog_left_sidebar_main_wrapper">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
               <div class="hs_blog_box1_main_wrapper">
                 <div class="hs_blog_box1_cont_main_wrapper">
                   <div class="hs_blog_cont_heading_wrapper">
                     <div class="prs_title_heading_wrapper">
-                      <h3 style="color: black">Login</h3>
+                      <h3 style="color: black" align="center">Login</h3>
                       <br>
+
                       <form (ngSubmit)="login()">
-                        <label>
-                          Username:
-                          <input type="text" name="username" [(ngModel)]="user.username"/>
-                        </label>
+                        <div align="center">
+                          <label>
+                            Username: &nbsp;
+                          </label>
+                          <label>
+                            <input type="text" name="username" [(ngModel)]="user.username" class="form-control"/>
+                          </label>
+                          <br>
+                          <br>
+                          <div>
+                            <label>
+                              Password: &nbsp;
+                            </label>
+                            <label>
+                              <input type="text" name="password" [(ngModel)]="user.password" class="form-control"/>
+                            </label>
+                          </div>
+
+                          <br>
+                          <br>
+                          <div>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" style="width: 120px" >
+                              Login
+                            </button>
+                          </div>
+                          <br>
+                          <br>
+                          <div>
+                            <a [routerLink]="'/registry'">Registrieren</a>
+                          </div>
+                        </div>
                         <br>
                         <br>
-                        <label>
-                          Password:
-                          <input type="text" name="password" [(ngModel)]="user.password"/>
-                        </label>
-                        <br>
-                        <br>
-                        <button type="submit">
-                          Login
-                        </button>
-                        <br>
-                        <br>
-                        <a href="" >Registrieren</a>
+
                       </form>
+                      <br>
+                      <br>
                     </div>
                   </div>
                 </div>

@@ -4,7 +4,15 @@
   <meta charset="utf-8">
   <title>Cine-Fox</title>
   <base href="/">
-
+  <script>
+    function reload_js(src)
+    {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= 'scripts.js';
+      head.appendChild(script);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="assets/images/header/favicon.ico" />
   <!--<link rel="manifest" href="manifest.json">-->
@@ -14,7 +22,6 @@
   <meta name="keywords" content="Cine-Fox" />
   <meta name="author" content="" />
   <meta name="MobileOptimized" content="320" />
-
 </head>
 <body>
   <app-root></app-root>
