@@ -235,8 +235,8 @@
             <option>Music</option>
             <option>TV-Show</option>
           </select>
-          <input type="text" placeholder="Search Movie , Video , Music">
-          <button type="submit"><i class="flaticon-tool"></i>
+          <input type="text" #searchText placeholder="Search Movie , Video , Music">
+          <button [routerLink]="'/search-results/' + searchText.value"  type="submit"><i class="flaticon-tool"></i>
           </button>
         </div>
       </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PersonService} from '../service/person.service';
+import {MovieService} from '../service/movie.service';
 
 @Component({
   selector: 'app-search-results-page',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results-page.component.scss']
 })
 export class SearchResultsPageComponent implements OnInit {
+  search;
+  searchResult = [];
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute, private movieService: MovieService) { }
 
   ngOnInit() {
+    this.search = this.route.snapshot.paramMap.get('search');
+
+    this.movieService.getByTitel(this.search)
+      .subscribe((response) => {
+        this.searchResult = response;
+      });
   }
 
 }
