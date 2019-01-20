@@ -1191,8 +1191,7 @@ public class DataGenerateService {
             serieRepository.save(movie60);*/
 
 
-
-            //---------Charakters ------------
+//---------Charakters ------------
 
             Charakter char0 = new Charakter();
             char0.setName("Biggus Dickus");
@@ -1225,6 +1224,7 @@ public class DataGenerateService {
             charakterRepository.save(char4);
 
 
+
             //---------Person ------------
 
             Person pers0 = new Person();
@@ -1235,6 +1235,7 @@ public class DataGenerateService {
             Set<Charakter> charForPers0 = new HashSet<>();
             charForPers0.add(char4);
             pers0.setDirectors(null);
+            char4.setPerson(pers0);
             personRepository.save(pers0);
 
             Person pers1 = new Person();
@@ -1243,8 +1244,8 @@ public class DataGenerateService {
             pers1.setDayOfBirth(new Date());
             pers1.setBeschreibung("Oscar-würdig");
             Set<Charakter> charForPers1 = new HashSet<>();
-            charForPers1.add(char2);
             charForPers1.add(char3);
+            charForPers1.add(null);
             pers1.setDirectors(null);
             personRepository.save(pers1);
 
@@ -1254,8 +1255,8 @@ public class DataGenerateService {
             pers2.setDayOfBirth(new Date());
             pers2.setBeschreibung("Bester Drama-Darsteller");
             Set<Charakter> charForPers2 = new HashSet<>();
-            charForPers2.add(char1);
-            charForPers2.add(char1);
+            charForPers2.add(char2);
+            charForPers2.add(null);
             pers2.setDirectors(null);
             personRepository.save(pers2);
 
@@ -1265,7 +1266,7 @@ public class DataGenerateService {
             pers3.setDayOfBirth(new Date());
             pers3.setBeschreibung("Leider komplett abgewrackt");
             Set<Charakter> charForPers3 = new HashSet<>();
-            charForPers3.add(char3);
+            charForPers3.add(char1);
             pers3.setDirectors(null);
             personRepository.save(pers3);
 
@@ -1282,7 +1283,7 @@ public class DataGenerateService {
         //---------Directors ------------
 
             Director dir0 = new Director();
-            dir0.setPerson(pers0);
+            dir0.setPerson(null);
             dir0.setSerie(null);
             directorRepository.save(dir0);
 
@@ -1292,19 +1293,21 @@ public class DataGenerateService {
             directorRepository.save(dir1);
 
             Director dir2 = new Director();
-            dir2.setPerson(pers2);
+            dir2.setPerson(null);
             dir2.setSerie(null);
             directorRepository.save(dir2);
 
             Director dir3 = new Director();
-            dir3.setPerson(pers3);
+            dir3.setPerson(null);
             dir3.setSerie(null);
             directorRepository.save(dir3);
 
             Director dir4 = new Director();
-            dir4.setPerson(pers4);
+            dir4.setPerson(null);
             dir4.setSerie(null);
             directorRepository.save(dir4);
+
+
         }
 
     }
