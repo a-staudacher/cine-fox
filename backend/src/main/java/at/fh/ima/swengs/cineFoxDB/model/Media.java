@@ -17,6 +17,8 @@ public class Media implements Serializable {
     @Column(name = "original_file_name", nullable = false)
     private String originalFileName;
 
+    private String savedAt;
+
     @NotNull
     @Column(name = "content_type", nullable = false)
     private String contentType;
@@ -30,6 +32,9 @@ public class Media implements Serializable {
 
     @ManyToOne
     private Serie serie;
+
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;
@@ -84,6 +89,30 @@ public class Media implements Serializable {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public Serie getSerie() {
+        return serie;
+    }
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getSavedAt() {
+        return savedAt;
+    }
+
+    public void setSavedAt(String savedAt) {
+        this.savedAt = savedAt;
     }
 
     @Override

@@ -1,10 +1,10 @@
 package at.fh.ima.swengs.cineFoxDB.service;
 
 import at.fh.ima.swengs.cineFoxDB.model.*;
+import at.fh.ima.swengs.cineFoxDB.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,7 +17,7 @@ import javax.swing.*;
 import java.util.Date;
 import java.util.List;
 
-@Service("userDetailsService")   // It has to be annotated with @Service.
+@Service("dataGenerateService")   // It has to be annotated with @Service.
 public class DataGenerateService {
 
 
@@ -30,25 +30,157 @@ public class DataGenerateService {
     @Autowired
     private SerieRepository serieRepository;
 
+    @Autowired
+    private KategorieRepository kategorieRepository;
+
+    @Autowired
+    private HerstellerRepository herstellerRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
+    @Autowired
+    private UserRepository userRepository;
+
 
 
     @PostConstruct()
     @Transactional
     public void initData() {
         if (serieRepository.count() == 0) {
+            //---------User
+            User usr_andreas = new User();
+            usr_andreas.setUsername("Andreas");
+            usr_andreas.setPassword(encoder.encode("12345"));
+            usr_andreas.setAdmin(true);
+            userRepository.save(usr_andreas);
+
+            Media med_andreas = new Media();
+            med_andreas.setUser(usr_andreas);
+            med_andreas.setContentType("image/jpeg");
+            med_andreas.setOriginalFileName("andreas_schokoSeite.jpeg");
+            med_andreas.setSavedAt(med_andreas.getOriginalFileName());
+            med_andreas.setSize((long)100000);
+            mediaRepository.save(med_andreas);
+
+            User usr_georg = new User();
+            usr_georg.setUsername("Georg");
+            usr_georg.setPassword(encoder.encode("12345"));
+            usr_georg.setAdmin(false);
+            userRepository.save(usr_georg);
+
+            Media med_georg = new Media();
+            med_georg.setUser(usr_georg);
+            med_georg.setContentType("image/jpeg");
+            med_georg.setOriginalFileName("georg_marzipanSeite.jpeg");
+            med_georg.setSavedAt(med_georg.getOriginalFileName());
+            med_georg.setSize((long)100000);
+            mediaRepository.save(med_georg);
+
+            User usr_martin = new User();
+            usr_martin.setUsername("Martin");
+            usr_martin.setPassword(encoder.encode("12345"));
+            usr_martin.setAdmin(false);
+            userRepository.save(usr_martin);
+
+            Media med_martin = new Media();
+            med_martin.setUser(usr_martin);
+            med_martin.setContentType("image/jpeg");
+            med_martin.setOriginalFileName("martin_vanilleSeite.jpeg");
+            med_martin.setSavedAt(med_martin.getOriginalFileName());
+            med_martin.setSize((long)100000);
+            mediaRepository.save(med_martin);
+
+            User usr_florian = new User();
+            usr_florian.setUsername("Florian");
+            usr_florian.setPassword(encoder.encode("12345"));
+            usr_florian.setAdmin(false);
+            userRepository.save(usr_florian);
+
+            Media med_florian = new Media();
+            med_florian.setUser(usr_florian);
+            med_florian.setContentType("image/jpeg");
+            med_florian.setOriginalFileName("florian_lakrizSeite.jpeg");
+            med_florian.setSavedAt(med_florian.getOriginalFileName());
+            med_florian.setSize((long)100000);
+            mediaRepository.save(med_florian);
 
             //---------Herstellers ------------
-            Hersteller null;
+            Hersteller her_cuyahoga;
+            her_cuyahoga = new Hersteller();
+            her_cuyahoga.setBezeichnung("Cuyahoga Country Association");
+            herstellerRepository.save(her_cuyahoga);
 
+            Hersteller her_jacob;
+            her_jacob = new Hersteller();
+            her_jacob.setBezeichnung("Jacob Litt");
+            herstellerRepository.save(her_jacob);
 
+            Hersteller her_bernhard;
+            her_bernhard = new Hersteller();
+            her_bernhard.setBezeichnung("Bernhard Woolder");
+            herstellerRepository.save(her_bernhard);
+
+            Hersteller her_alliedArtist;
+            her_alliedArtist = new Hersteller();
+            her_alliedArtist.setBezeichnung("Allied Artists");
+            herstellerRepository.save(her_alliedArtist);
+
+            Hersteller her_charles;
+            her_charles = new Hersteller();
+            her_charles.setBezeichnung("Charles Frohman's Production");
+            herstellerRepository.save(her_charles);
+
+            Hersteller her_20century;
+            her_20century = new Hersteller();
+            her_20century.setBezeichnung("20th Century-Fox");
+            herstellerRepository.save(her_20century);
+
+            Hersteller her_george;
+            her_george = new Hersteller();
+            her_george.setBezeichnung("George Pal");
+            herstellerRepository.save(her_george);
+
+            Hersteller her_cinema;
+            her_cinema = new Hersteller();
+            her_cinema.setBezeichnung("Cinema Scope");
+            herstellerRepository.save(her_cinema);
+
+            Hersteller her_gartner;
+            her_gartner = new Hersteller();
+            her_gartner.setBezeichnung("Gardener's Nightmares");
+            herstellerRepository.save(her_gartner);
+
+            Hersteller her_georg;
+            her_georg = new Hersteller();
+            her_georg.setBezeichnung("The Horrors of Georg");
+            herstellerRepository.save(her_georg);
+
+            Hersteller her_martin;
+            her_martin = new Hersteller();
+            her_martin.setBezeichnung("Martin's innocent Dreams");
+            herstellerRepository.save(her_martin);
             //---------ReleaseDate ------------
 
 
             //----------Kategories-----------
-            Kategorie null;
+            Kategorie kat_movie;
+            kat_movie = new Kategorie();
+            kat_movie.setBezeichnung("Movie");
+            kategorieRepository.save(kat_movie);
+
+            Kategorie kat_series;
+            kat_series = new Kategorie();
+            kat_series.setBezeichnung("Series");
+            kategorieRepository.save(kat_series);
+
+            Kategorie kat_anime;
+            kat_anime = new Kategorie();
+            kat_anime.setBezeichnung("Anime");
+            kategorieRepository.save(kat_anime);
 
 
-
+            /*
             //----------Genres-----------
             Genre genre0 = new Genre();
             genre0.setName("Anime");
@@ -1137,7 +1269,7 @@ public class DataGenerateService {
             movie60.setFav_users(null);
             movie60.setTrailer("undefined");
             serieRepository.save(movie60);
-
+            */
         }
 
     }

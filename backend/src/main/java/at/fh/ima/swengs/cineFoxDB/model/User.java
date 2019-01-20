@@ -31,6 +31,9 @@ public class User {
     private Set<Serie> favorite;
 
     @OneToMany(mappedBy = "user")
+    private Set<Media> profilePicture;
+
+    @OneToMany(mappedBy = "user")
     private Set<Serien_Rating> serien_ratings;
 
     @OneToMany(mappedBy = "user")
@@ -124,6 +127,14 @@ public class User {
 
     public void setEpisoden_ratings(Set<Episoden_Rating> episoden_ratings) {
         this.episoden_ratings = episoden_ratings;
+    }
+
+    public Set<Media> getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(Set<Media> profilePicture) {
+        this.profilePicture = profilePicture;
     }
 
     @Override
