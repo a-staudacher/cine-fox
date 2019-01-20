@@ -1,0 +1,93 @@
+<form [formGroup]="personShow">
+  <div class="prs_title_main_sec_wrapper">
+    <div class="prs_title_img_overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="prs_title_heading_wrapper">
+            <h2>Actor / Director</h2>
+            <ul>
+              <li><a [routerLink]="'/index'">Home</a>
+              </li>
+              <li>&nbsp;&nbsp; >&nbsp;&nbsp; Actor / Director</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+          <div class="hs_blog_left_sidebar_main_wrapper">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="hs_blog_box1_main_wrapper">
+                  <!--<div class="row">
+                    <div class="col">
+                      <app-mediainput name="pictures"
+                                      formControlName="pictures"></app-mediainput>
+                    </div>
+                  </div>-->
+                  <div class="hs_blog_box1_cont_main_wrapper">
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="vorname">First name:</label>
+                          <div id="vorname"> {{person.vorname}}</div>
+                        </div>
+                      </div>
+
+                      <div class="col">
+                        <div class="col">
+                        <label for="nachname">Last name:</label>
+                        <div id="nachname"> {{person.nachname}}</div>
+                      </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <label for="dayOfBirth">Day of birth:</label>
+                        <div id="dayOfBirth"> {{person.dayOfBirth}}</div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <label for="beschreibung">Description:</label>
+                        <div id="beschreibung"> {{person.beschreibung}}</div>
+                      </div>
+                    </div>
+
+                    <!--<div class="row" *ngIf="person.directors">
+                      <div class="col">
+                        <label for="director">Movies directed:</label>
+                        <div id="director" *ngFor="let directors of person.directors"> {{person.directors}}</div>
+                      </div>
+                    </div>-->
+
+                    <div class="row">
+                      <div class="col">
+                        <label for="charakters">Characters played:</label>
+                        <div id="charakters" *ngFor="let charakter of person.charakters"> {{charakter.toString()}}</div>
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" [routerLink] = "'/person-form/' + person.id">
+                      Edit
+                    </button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

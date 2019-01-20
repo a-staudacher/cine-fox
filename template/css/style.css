@@ -3295,7 +3295,7 @@ body.active #mobile-nav {
 	right:0%;
 	top:0%;
 	bottom:0%;
-	background:rgba(0,0,0,0.8);
+	background:rgba(0,0,0,0.3);
 }
 .prs_title_heading_wrapper{
 	float:left;
@@ -6583,7 +6583,7 @@ body.active #mobile-nav {
 	padding-bottom:50px;
 }
 /**************------- BLOG CATEGORIES CSS End ---------*******************/
-/**************------- EVENT SINGLE CSS Start ---------*******************/
+/**************------- profile CSS Start ---------*******************/
 .prs_es_about_main_section_wrapper{
 	float:left;
 	width:100%;
@@ -7256,7 +7256,7 @@ body.active #mobile-nav {
     transition: all 0.5s;
 }
 
-/**************------- EVENT SINGLE CSS End ---------*******************/
+/**************------- profile CSS End ---------*******************/
 .gc_search_box{
     position: absolute;
     right: 0px;

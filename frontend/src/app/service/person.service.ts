@@ -13,7 +13,7 @@ export class PersonService {
   }
 
   getById(id: string) {
-    return this.http.get('/api/persons/' + id).pipe(map((res: any) => {
+    return this.http.get('/api/dto/person/' + id).pipe(map((res: any) => {
       if (res.dayOfBirth) {
         res.dayOfBirth = new Date(res.dayOfBirth);
       }
@@ -22,7 +22,7 @@ export class PersonService {
   }
 
   getAll() {
-    return this.http.get('/api/persons').pipe(
+    return this.http.get('/api/person').pipe(
       map((response: any) => {
         return response._embedded.persons;
       })
@@ -34,11 +34,11 @@ export class PersonService {
   }
 
   update(person: Person) {
-    return this.http.put('/api/person/' + person.id, person);
+    return this.http.put('/api/dto/person/' + person.id, person);
   }
 
   create(person: Person) {
-    return this.http.post('/api/person', person);
+    return this.http.post('/api/dto/person', person);
   }
 
 }

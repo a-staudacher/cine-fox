@@ -7,7 +7,7 @@
         <div class="prs_title_heading_wrapper">
           <h2>Movie erstellen / bearbeiten</h2>
           <ul>
-            <li><a href="#">Home</a>
+            <li><a [routerLink]="'/index'">Home</a>
             </li>
             <li>&nbsp;&nbsp; >&nbsp;&nbsp; Movie erstellen / bearbeiten</li>
           </ul>
@@ -23,7 +23,7 @@
     <div class="row">
       <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
         <div class="hs_blog_left_sidebar_main_wrapper">
-          <div class="row">
+          <div class="container">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="hs_blog_box1_main_wrapper">
                 <div class="hs_blog_box1_img_wrapper">
@@ -31,19 +31,49 @@
                 </div>
                 <div class="hs_blog_box1_cont_main_wrapper">
                   <div class="hs_blog_cont_heading_wrapper">
-                    Bild hochladen <br><br>
+                    <div class="row">
+                      <div class="col">
+                        <app-mediainput name="picture"
+                                        formControlName="picture"></app-mediainput>
+                      </div>
+                    </div>
+                    <!--<input [id]="'field_' + name" type="file" ng2FileSelect [uploader]="uploader" [multiple]="true"/>-->
+                    <br>
                     <h2>Name</h2>
-                    <p>Film-name eingabe</p><br><br>
+                    <input id="name" type="text" name="name" formControlName="name" class="form-control"/>
+                    <br>
                     <h2>Genre</h2>
-                    <p>Genre auswahl</p><br><br>
+                    <!-- Genre Auswahl -->
+                    <input id="genre" type="text" name="genre" formControlName="genre" class="form-control"/>
+                    <br>
                     <h2>Hersteller</h2>
-                    <p>Hersteller auswahl / eingabe</p><br><br>
+                    <!--Hersteller auswahl / eingabe-->
+                    <input id="hersteller" type="text" name="hersteller" formControlName="hersteller" class="form-control"/>
+                    <br>
                     <h2>Kategorie</h2>
-                    <p>Kategorie auswahl</p><br><br>
+                    <!-- Kategorie auswahl-->
+                    <input id="kategorie" type="text" name="kategorie" formControlName="kategorie" class="form-control"/>
+                    <br>
                     <h2>Episoden</h2>
-                    <p>Episoden-listen eingabe</p><br><br>
+                    <!--Episoden-listen eingabe</p><br>-->
+                    <input id="episoden" type="text" name="episoden" formControlName="episoden" class="form-control"/>
+                    <br>
                     <h2>Direktor</h2>
-                    <p>Direktor auswahl</p><br><br>
+                    <!--Direktor auswahl-->
+                    <input id="direktor" type="text" name="direktor" formControlName="direktor" class="form-control"/>
+                    <br>
+                    <div class="btn-group">
+                      <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
+                        Save
+                      </button>
+                      <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
+                        Save and Back
+                      </button>
+                      <button type="submit" (click)="navigateToList()" class="btn btn-primary">
+                        Back without saving
+                      </button>
+                    </div>
+
                   </div>
                 </div>
               </div>
