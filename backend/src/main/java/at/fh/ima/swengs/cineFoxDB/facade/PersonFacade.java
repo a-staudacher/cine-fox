@@ -22,6 +22,8 @@ public class PersonFacade {
             entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
             entity.setBeschreibung(dto.getBeschreibung());
+            entity.setDirectors(dto.getDirectors());
+            entity.setCharakters(dto.getCharakters());
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Person entity, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
@@ -30,7 +32,7 @@ public class PersonFacade {
             dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
             dto.setBeschreibung(entity.getBeschreibung());
-
+            dto.setCharakters(entity.getCharakters());
         }
 
         public at.fh.ima.swengs.cineFoxDB.dto.PersonDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
