@@ -34,7 +34,7 @@ export class PersonService {
   }
 
   update(person: Person) {
-    return this.http.put('api/dto/person/' + person.id, person);
+    return this.http.put('/api/dto/person/' + person.id, person);
   }
 
   create(person: Person) {
