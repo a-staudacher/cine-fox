@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {PersonService} from '../service/person.service';
 // import {MovieService} from '../service/movie.service';
 import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import {CharacterService} from '../service/character.service';
 
 @Component({
   selector: 'app-person-form',
@@ -16,8 +17,7 @@ export class PersonFormComponent implements OnInit {
   personForm;
   shouldNavigateToList: boolean;
 
-  constructor(private personService: PersonService, private route: ActivatedRoute, private router: Router,
-              /*private movieService: MovieService*/) { }
+  constructor(private personService: PersonService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
 

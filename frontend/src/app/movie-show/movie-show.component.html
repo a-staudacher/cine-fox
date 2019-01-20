@@ -4,11 +4,11 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="prs_title_heading_wrapper">
-          <h2>MovieTitel</h2>
+          <h2>Movie</h2>
           <ul>
             <li><a [routerLink]="'/index'">Home</a>
             </li>
-            <li>&nbsp;&nbsp; >&nbsp;&nbsp; MovieTitel</li>
+            <li>&nbsp;&nbsp; >&nbsp;&nbsp; {{movie.name}}</li>
           </ul>
         </div>
       </div>
@@ -33,7 +33,7 @@
                     <div class="col">
                       <div class="form-group">
                         <label for="titel">Titel:</label>
-                        <div id="titel">MovieTitel</div>
+                        <div id="titel">{{movie.name}}</div>
                       </div>
                     </div>
                     <br>
@@ -45,19 +45,19 @@
                   </div>
                   <br>
 
+                  <form [formGroup]="movieRateForm" (ngSubmit)="rateMovie()">
                   <div class="row">
                     <div class="col">
                       <label for="avgRating">Average Rating:</label><br>
-                      <rating id="avgRating" type="text" name="avgRating" [max]="10"></rating>
+                      <rating id="avgRating" readonly="true" type="text" name="avgRating" formControlName="avgRating" [max]="5"></rating>
                     </div>
                   </div>
                   <br>
 
-                  <form [formGroup]="movieRateForm" (ngSubmit)="rateMovie()">
                     <div class="row">
                       <div class="col">
                         <label for="rating">Your Rating:</label><br>
-                        <rating id="rating" type="text" name="rating" [max]="10" formControlName="rating"></rating>
+                        <rating id="rating"  (onLeave)="rateMovie()" type="text" name="rating" [max]="5" formControlName="rating"></rating>
                       </div>
                     </div>
                     <br>
@@ -70,57 +70,70 @@
                         <table class="table table-striped">
                           <thead>
                           <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Actor</th>
                             <th scope="col">Character</th>
                             <th scope="col">Actions</th>
                           </tr>
                           </thead>
                           <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Gartner</td>
-                            <td>Der Bettler</td>
+                          <tr *ngFor="let charakter of movie.charakters">
+                            <td>{{charakter.person.vorname}} {{charakter.person.nachname}}</td>
+                            <td>{{charakter.name}}</td>
                             <td>
-                              <button type="submit" (click)="editChar()" class="btn btn-primary">Edit</button>
-                              <button type="submit" (click)="deleteChar()" class="btn btn-danger">Delete</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Georg</td>
-                            <td>Der Gesuchte</td>
-                            <td>
-                              <button type="submit" (click)="editChar()" class="btn btn-primary">Edit</button>
-                              <button type="submit" (click)="deleteChar()" class="btn btn-danger">Delete</button>
+                              <button type="submit" (click)="editChar(charakter.person.id)" class="btn btn-primary">Edit</button>
+                              <button type="submit" (click)="deleteChar(charakter)" class="btn btn-danger">Delete</button>
                             </td>
                           </tr>
                           </tbody>
                         </table>
                         <br>
 
+                        <form [formGroup]="addActorForm" (ngSubmit)="addActor()">
                         <h2>Add new Actor</h2>
                         <div class="row">
                           <div class="col-lg-4">
                             <div class="form-group"><!--input-group-->
                               Character Name:
-                              <input type="text" class="form-control" aria-label="...">
+                              <input type="text" class="form-control" aria-label="..." formControlName="name">
                             </div><!-- /input-group -->
                           </div><!-- /.col-lg-6 -->
                           <div class="col-lg-4">
                             <div class="form-group">
                               Actor:
-                              <input type="text" class="form-control" aria-label="...">
+                              <ngx-select id="person" [items]="personOptions" name="person" [multiple]="false"
+                                          formControlName="person" optionTextField="nachname"></ngx-select>
                             </div><!-- /input-group -->
                           </div><!-- /.col-lg-6 -->
                           <div class="col-lg-4">
                             <div class="form-group">
                               <br>
-                              <button type="submit" (click)="addActor()" class="btn btn-success">+</button>
+                              <button type="submit" class="btn btn-success">+</button>
                             </div><!-- /input-group -->
                           </div>
                         </div>
-                        Reviews...
+                        </form>
+                        <br>
+                        <label for="titel">Reviews</label>
+                        <table class="table table-striped">
+                          <thead>
+                          <tr>
+                            <th scope="col">User</th>
+                            <th scope="col">Review</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let review of reviews">
+                            <td>{{review.user.username}}</td>
+                            <td> {{review.reviewText}}</td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <h2>Post a Review</h2>
+                        <textarea></textarea>
+                        <br>
+                        <button>Submit</button>
+                        <br>
+
                         <button type="submit" (click)="editMovie()" class="btn btn-primary">EditMovie</button>
                       </div>
                     </div>

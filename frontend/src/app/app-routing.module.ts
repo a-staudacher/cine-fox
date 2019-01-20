@@ -24,8 +24,6 @@ const routes: Routes = [
   },
   {
     path: 'person-show/:id', component: PersonShowComponent // , canActivate: [AuthGuard]
-
-    //path: 'person-show', component: PersonShowComponent, canActivate: [AuthGuard]
   },
   {
     path: 'person', redirectTo: '/person-form' , canActivate: [AuthGuard]
@@ -34,7 +32,13 @@ const routes: Routes = [
     path: 'movie-form', component: MovieFormComponent
   },
   {
+    path: 'movie-form/:id', component: MovieFormComponent
+  },
+  {
     path: 'movie-show', component: MovieShowComponent
+  },
+  {
+    path: 'movie-show/:id', component: MovieShowComponent
   },
   {
     path: 'login', component: LoginComponent
@@ -53,6 +57,9 @@ const routes: Routes = [
   },
   {
     path: 'search-results', component: SearchResultsPageComponent
+  },
+  {
+    path: 'search-results/:search', component: SearchResultsPageComponent
   },
   {
     path: 'profile', component: ProfileComponent
