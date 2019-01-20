@@ -18,6 +18,7 @@
 </div>
 <!-- prs title wrapper End -->
 <!-- hs sidebar Start -->
+<form [formGroup]="movieForm" (ngSubmit)="saveMovie()">
 <div class="hs_blog_categories_main_wrapper hs_blog_categories_main_wrapper2">
   <div class="container">
     <div class="row">
@@ -44,29 +45,33 @@
                     <br>
                     <h2>Genre</h2>
                     <!-- Genre Auswahl -->
-                    <input id="genre" type="text" name="genre" formControlName="genre" class="form-control"/>
+                    <ngx-select id="genre" [items]="genreOptions" name="genre" [multiple]="true"
+                                formControlName="genre" optionTextField="name"></ngx-select>
                     <br>
                     <h2>Hersteller</h2>
                     <!--Hersteller auswahl / eingabe-->
-                    <input id="hersteller" type="text" name="hersteller" formControlName="hersteller" class="form-control"/>
+                    <ngx-select id="hersteller" [items]="herstellerOptions" name="hersteller" [multiple]="false"
+                                formControlName="hersteller" optionTextField="bezeichnung"></ngx-select>
                     <br>
                     <h2>Kategorie</h2>
                     <!-- Kategorie auswahl-->
-                    <input id="kategorie" type="text" name="kategorie" formControlName="kategorie" class="form-control"/>
+                    <ngx-select id="kategorie" [items]="kategorieOptions" name="kategorie" [multiple]="false"
+                                formControlName="kategorie" optionTextField="bezeichnung"></ngx-select>
                     <br>
-                    <h2>Episoden</h2>
+                    <!--<h2>Episoden</h2>-->
                     <!--Episoden-listen eingabe</p><br>-->
-                    <input id="episoden" type="text" name="episoden" formControlName="episoden" class="form-control"/>
-                    <br>
-                    <h2>Direktor</h2>
+                    <!--<input id="episoden" type="text" name="episoden" formControlName="episoden" class="form-control"/>
+                    <br> -->
+                    <h2>Director</h2>
                     <!--Direktor auswahl-->
-                    <input id="direktor" type="text" name="direktor" formControlName="direktor" class="form-control"/>
+                    <ngx-select id="director" [items]="directorOptions" name="director" [multiple]="false"
+                                formControlName="director" optionTextField="nachname"></ngx-select>
                     <br>
                     <div class="btn-group">
-                      <button type="submit" class="btn btn-primary" [disabled]="personForm.invalid">
+                      <button type="submit" class="btn btn-primary" [disabled]="false">
                         Save
                       </button>
-                      <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="personForm.invalid">
+                      <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="false">
                         Save and Back
                       </button>
                       <button type="submit" (click)="navigateToList()" class="btn btn-primary">
@@ -84,3 +89,4 @@
     </div>
   </div>
 </div>
+</form>
