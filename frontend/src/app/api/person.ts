@@ -4,6 +4,6 @@ export interface Person {
   nachname: string;
   dayOfBirth?: Date;
   beschreibung?: string;
-  charakter?: Array<any>;
+  charakters?: Array<any>;
   directors?: Array<any>;
 }

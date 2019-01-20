@@ -25,12 +25,12 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="hs_blog_box1_main_wrapper">
-                  <div class="row">
+                  <!--<div class="row">
                     <div class="col">
                       <app-mediainput name="pictures"
                                       formControlName="pictures"></app-mediainput>
                     </div>
-                  </div>
+                  </div>-->
                   <div class="hs_blog_box1_cont_main_wrapper">
 
                     <div class="row">
@@ -63,17 +63,17 @@
                       </div>
                     </div>
 
-                    <div class="row" *ngIf="person.directors">
+                    <!--<div class="row" *ngIf="person.directors">
                       <div class="col">
                         <label for="director">Movies directed:</label>
                         <div id="director" *ngFor="let directors of person.directors"> {{person.directors}}</div>
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="row">
                       <div class="col">
-                        <label for="characters">Characters played:</label>
-                        <div id="characters" *ngFor="let charakter of person.charakter"> {{person.charakter}}</div>
+                        <label for="charakters">Characters played:</label>
+                        <div id="charakters" *ngFor="let charakter of person.charakters"> {{charakter.toString()}}</div>
                       </div>
                     </div>
 
