@@ -17,10 +17,10 @@ export class SearchResultsPageComponent implements OnInit {
   ngOnInit() {
     this.search = this.route.snapshot.paramMap.get('search');
 
-    this.movieService.getByTitel(this.search)
+    /*this.movieService.getByTitel(this.search)
       .subscribe((response) => {
         this.searchResult = response;
-      });
+      });*/
   }
 
 }
