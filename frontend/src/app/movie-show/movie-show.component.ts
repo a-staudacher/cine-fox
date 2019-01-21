@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Person} from '../api/person';
+import {PersonService} from '../service/person.service';
+import {MovieService} from '../service/movie.service';
+import {CharacterService} from '../service/character.service';
 
 @Component({
   selector: 'app-movie-show',
@@ -9,20 +13,69 @@ import {Router} from '@angular/router';
 })
 export class MovieShowComponent implements OnInit {
   movieRateForm;
+  addActorForm;
+  movie = {name: '', charakters: [], ratings: []};
+  personOptions;
+  id;
 
-  constructor(private router: Router) { }
+  constructor(private movieService: MovieService, private router: Router, private route: ActivatedRoute,
+              private characterService: CharacterService, private personService: PersonService) { }
 
   ngOnInit() {
     this.movieRateForm = new FormGroup({
-      'rating': new FormControl()
+      'rating': new FormControl(),
+      'avgRating': new FormControl()
     });
+
+    this.addActorForm = new FormGroup({
+      'name': new FormControl(),
+      'person': new FormControl()
+    });
+
+    this.personService.getAll()
+      .subscribe(persons => {
+        this.personOptions = persons;
+        this.personOptions.push({nachname: 'Gartner'});
+      });
+
+    this.id = this.route.snapshot.paramMap.get('id');
+    if (this.id) {
+      this.movieService.getById(this.id)
+        .subscribe((response) => {
+          this.movie = response;
+          this.movie.charakters = [{name: 'Der Bettler', person: {vorname: 'Florian', nachname: 'Gartner'}}
+          , {name: 'Der Gesuchte', person: {vorname: 'Georg', nachname: 'Schmitzer'}}];
+
+        });
+    }
+
+    if (true) {
+      this.movieRateForm.setValue({'rating': 5, 'avgRating': 2});
+    }
   }
 
-  rateMovie() { }
+  rateMovie() {
+    alert(this.movieRateForm.value.rating);
+    //this.movie.ratings.push(this.movieRateForm.value.rating);
+    //this.movieService.update(this.movie);
+  }
 
-  editMovie()
-  {
+  editMovie() {
     this.router.navigate(['/movie-form']);
+  }
+
+  editChar(id) {
+    this.router.navigate(['/person-form/' + id]);
+  }
+
+  deleteChar(charakter) {
+    this.characterService.delete(charakter);
+  }
+
+  addActor() {
+    alert(this.addActorForm.value.name);
+    alert(this.addActorForm.value.person);
+    // this.characterService.create(this.addActorForm.value);
   }
 
 }

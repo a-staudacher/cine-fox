@@ -1,10 +1,10 @@
 package at.fh.ima.swengs.cineFoxDB.service;
 
 import at.fh.ima.swengs.cineFoxDB.model.*;
+import at.fh.ima.swengs.cineFoxDB.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -34,24 +34,149 @@ public class DataGenerateService {
     private SerieRepository serieRepository;
 
     @Autowired
+    private KategorieRepository kategorieRepository;
+
+    @Autowired
+    private HerstellerRepository herstellerRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private PersonRepository personRepository;
 
     @Autowired
     private CharakterRepository charakterRepository;
 
     @Autowired
-    private HerstellerRepository herstellerRepository;
-
-    @Autowired
     private  DirectorRepository directorRepository;
 
+    @Autowired
+    private ReviewRepository reviewRepository;
+
+    @Autowired
+    private Serien_RatingRepository serien_ratingRepository;
 
     @PostConstruct()
     @Transactional
     public void initData() {
         if (serieRepository.count() == 0) {
+            //---------User
+            User usr_andreas = new User();
+            usr_andreas.setUsername("Andreas");
+            usr_andreas.setPassword(encoder.encode("12345"));
+            usr_andreas.setAdmin(true);
+            userRepository.save(usr_andreas);
+
+            Media med_andreas = new Media();
+            med_andreas.setUser(usr_andreas);
+            med_andreas.setContentType("image/jpeg");
+            med_andreas.setOriginalFileName("andreas_schokoSeite.jpeg");
+            med_andreas.setSavedAt(med_andreas.getOriginalFileName());
+            med_andreas.setSize((long)100000);
+            mediaRepository.save(med_andreas);
+
+            User usr_georg = new User();
+            usr_georg.setUsername("Georg");
+            usr_georg.setPassword(encoder.encode("12345"));
+            usr_georg.setAdmin(false);
+            userRepository.save(usr_georg);
+
+            Media med_georg = new Media();
+            med_georg.setUser(usr_georg);
+            med_georg.setContentType("image/jpeg");
+            med_georg.setOriginalFileName("georg_marzipanSeite.jpeg");
+            med_georg.setSavedAt(med_georg.getOriginalFileName());
+            med_georg.setSize((long)100000);
+            mediaRepository.save(med_georg);
+
+            User usr_martin = new User();
+            usr_martin.setUsername("Martin");
+            usr_martin.setPassword(encoder.encode("12345"));
+            usr_martin.setAdmin(false);
+            userRepository.save(usr_martin);
+
+            Media med_martin = new Media();
+            med_martin.setUser(usr_martin);
+            med_martin.setContentType("image/jpeg");
+            med_martin.setOriginalFileName("martin_vanilleSeite.jpeg");
+            med_martin.setSavedAt(med_martin.getOriginalFileName());
+            med_martin.setSize((long)100000);
+            mediaRepository.save(med_martin);
+
+            User usr_florian = new User();
+            usr_florian.setUsername("Florian");
+            usr_florian.setPassword(encoder.encode("12345"));
+            usr_florian.setAdmin(false);
+            userRepository.save(usr_florian);
+
+            Media med_florian = new Media();
+            med_florian.setUser(usr_florian);
+            med_florian.setContentType("image/jpeg");
+            med_florian.setOriginalFileName("florian_lakrizSeite.jpeg");
+            med_florian.setSavedAt(med_florian.getOriginalFileName());
+            med_florian.setSize((long)100000);
+            mediaRepository.save(med_florian);
 
             //---------Herstellers ------------
+            Hersteller her_cuyahoga;
+            her_cuyahoga = new Hersteller();
+            her_cuyahoga.setBezeichnung("Cuyahoga Country Association");
+            herstellerRepository.save(her_cuyahoga);
+
+            Hersteller her_jacob;
+            her_jacob = new Hersteller();
+            her_jacob.setBezeichnung("Jacob Litt");
+            herstellerRepository.save(her_jacob);
+
+            Hersteller her_bernhard;
+            her_bernhard = new Hersteller();
+            her_bernhard.setBezeichnung("Bernhard Woolder");
+            herstellerRepository.save(her_bernhard);
+
+            Hersteller her_alliedArtist;
+            her_alliedArtist = new Hersteller();
+            her_alliedArtist.setBezeichnung("Allied Artists");
+            herstellerRepository.save(her_alliedArtist);
+
+            Hersteller her_charles;
+            her_charles = new Hersteller();
+            her_charles.setBezeichnung("Charles Frohman's Production");
+            herstellerRepository.save(her_charles);
+
+            Hersteller her_20century;
+            her_20century = new Hersteller();
+            her_20century.setBezeichnung("20th Century-Fox");
+            herstellerRepository.save(her_20century);
+
+            Hersteller her_george;
+            her_george = new Hersteller();
+            her_george.setBezeichnung("George Pal");
+            herstellerRepository.save(her_george);
+
+            Hersteller her_cinema;
+            her_cinema = new Hersteller();
+            her_cinema.setBezeichnung("Cinema Scope");
+            herstellerRepository.save(her_cinema);
+
+            Hersteller her_gartner;
+            her_gartner = new Hersteller();
+            her_gartner.setBezeichnung("Gardener's Nightmares");
+            herstellerRepository.save(her_gartner);
+
+            Hersteller her_georg;
+            her_georg = new Hersteller();
+            her_georg.setBezeichnung("The Horrors of Georg");
+            herstellerRepository.save(her_georg);
+
+            Hersteller her_martin;
+            her_martin = new Hersteller();
+            her_martin.setBezeichnung("Martin's innocent Dreams");
+            herstellerRepository.save(her_martin);
+
             Hersteller hersteller0 = new Hersteller();
             hersteller0.setBezeichnung("firma 1");
             herstellerRepository.save(hersteller0);
@@ -71,17 +196,27 @@ public class DataGenerateService {
             Hersteller hersteller4 = new Hersteller();
             hersteller0.setBezeichnung("firma 5");
             herstellerRepository.save(hersteller4);
-
-            //---------ReleaseDate ------------
-
             //---------ReleaseDate ------------
 
 
             //----------Kategories-----------
-            //Kategorie null;
+            Kategorie kat_movie;
+            kat_movie = new Kategorie();
+            kat_movie.setBezeichnung("Movie");
+            kategorieRepository.save(kat_movie);
+
+            Kategorie kat_series;
+            kat_series = new Kategorie();
+            kat_series.setBezeichnung("Series");
+            kategorieRepository.save(kat_series);
+
+            Kategorie kat_anime;
+            kat_anime = new Kategorie();
+            kat_anime.setBezeichnung("Anime");
+            kategorieRepository.save(kat_anime);
 
 
-
+            /*
             //----------Genres-----------
             Genre genre0 = new Genre();
             genre0.setName("Anime");
@@ -142,9 +277,190 @@ public class DataGenerateService {
 
 
             //----------Reviews-----------
-            //Review null;
+            Review review1 = new Review();
+            review1.setReviewText("Beschter Film allerzeitn oida");
+            review1.setSerie(null);
+            review1.setUser(null);
+            reviewRepository.save(review1);
+
+            Review review2 = new Review();
+            review2.setReviewText("Könnte besser sein ");
+            review2.setSerie(null);
+            review2.setUser(null);
+            reviewRepository.save(review2);
+
+            Review review3 = new Review();
+            review3.setReviewText("Der film war gut nur die anderen Kinobesucher sind zu laut gewesen");
+            review3.setSerie(null);
+            review3.setUser(null);
+            reviewRepository.save(review3);
+
+            Review review4 = new Review();
+            review4.setReviewText("Der Film ist für den Inhalt nicht mal 1 Cent wert");
+            review4.setSerie(null);
+            review4.setUser(null);
+            reviewRepository.save(review4);
+
+            Review review5 = new Review();
+            review5.setReviewText("Hab schon besseres gesehen");
+            review5.setSerie(null);
+            review5.setUser(null);
+            reviewRepository.save(review5);
+
+            Review review6 = new Review();
+            review6.setReviewText("Diesen Film kann ich nur weiterempfehlen");
+            review6.setSerie(null);
+            review6.setUser(null);
+            reviewRepository.save(review6);
+
+            Review review7 = new Review();
+            review7.setReviewText("Noch eine Fortsetzung nach die niemand gefragt hat");
+            review7.setSerie(null);
+            review7.setUser(null);
+            reviewRepository.save(review7);
+
+            Review review8 = new Review();
+            review8.setReviewText("Der Sitz war unbeguem, aber sonst war der Film nicht schlecht");
+            review8.setSerie(null);
+            review8.setUser(null);
+            reviewRepository.save(review8);
+
+            Review review9 = new Review();
+            review9.setReviewText("Mein Popcorn war versalzen");
+            review9.setSerie(null);
+            review9.setUser(null);
+            reviewRepository.save(review9);
+
+            Review review10 = new Review();
+            review10.setReviewText("Also für Blinde ist dieser Film nicht zu empfehlen");
+            review10.setSerie(null);
+            review10.setUser(null);
+            reviewRepository.save(review10);
+
+            Review review11 = new Review();
+            review11.setReviewText("Ich hätte mir die Ohren zu halten sollen bei diesem Film");
+            review11.setSerie(null);
+            review11.setUser(null);
+            reviewRepository.save(review11);
+
+            Review review12 = new Review();
+            review12.setReviewText("Seit wann sind Hunde im Kino erlaubt");
+            review12.setSerie(null);
+            review12.setUser(null);
+            reviewRepository.save(review12);
+
+            Review review13 = new Review();
+            review13.setReviewText("Ich glaub das ist alles erfunden");
+            review13.setSerie(null);
+            review13.setUser(null);
+            reviewRepository.save(review13);
+
+            Review review14 = new Review();
+            review14.setReviewText("Toller Film, wenn man entspannen will");
+            review14.setSerie(null);
+            review14.setUser(null);
+            reviewRepository.save(review14);
 
             //----------Favourites-----------
+
+            //----------Serien Rating-----------
+
+                        //-----Serie 1-------
+            Serien_Rating rating1 = new Serien_Rating();
+            rating1.setRating(2);
+            rating1.setSerie(null);
+            rating1.setUser(null);
+            serien_ratingRepository.save(rating1);
+
+            Serien_Rating rating2 = new Serien_Rating();
+            rating2.setRating(5);
+            rating2.setSerie(null);
+            rating2.setUser(null);
+            serien_ratingRepository.save(rating2);
+
+            Serien_Rating rating3 = new Serien_Rating();
+            rating3.setRating(4);
+            rating3.setSerie(null);
+            rating3.setUser(null);
+            serien_ratingRepository.save(rating3);
+
+            //-----Serie 2-------
+            Serien_Rating rating4 = new Serien_Rating();
+            rating4.setRating(1);
+            rating4.setSerie(null);
+            rating4.setUser(null);
+            serien_ratingRepository.save(rating4);
+
+            Serien_Rating rating5 = new Serien_Rating();
+            rating5.setRating(3);
+            rating5.setSerie(null);
+            rating5.setUser(null);
+            serien_ratingRepository.save(rating5);
+
+            Serien_Rating rating6 = new Serien_Rating();
+            rating6.setRating(5);
+            rating6.setSerie(null);
+            rating6.setUser(null);
+            serien_ratingRepository.save(rating6);
+
+            //-----Serie 3-------
+            Serien_Rating rating7 = new Serien_Rating();
+            rating7.setRating(5);
+            rating7.setSerie(null);
+            rating7.setUser(null);
+            serien_ratingRepository.save(rating7);
+
+            Serien_Rating rating8 = new Serien_Rating();
+            rating8.setRating(5);
+            rating8.setSerie(null);
+            rating8.setUser(null);
+            serien_ratingRepository.save(rating8);
+
+            Serien_Rating rating9 = new Serien_Rating();
+            rating9.setRating(5);
+            rating9.setSerie(null);
+            rating9.setUser(null);
+            serien_ratingRepository.save(rating9);
+
+            //-----Serie 4-------
+            Serien_Rating rating10 = new Serien_Rating();
+            rating10.setRating(2);
+            rating10.setSerie(null);
+            rating10.setUser(null);
+            serien_ratingRepository.save(rating10);
+
+            Serien_Rating rating11 = new Serien_Rating();
+            rating11.setRating(4);
+            rating11.setSerie(null);
+            rating11.setUser(null);
+            serien_ratingRepository.save(rating11);
+
+            Serien_Rating rating12 = new Serien_Rating();
+            rating12.setRating(1);
+            rating12.setSerie(null);
+            rating12.setUser(null);
+            serien_ratingRepository.save(rating12);
+
+            //-----Serie 5-------
+            Serien_Rating rating13 = new Serien_Rating();
+            rating13.setRating(3);
+            rating13.setSerie(null);
+            rating13.setUser(null);
+            serien_ratingRepository.save(rating13);
+
+            Serien_Rating rating14 = new Serien_Rating();
+            rating14.setRating(1);
+            rating14.setSerie(null);
+            rating14.setUser(null);
+            serien_ratingRepository.save(rating14);
+
+            Serien_Rating rating15 = new Serien_Rating();
+            rating15.setRating(5);
+            rating15.setSerie(null);
+            rating15.setUser(null);
+            serien_ratingRepository.save(rating15);
+
+
 
 
             //----------------Pictures Movies---------------
@@ -1188,7 +1504,8 @@ public class DataGenerateService {
             movie60.setReviews(null);
             movie60.setFav_users(null);
             movie60.setTrailer("undefined");
-            serieRepository.save(movie60);*/
+            serieRepository.save(movie60);
+            */
 
 
 //---------Charakters ------------
@@ -1306,8 +1623,6 @@ public class DataGenerateService {
             dir4.setPerson(null);
             dir4.setSerie(null);
             directorRepository.save(dir4);
-
-
         }
 
     }
