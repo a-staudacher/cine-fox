@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CharakterService } from './charakter.service';
+import { CharakterService } from './charakters.service';
 
 describe('CharakterService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
