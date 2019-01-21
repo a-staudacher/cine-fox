@@ -14,8 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import javax.swing.*;
+import java.lang.reflect.Array;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service("dataGenerateService")   // It has to be annotated with @Service.
 public class DataGenerateService {
@@ -42,7 +45,20 @@ public class DataGenerateService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PersonRepository personRepository;
 
+    @Autowired
+    private CharakterRepository charakterRepository;
+
+    @Autowired
+    private  DirectorRepository directorRepository;
+
+    @Autowired
+    private ReviewRepository reviewRepository;
+
+    @Autowired
+    private Serien_RatingRepository serien_ratingRepository;
 
     @PostConstruct()
     @Transactional
@@ -160,6 +176,26 @@ public class DataGenerateService {
             her_martin = new Hersteller();
             her_martin.setBezeichnung("Martin's innocent Dreams");
             herstellerRepository.save(her_martin);
+
+            Hersteller hersteller0 = new Hersteller();
+            hersteller0.setBezeichnung("firma 1");
+            herstellerRepository.save(hersteller0);
+
+            Hersteller hersteller1 = new Hersteller();
+            hersteller0.setBezeichnung("firma 2");
+            herstellerRepository.save(hersteller1);
+
+            Hersteller hersteller2 = new Hersteller();
+            hersteller0.setBezeichnung("firma 3");
+            herstellerRepository.save(hersteller2);
+
+            Hersteller hersteller3 = new Hersteller();
+            hersteller0.setBezeichnung("firma 4");
+            herstellerRepository.save(hersteller3);
+
+            Hersteller hersteller4 = new Hersteller();
+            hersteller0.setBezeichnung("firma 5");
+            herstellerRepository.save(hersteller4);
             //---------ReleaseDate ------------
 
 
@@ -241,14 +277,195 @@ public class DataGenerateService {
 
 
             //----------Reviews-----------
-            Review null;
+            Review review1 = new Review();
+            review1.setReviewText("Beschter Film allerzeitn oida");
+            review1.setSerie(null);
+            review1.setUser(null);
+            reviewRepository.save(review1);
+
+            Review review2 = new Review();
+            review2.setReviewText("Könnte besser sein ");
+            review2.setSerie(null);
+            review2.setUser(null);
+            reviewRepository.save(review2);
+
+            Review review3 = new Review();
+            review3.setReviewText("Der film war gut nur die anderen Kinobesucher sind zu laut gewesen");
+            review3.setSerie(null);
+            review3.setUser(null);
+            reviewRepository.save(review3);
+
+            Review review4 = new Review();
+            review4.setReviewText("Der Film ist für den Inhalt nicht mal 1 Cent wert");
+            review4.setSerie(null);
+            review4.setUser(null);
+            reviewRepository.save(review4);
+
+            Review review5 = new Review();
+            review5.setReviewText("Hab schon besseres gesehen");
+            review5.setSerie(null);
+            review5.setUser(null);
+            reviewRepository.save(review5);
+
+            Review review6 = new Review();
+            review6.setReviewText("Diesen Film kann ich nur weiterempfehlen");
+            review6.setSerie(null);
+            review6.setUser(null);
+            reviewRepository.save(review6);
+
+            Review review7 = new Review();
+            review7.setReviewText("Noch eine Fortsetzung nach die niemand gefragt hat");
+            review7.setSerie(null);
+            review7.setUser(null);
+            reviewRepository.save(review7);
+
+            Review review8 = new Review();
+            review8.setReviewText("Der Sitz war unbeguem, aber sonst war der Film nicht schlecht");
+            review8.setSerie(null);
+            review8.setUser(null);
+            reviewRepository.save(review8);
+
+            Review review9 = new Review();
+            review9.setReviewText("Mein Popcorn war versalzen");
+            review9.setSerie(null);
+            review9.setUser(null);
+            reviewRepository.save(review9);
+
+            Review review10 = new Review();
+            review10.setReviewText("Also für Blinde ist dieser Film nicht zu empfehlen");
+            review10.setSerie(null);
+            review10.setUser(null);
+            reviewRepository.save(review10);
+
+            Review review11 = new Review();
+            review11.setReviewText("Ich hätte mir die Ohren zu halten sollen bei diesem Film");
+            review11.setSerie(null);
+            review11.setUser(null);
+            reviewRepository.save(review11);
+
+            Review review12 = new Review();
+            review12.setReviewText("Seit wann sind Hunde im Kino erlaubt");
+            review12.setSerie(null);
+            review12.setUser(null);
+            reviewRepository.save(review12);
+
+            Review review13 = new Review();
+            review13.setReviewText("Ich glaub das ist alles erfunden");
+            review13.setSerie(null);
+            review13.setUser(null);
+            reviewRepository.save(review13);
+
+            Review review14 = new Review();
+            review14.setReviewText("Toller Film, wenn man entspannen will");
+            review14.setSerie(null);
+            review14.setUser(null);
+            reviewRepository.save(review14);
 
             //----------Favourites-----------
+
+            //----------Serien Rating-----------
+
+                        //-----Serie 1-------
+            Serien_Rating rating1 = new Serien_Rating();
+            rating1.setRating(2);
+            rating1.setSerie(null);
+            rating1.setUser(null);
+            serien_ratingRepository.save(rating1);
+
+            Serien_Rating rating2 = new Serien_Rating();
+            rating2.setRating(5);
+            rating2.setSerie(null);
+            rating2.setUser(null);
+            serien_ratingRepository.save(rating2);
+
+            Serien_Rating rating3 = new Serien_Rating();
+            rating3.setRating(4);
+            rating3.setSerie(null);
+            rating3.setUser(null);
+            serien_ratingRepository.save(rating3);
+
+            //-----Serie 2-------
+            Serien_Rating rating4 = new Serien_Rating();
+            rating4.setRating(1);
+            rating4.setSerie(null);
+            rating4.setUser(null);
+            serien_ratingRepository.save(rating4);
+
+            Serien_Rating rating5 = new Serien_Rating();
+            rating5.setRating(3);
+            rating5.setSerie(null);
+            rating5.setUser(null);
+            serien_ratingRepository.save(rating5);
+
+            Serien_Rating rating6 = new Serien_Rating();
+            rating6.setRating(5);
+            rating6.setSerie(null);
+            rating6.setUser(null);
+            serien_ratingRepository.save(rating6);
+
+            //-----Serie 3-------
+            Serien_Rating rating7 = new Serien_Rating();
+            rating7.setRating(5);
+            rating7.setSerie(null);
+            rating7.setUser(null);
+            serien_ratingRepository.save(rating7);
+
+            Serien_Rating rating8 = new Serien_Rating();
+            rating8.setRating(5);
+            rating8.setSerie(null);
+            rating8.setUser(null);
+            serien_ratingRepository.save(rating8);
+
+            Serien_Rating rating9 = new Serien_Rating();
+            rating9.setRating(5);
+            rating9.setSerie(null);
+            rating9.setUser(null);
+            serien_ratingRepository.save(rating9);
+
+            //-----Serie 4-------
+            Serien_Rating rating10 = new Serien_Rating();
+            rating10.setRating(2);
+            rating10.setSerie(null);
+            rating10.setUser(null);
+            serien_ratingRepository.save(rating10);
+
+            Serien_Rating rating11 = new Serien_Rating();
+            rating11.setRating(4);
+            rating11.setSerie(null);
+            rating11.setUser(null);
+            serien_ratingRepository.save(rating11);
+
+            Serien_Rating rating12 = new Serien_Rating();
+            rating12.setRating(1);
+            rating12.setSerie(null);
+            rating12.setUser(null);
+            serien_ratingRepository.save(rating12);
+
+            //-----Serie 5-------
+            Serien_Rating rating13 = new Serien_Rating();
+            rating13.setRating(3);
+            rating13.setSerie(null);
+            rating13.setUser(null);
+            serien_ratingRepository.save(rating13);
+
+            Serien_Rating rating14 = new Serien_Rating();
+            rating14.setRating(1);
+            rating14.setSerie(null);
+            rating14.setUser(null);
+            serien_ratingRepository.save(rating14);
+
+            Serien_Rating rating15 = new Serien_Rating();
+            rating15.setRating(5);
+            rating15.setSerie(null);
+            rating15.setUser(null);
+            serien_ratingRepository.save(rating15);
+
+
 
 
             //----------------Pictures Movies---------------
 
-            Media picture1 = new Media();
+            /*Media picture1 = new Media();
             picture1.setContentType("image/jpeg");
             mediaRepository.save(picture1);
 
@@ -493,13 +710,18 @@ public class DataGenerateService {
 
             //----------------Movies/Filme---------------
 
-            Serie movie1 = new Serie();
+            /*Serie movie1 = new Serie();
             movie1.setName("Tarzan the Ape Man");
-            movie1.setPictures(picture1);
+            Set<Media> picForMovie1 = new HashSet<Media>();
+            Set<Genre> genreForMovie1 = new HashSet<Genre>();
+            picForMovie1.add(picture1);
+            genreForMovie1.add(genre1);
+            genreForMovie1.add(genre10);
+            movie1.setPictures(picForMovie1);
             movie1.setHersteller(null);
             movie1.setReleaseDate(new Date());
             movie1.setKategorie(null);
-            movie1.setGenres(genre1,genre10);
+            movie1.setGenres(genreForMovie1);
             movie1.setReviews(null);
             movie1.setFav_users(null);
             movie1.setTrailer("undefined");
@@ -508,11 +730,16 @@ public class DataGenerateService {
 
             Serie movie2 = new Serie();
             movie2.setName("Attack of the 50 ft. Woman");
-            movie2.setPictures(picture2);
+            Set<Media> picForMovie2 = new HashSet<Media>();
+            Set<Genre> genreForMovie2 = new HashSet<Genre>();
+            picForMovie2.add(picture2);
+            genreForMovie1.add(genre8);
+            genreForMovie1.add(genre11);
+            movie2.setPictures(picForMovie2);
             movie2.setHersteller(null);
             movie2.setReleaseDate(new Date());
             movie2.setKategorie(null);
-            movie2.setGenres(genre11,genre8);
+            movie2.setGenres(genreForMovie2);
             movie2.setReviews(null);
             movie2.setFav_users(null);
             movie2.setTrailer("undefined");
@@ -521,7 +748,12 @@ public class DataGenerateService {
 
             Serie movie3 = new Serie();
             movie3.setName("Betrayed Woman");
-            movie3.setPictures(picture3);
+            Set<Media> picForMovie3 = new HashSet<Media>();
+            Set<Genre> genreForMovie3 = new HashSet<Genre>();
+            picForMovie1.add(picture3);
+            genreForMovie1.add(genre5);
+            genreForMovie1.add(genre9);
+            movie3.setPictures(pciF);
             movie3.setHersteller(null);
             movie3.setReleaseDate(new Date());
             movie3.setKategorie(null);
@@ -1075,14 +1307,18 @@ public class DataGenerateService {
             movie45.setTrailer("undefined");
             serieRepository.save(movie45);
 
-
             Serie movie46 = new Serie();
             movie46.setName("Saturday Night");
-            movie46.setPictures(picture46);
+            Set<Media> movie46Media = new HashSet<>();
+            Set<Genre> movie46Genre = new HashSet<>();
+            movie46Media.add(picture64);
+            movie46Genre.add(genre9);
+            movie46Genre.add(genre10);
+            movie46.setPictures(movie46Media);
             movie46.setHersteller(null);
             movie46.setReleaseDate(new Date());
             movie46.setKategorie(null);
-            movie46.setGenres(genre9,genre10);
+            movie46.setGenres(movie46Genre);
             movie46.setReviews(null);
             movie46.setFav_users(null);
             movie46.setTrailer("undefined");
@@ -1270,6 +1506,123 @@ public class DataGenerateService {
             movie60.setTrailer("undefined");
             serieRepository.save(movie60);
             */
+
+
+//---------Charakters ------------
+
+            Charakter char0 = new Charakter();
+            char0.setName("Biggus Dickus");
+            char0.setPerson(null);
+            char0.setSerie(null);
+            charakterRepository.save(char0);
+
+            Charakter char1 = new Charakter();
+            char1.setName("Aragorn");
+            char1.setPerson(null);
+            char1.setSerie(null);
+            charakterRepository.save(char1);
+
+            Charakter char2 = new Charakter();
+            char2.setName("Deine Mutter");
+            char2.setPerson(null);
+            char2.setSerie(null);
+            charakterRepository.save(char2);
+
+            Charakter char3 = new Charakter();
+            char3.setName("Son Goku");
+            char3.setPerson(null);
+            char3.setSerie(null);
+            charakterRepository.save(char3);
+
+            Charakter char4 = new Charakter();
+            char4.setName("Darth Vaders behinderter kleiner Bruder");
+            char4.setPerson(null);
+            char4.setSerie(null);
+            charakterRepository.save(char4);
+
+
+
+            //---------Person ------------
+
+            Person pers0 = new Person();
+            pers0.setVorname("Martin");
+            pers0.setNachname("Hutter");
+            pers0.setDayOfBirth(new Date());
+            pers0.setBeschreibung("Toller Schauspieler");
+            Set<Charakter> charForPers0 = new HashSet<>();
+            charForPers0.add(char4);
+            pers0.setDirectors(null);
+            char4.setPerson(pers0);
+            personRepository.save(pers0);
+
+            Person pers1 = new Person();
+            pers1.setVorname("Andreas");
+            pers1.setNachname("Staudacher");
+            pers1.setDayOfBirth(new Date());
+            pers1.setBeschreibung("Oscar-würdig");
+            Set<Charakter> charForPers1 = new HashSet<>();
+            charForPers1.add(char3);
+            charForPers1.add(null);
+            pers1.setDirectors(null);
+            personRepository.save(pers1);
+
+            Person pers2 = new Person();
+            pers2.setVorname("Georg");
+            pers2.setNachname("Schmitzer");
+            pers2.setDayOfBirth(new Date());
+            pers2.setBeschreibung("Bester Drama-Darsteller");
+            Set<Charakter> charForPers2 = new HashSet<>();
+            charForPers2.add(char2);
+            charForPers2.add(null);
+            pers2.setDirectors(null);
+            personRepository.save(pers2);
+
+            Person pers3 = new Person();
+            pers3.setVorname("Florian");
+            pers3.setNachname("Gartner");
+            pers3.setDayOfBirth(new Date());
+            pers3.setBeschreibung("Leider komplett abgewrackt");
+            Set<Charakter> charForPers3 = new HashSet<>();
+            charForPers3.add(char1);
+            pers3.setDirectors(null);
+            personRepository.save(pers3);
+
+            Person pers4 = new Person();
+            pers4.setVorname("Miriam");
+            pers4.setNachname("Grainer");
+            pers4.setDayOfBirth(new Date());
+            pers4.setBeschreibung("Absolut super");
+            Set<Charakter> charForPers4 = new HashSet<>();
+            charForPers4.add(char0);
+            pers4.setDirectors(null);
+            personRepository.save(pers4);
+
+        //---------Directors ------------
+
+            Director dir0 = new Director();
+            dir0.setPerson(null);
+            dir0.setSerie(null);
+            directorRepository.save(dir0);
+
+            Director dir1 = new Director();
+            dir1.setPerson(pers1);
+            dir1.setSerie(null);
+            directorRepository.save(dir1);
+
+            Director dir2 = new Director();
+            dir2.setPerson(null);
+            dir2.setSerie(null);
+            directorRepository.save(dir2);
+
+            Director dir3 = new Director();
+            dir3.setPerson(null);
+            dir3.setSerie(null);
+            directorRepository.save(dir3);
+
+            Director dir4 = new Director();
+            dir4.setPerson(null);
+            dir4.setSerie(null);
+            directorRepository.save(dir4);
         }
 
     }

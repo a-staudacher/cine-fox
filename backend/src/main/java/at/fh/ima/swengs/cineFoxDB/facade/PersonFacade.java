@@ -1,10 +1,14 @@
 package at.fh.ima.swengs.cineFoxDB.facade;
 
+import at.fh.ima.swengs.cineFoxDB.model.DirectorRepository;
+import at.fh.ima.swengs.cineFoxDB.service.CharakterService;
+import at.fh.ima.swengs.cineFoxDB.service.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import at.fh.ima.swengs.cineFoxDB.service.PersonService;
 
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Service()
@@ -13,17 +17,21 @@ public class PersonFacade {
 
     @Autowired
     private PersonService personService;
-    /*
-        @Autowired
-        private MovieService movieService;*/
+
+    @Autowired
+    private DirectorService directorService;
+
+    @Autowired
+    private CharakterService charakterService;
 
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, at.fh.ima.swengs.cineFoxDB.model.Person entity) {
             entity.setVorname(dto.getVorname());
             entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
             entity.setBeschreibung(dto.getBeschreibung());
-            entity.setDirectors(dto.getDirectors());
-            entity.setCharakters(dto.getCharakters());
+            entity.setDirectors(directorService.getDirectors(dto.getDirectors()));
+            entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
+            entity.setPictures(dto.getPictures());
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Person entity, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {
@@ -32,7 +40,9 @@ public class PersonFacade {
             dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
             dto.setBeschreibung(entity.getBeschreibung());
-            dto.setCharakters(entity.getCharakters());
+            dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
+            dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
+            dto.setPictures(entity.getPictures());
         }
 
         public at.fh.ima.swengs.cineFoxDB.dto.PersonDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto) {

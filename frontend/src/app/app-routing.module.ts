@@ -28,9 +28,6 @@ const routes: Routes = [
     //path: 'person-show', component: PersonShowComponent, canActivate: [AuthGuard]
   },
   {
-    path: 'person', redirectTo: '/person-form' , canActivate: [AuthGuard]
-  },
-  {
     path: 'movie-form', component: MovieFormComponent
   },
   {
