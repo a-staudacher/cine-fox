@@ -4,6 +4,7 @@ import {map, reduce} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {Observable, of, Subject} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import {Person} from '../api/person';
 
 @Injectable({
   providedIn: 'root'
@@ -61,5 +62,9 @@ export class UserService {
       userList = response;
     });
     return of(userList.includes(value));
+  }
+
+  create(user) {
+    return this.http.post('/api/dto/user', user);
   }
 }

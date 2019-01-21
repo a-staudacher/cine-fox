@@ -12,6 +12,7 @@ import {UsernameValidator} from '../usernameValidator';
 })
 export class RegistryComponent implements OnInit {
   registryForm;
+  user;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router,
   private usernameValidator: UsernameValidator) {}
@@ -27,9 +28,10 @@ export class RegistryComponent implements OnInit {
   }
 
   register() {
-
-
+    this.userService.create(this.user)
+      .subscribe((response: any) => {
+        alert('user created successfully');
+        this.router.navigate(['/index', response.id]);
+      });
   }
-
-
 }
