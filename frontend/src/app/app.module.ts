@@ -33,7 +33,7 @@ import {ProfileComponent} from './profile/profile.component';
 import { SearchResultsPageComponent } from './search-results-page/search-results-page.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 import { MovieShowComponent } from './movie-show/movie-show.component';
-
+import { SafeUrlPipe } from './service/safe-url.pipe'; //make sure your safe-url.pipe.ts file path is matching
 
 
 defineLocale('de', deLocale);
@@ -64,8 +64,8 @@ export const httpInterceptorProviders = [
     ProfileComponent,
     SearchResultsPageComponent,
     ProfileEditComponent,
-    MovieShowComponent
-
+    MovieShowComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

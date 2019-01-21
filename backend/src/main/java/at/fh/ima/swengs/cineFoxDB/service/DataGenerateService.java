@@ -305,65 +305,6 @@ public class DataGenerateService {
             review14.setUser(null);
             reviewRepository.save(review14);
 
-            //----------Favourites-----------
-
-                //-----Favorite 1------------
-            User favorite1 = new User();
-            favorite1.setFavorite(movie37);
-            favorite1.setUsername(null);
-            userRepository.save(favorite1);
-
-            //-----Favorite 2------------
-            User favorite2 = new User();
-            favorite2.setFavorite(movie10);
-            favorite2.setUsername(null);
-            userRepository.save(favorite2);
-
-            //-----Favorite 3------------
-            User favorite3 = new User();
-            favorite3.setFavorite(movie25);
-            favorite3.setUsername(null);
-            userRepository.save(favorite3);
-
-            //-----Favorite 4------------
-            User favorite4 = new User();
-            favorite4.setFavorite(movie7);
-            favorite4.setUsername(null);
-            userRepository.save(favorite4);
-
-            //-----Favorite 5------------
-            User favorite5 = new User();
-            favorite5.setFavorite(movie21);
-            favorite5.setUsername(null);
-            userRepository.save(favorite5);
-
-            //-----Favorite 6------------
-            User favorite6 = new User();
-            favorite6.setFavorite(movie33);
-            favorite6.setUsername(null);
-            userRepository.save(favorite6);
-
-            //-----Favorite 7------------
-            User favorite7 = new User();
-            favorite7.setFavorite(movie15);
-            favorite7.setUsername(null);
-            userRepository.save(favorite7);
-
-            //-----Favorite 8------------
-            User favorite8 = new User();
-            favorite8.setFavorite(movie41);
-            favorite8.setUsername(null);
-            userRepository.save(favorite8);
-
-
-            //-----Favorite 9------------
-            User favorite9 = new User();
-            favorite9.setFavorite(movie47);
-            favorite9.setUsername(null);
-            userRepository.save(favorite9);
-
-
-
 
 
 
@@ -466,10 +407,6 @@ public class DataGenerateService {
 
 
 
-
-            Media picture1 = new Media();
-            picture1.setContentType("image/jpeg");
-            mediaRepository.save(picture1);
 
             //----------------Movies/Filme-------------------------
 
@@ -1795,7 +1732,64 @@ public class DataGenerateService {
             mediaRepository.save(picture60);
 
 
+            //----------Favourites-----------
 
+          /*  //-----Favorite 1------------
+            User favorite1 = new User();
+            favorite1.setFavorite(movie37);
+            favorite1.setUsername(null);
+            userRepository.save(favorite1);
+
+            //-----Favorite 2------------
+            User favorite2 = new User();
+            favorite2.setFavorite(movie10);
+            favorite2.setUsername(null);
+            userRepository.save(favorite2);
+
+            //-----Favorite 3------------
+            User favorite3 = new User();
+            favorite3.setFavorite(movie25);
+            favorite3.setUsername(null);
+            userRepository.save(favorite3);
+
+            //-----Favorite 4------------
+            User favorite4 = new User();
+            favorite4.setFavorite(movie7);
+            favorite4.setUsername(null);
+            userRepository.save(favorite4);
+
+            //-----Favorite 5------------
+            User favorite5 = new User();
+            favorite5.setFavorite(movie21);
+            favorite5.setUsername(null);
+            userRepository.save(favorite5);
+
+            //-----Favorite 6------------
+            User favorite6 = new User();
+            favorite6.setFavorite(movie33);
+            favorite6.setUsername(null);
+            userRepository.save(favorite6);
+
+            //-----Favorite 7------------
+            User favorite7 = new User();
+            favorite7.setFavorite(movie15);
+            favorite7.setUsername(null);
+            userRepository.save(favorite7);
+
+            //-----Favorite 8------------
+            User favorite8 = new User();
+            favorite8.setFavorite(movie41);
+            favorite8.setUsername(null);
+            userRepository.save(favorite8);
+
+
+            //-----Favorite 9------------
+            User favorite9 = new User();
+            favorite9.setFavorite(movie47);
+            favorite9.setUsername(null);
+            userRepository.save(favorite9);
+
+*/
 
 //---------Charakters ------------
 

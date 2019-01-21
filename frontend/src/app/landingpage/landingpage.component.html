@@ -108,10 +108,11 @@
 
                   <!--*ngFor="let movie of movies"-->
 
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
+                  <div *ngFor = "let movie of movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
-                        <img src="assets/images/1.jpg" alt="movie_img" />
+                        <!--<img src="assets/images/1.jpg" alt="movie_img" />-->
+                        <img [src]="movie.url | safeUrl" *ngIf="movie.url" class="img-fluid">
                         <div class="prs_upcom_movie_img_overlay"></div>
                         <div class="prs_upcom_movie_img_btn_wrapper">
                           <ul>
@@ -3716,8 +3717,6 @@
   </div>
 </div>
 <!-- prs patner slider End -->
-
-</form>
 
 
 
