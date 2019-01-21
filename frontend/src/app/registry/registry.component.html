@@ -29,14 +29,20 @@
                     <div class="prs_title_heading_wrapper">
                       <h3 style="color: black" align="center">Registrierung</h3>
                       <br>
-                      <form (ngSubmit)="login()">
+                      <form [formGroup]="registryForm" (ngSubmit)="register()">
                         <div align="center">
                           <label>
                             Username: &nbsp;
                           </label>
                           <label>
-                            <input type="text" name="username" [(ngModel)]="user.username" class="form-control"/>
+                            <input id="username" type="text" name="username" formControlName="username" class="form-control"/>
                           </label>
+                          <div *ngIf="username.pending">Validating...</div>
+                          <div *ngIf="username.invalid" class="alert alert-danger">
+                            <div *ngIf="username.errors?.uniqueUsername">
+                              Username is already taken.
+                            </div>
+                          </div>
                           <br>
                           <br>
                           <label>

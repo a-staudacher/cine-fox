@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map, reduce} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import {Subject} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
@@ -50,4 +50,16 @@ export class UserService {
     this.router.navigate(['']);
   }
 
+  getAll() {
+    return this.http.get('/user');
+  }
+
+  isUsernameTaken(value: string, userList = []): Observable<boolean> {
+    this.getAll().pipe(reduce((acc: any, val: any) => {
+      return(acc.push(val.username));
+    })).subscribe((response: any) => {
+      userList = response;
+    });
+    return of(userList.includes(value));
+  }
 }
