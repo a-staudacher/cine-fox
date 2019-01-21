@@ -308,7 +308,7 @@ public class DataGenerateService {
             //----------Favourites-----------
 
                 //-----Favorite 1------------
-            User favorite1 = new User();
+            /*User favorite1 = new User();
             favorite1.setFavorite(movie37);
             favorite1.setUsername(null);
             userRepository.save(favorite1);
@@ -360,7 +360,7 @@ public class DataGenerateService {
             User favorite9 = new User();
             favorite9.setFavorite(movie47);
             favorite9.setUsername(null);
-            userRepository.save(favorite9);
+            userRepository.save(favorite9);*/
 
 
 
@@ -467,9 +467,9 @@ public class DataGenerateService {
 
 
 
-            Media picture1 = new Media();
+            /*Media picture1 = new Media();
             picture1.setContentType("image/jpeg");
-            mediaRepository.save(picture1);
+            mediaRepository.save(picture1);*/
 
             //----------------Movies/Filme-------------------------
 
