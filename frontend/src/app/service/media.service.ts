@@ -1,44 +1,41 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Person} from '../api/person';
+/*import {media} from '../api/medias';*/
 import {map} from 'rxjs/operators';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonService {
+export class MediaService {
 
   constructor(private http: HttpClient) {
   }
 
   getById(id: string) {
-    return this.http.get('/api/dto/person/' + id).pipe(map((res: any) => {
-      if (res.dayOfBirth) {
-        res.dayOfBirth = new Date(res.dayOfBirth);
-      }
+    return this.http.get('/api/dto/medias/' + id).pipe(map((res: any) => {
       return res;
     }));
   }
 
   getAll() {
-    return this.http.get('/api/persons').pipe(
+    return this.http.get('/api/medias').pipe(
       map((response: any) => {
-        return response._embedded.persons;
+        return response._embedded.medias;
       })
     );
   }
 
-  delete(person) {
-    return this.http.delete('/api/persons/' + person.id);
+  delete(media) {
+    return this.http.delete('/api/mediass/' + media.id);
   }
 
-  update(person: Person) {
-    return this.http.put('/api/dto/person/' + person.id, person);
+  update(media) {
+    return this.http.put('/api/dto/medias/' + media.id, media);
   }
 
-  create(person: Person) {
-    return this.http.post('/api/dto/person', person);
+  create(media) {
+    return this.http.post('/api/dto/medias', media);
   }
 
 }
