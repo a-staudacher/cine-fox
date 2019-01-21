@@ -22,7 +22,7 @@ export class PersonService {
   }
 
   getAll() {
-    return this.http.get('/api/person').pipe(
+    return this.http.get('/api/persons').pipe(
       map((response: any) => {
         return response._embedded.persons;
       })
@@ -30,7 +30,7 @@ export class PersonService {
   }
 
   delete(person) {
-    return this.http.delete('/api/person/' + person.id);
+    return this.http.delete('/api/persons/' + person.id);
   }
 
   update(person: Person) {
