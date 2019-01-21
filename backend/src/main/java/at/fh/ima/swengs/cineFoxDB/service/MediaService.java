@@ -68,7 +68,13 @@ public class MediaService {
 
     public File retrieveMediaFile(Media media) {
         File uploadsDir = retrieveUploadsDirectory();
-        String filePath = uploadsDir.getAbsolutePath() + "/" + media.getId();
+        String filePath;
+        if(media.getSavedAt() != "")
+        {
+            filePath = uploadsDir.getAbsolutePath() + "/" + media.getSavedAt();
+        }
+        else
+            filePath = uploadsDir.getAbsolutePath() + "/" + media.getId();
         return new File(filePath);
     }
 

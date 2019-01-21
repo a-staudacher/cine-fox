@@ -13,6 +13,7 @@ export class RegistryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

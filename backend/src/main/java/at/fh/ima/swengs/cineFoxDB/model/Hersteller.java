@@ -62,6 +62,14 @@ public class Hersteller {
         this.version = version;
     }
 
+    public Set<Serie> getSeries() {
+        return series;
+    }
+
+    public void setSeries(Set<Serie> series) {
+        this.series = series;
+    }
+
     @Override
     public String toString() {
         return "Hersteller{" +

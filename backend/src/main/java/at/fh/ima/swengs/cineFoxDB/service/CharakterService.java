@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Optional;
 
 @Service()
 public class CharakterService {
@@ -22,4 +23,11 @@ public class CharakterService {
         return entities;
     }
 
+    public Optional<Charakter> findById(long id) {
+        return charakterRepository.findById(id);
+    }
+
+    public Charakter save(Charakter entity) {
+        return charakterRepository.save(entity);
+    }
 }
