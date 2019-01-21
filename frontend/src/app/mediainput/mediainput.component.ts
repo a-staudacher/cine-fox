@@ -3,6 +3,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {FileItem, FileUploader, ParsedResponseHeaders} from 'ng2-file-upload';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../service/user.service';
+import {ActivatedRoute} from '@angular/router';
 
 export interface IMedia {
   id?: number;
@@ -32,7 +33,7 @@ export class MediainputComponent implements OnInit, ControlValueAccessor {
     // empty default
   }
 
-  constructor(private userService: UserService, private http: HttpClient, elm: ElementRef) {
+  constructor(private userService: UserService, private route: ActivatedRoute, private http: HttpClient, elm: ElementRef) {
     this.name = elm.nativeElement.getAttribute('name');
   }
 
@@ -42,6 +43,8 @@ export class MediainputComponent implements OnInit, ControlValueAccessor {
       authToken: 'Bearer ' + localStorage.getItem(this.userService.accessTokenLocalStorageKey),
       autoUpload: true
     });
+    const id = this.route.snapshot.paramMap.get('id');
+
     this.uploader.onBeforeUploadItem = (item: FileItem) => {
       if (!this.medias) {
         this.medias = [];

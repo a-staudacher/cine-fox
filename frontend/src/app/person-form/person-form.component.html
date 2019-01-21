@@ -25,13 +25,18 @@
       <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
           <div class="hs_blog_left_sidebar_main_wrapper">
+            <div *ngIf="!personForm.pictures" class="hs_blog_box1_img_wrapper">
+              <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+            </div>
+            <div *ngIf="personForm.pictures" class="hs_blog_box1_img_wrapper">
+              <img src="backend/uploads/1" alt="blog_img">
+            </div>
             <div class="container">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="hs_blog_box1_main_wrapper">
                   <div class="hs_blog_box1_cont_main_wrapper">
                     <div class="col">
-                      <app-mediainput name="pictures"
-                                      formControlName="pictures"></app-mediainput>
+                      <app-mediainput name="pictures" formControlName="pictures"></app-mediainput>
                     </div>
 
 
@@ -68,7 +73,7 @@
                         </div>
                       </div>
 
-                    <div class ="row">
+                    <!--<div class ="row">
                       <div class="col">
                         <label for="charakters">Characters played:</label>
                         <ngx-select id="charakters" [items]="charaktersOptions" name="charakters" [multiple]="true"
@@ -82,7 +87,7 @@
                         <ngx-select id="directors" [items]="directorsOptions" name="directors" [multiple]="true"
                                     formControlName="directors" optionTextField="title"></ngx-select>
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="row">
                       <div class="col">

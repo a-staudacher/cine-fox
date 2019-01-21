@@ -1508,37 +1508,7 @@ public class DataGenerateService {
             */
 
 
-//---------Charakters ------------
 
-            Charakter char0 = new Charakter();
-            char0.setName("Biggus Dickus");
-            char0.setPerson(null);
-            char0.setSerie(null);
-            charakterRepository.save(char0);
-
-            Charakter char1 = new Charakter();
-            char1.setName("Aragorn");
-            char1.setPerson(null);
-            char1.setSerie(null);
-            charakterRepository.save(char1);
-
-            Charakter char2 = new Charakter();
-            char2.setName("Deine Mutter");
-            char2.setPerson(null);
-            char2.setSerie(null);
-            charakterRepository.save(char2);
-
-            Charakter char3 = new Charakter();
-            char3.setName("Son Goku");
-            char3.setPerson(null);
-            char3.setSerie(null);
-            charakterRepository.save(char3);
-
-            Charakter char4 = new Charakter();
-            char4.setName("Darth Vaders behinderter kleiner Bruder");
-            char4.setPerson(null);
-            char4.setSerie(null);
-            charakterRepository.save(char4);
 
 
 
@@ -1549,10 +1519,6 @@ public class DataGenerateService {
             pers0.setNachname("Hutter");
             pers0.setDayOfBirth(new Date());
             pers0.setBeschreibung("Toller Schauspieler");
-            Set<Charakter> charForPers0 = new HashSet<>();
-            charForPers0.add(char4);
-            pers0.setDirectors(null);
-            char4.setPerson(pers0);
             personRepository.save(pers0);
 
             Person pers1 = new Person();
@@ -1560,10 +1526,6 @@ public class DataGenerateService {
             pers1.setNachname("Staudacher");
             pers1.setDayOfBirth(new Date());
             pers1.setBeschreibung("Oscar-würdig");
-            Set<Charakter> charForPers1 = new HashSet<>();
-            charForPers1.add(char3);
-            charForPers1.add(null);
-            pers1.setDirectors(null);
             personRepository.save(pers1);
 
             Person pers2 = new Person();
@@ -1571,10 +1533,6 @@ public class DataGenerateService {
             pers2.setNachname("Schmitzer");
             pers2.setDayOfBirth(new Date());
             pers2.setBeschreibung("Bester Drama-Darsteller");
-            Set<Charakter> charForPers2 = new HashSet<>();
-            charForPers2.add(char2);
-            charForPers2.add(null);
-            pers2.setDirectors(null);
             personRepository.save(pers2);
 
             Person pers3 = new Person();
@@ -1582,9 +1540,6 @@ public class DataGenerateService {
             pers3.setNachname("Gartner");
             pers3.setDayOfBirth(new Date());
             pers3.setBeschreibung("Leider komplett abgewrackt");
-            Set<Charakter> charForPers3 = new HashSet<>();
-            charForPers3.add(char1);
-            pers3.setDirectors(null);
             personRepository.save(pers3);
 
             Person pers4 = new Person();
@@ -1592,10 +1547,39 @@ public class DataGenerateService {
             pers4.setNachname("Grainer");
             pers4.setDayOfBirth(new Date());
             pers4.setBeschreibung("Absolut super");
-            Set<Charakter> charForPers4 = new HashSet<>();
-            charForPers4.add(char0);
-            pers4.setDirectors(null);
             personRepository.save(pers4);
+
+        //---------Charakters ------------
+
+            Charakter char0 = new Charakter();
+            char0.setName("Biggus Dickus");
+            char0.setPerson(pers4);
+            char0.setSerie(null);
+            charakterRepository.save(char0);
+
+            Charakter char1 = new Charakter();
+            char1.setName("Aragorn");
+            char1.setPerson(pers3);
+            char1.setSerie(null);
+            charakterRepository.save(char1);
+
+            Charakter char2 = new Charakter();
+            char2.setName("Deine Mutter");
+            char2.setPerson(pers2);
+            char2.setSerie(null);
+            charakterRepository.save(char2);
+
+            Charakter char3 = new Charakter();
+            char3.setName("Son Goku");
+            char3.setPerson(pers1);
+            char3.setSerie(null);
+            charakterRepository.save(char3);
+
+            Charakter char4 = new Charakter();
+            char4.setName("Darth Vaders behinderter kleiner Bruder");
+            char4.setPerson(pers0);
+            char4.setSerie(null);
+            charakterRepository.save(char4);
 
         //---------Directors ------------
 
