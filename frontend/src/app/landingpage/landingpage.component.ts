@@ -10,7 +10,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 export class LandingpageComponent implements OnInit {
 
   landingpageForm;
-  moviename = 'Tarzan the Ape Man'
+  moviename = 'Tarzan the Ape Man';
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
