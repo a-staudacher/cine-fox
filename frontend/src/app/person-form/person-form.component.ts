@@ -11,7 +11,7 @@ import {getDay, getMonth} from 'ngx-bootstrap';
 import {formatDate} from '@angular/common';
 import {daysInMonth} from 'ngx-bootstrap/chronos/units/month';
 import {format} from 'util';
-import {MediainputComponent} from '../mediainput/mediainput.component';
+import {IMedia, MediainputComponent} from '../mediainput/mediainput.component';
 import {DirectorsService} from '../service/directors.service';
 import {FileUploader} from 'ng2-file-upload';
 
