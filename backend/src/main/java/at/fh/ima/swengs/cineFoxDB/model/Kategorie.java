@@ -52,6 +52,14 @@ public class Kategorie {
         this.bezeichnung = bezeichnung;
     }
 
+    public Set<Serie> getSeries() {
+        return series;
+    }
+
+    public void setSeries(Set<Serie> series) {
+        this.series = series;
+    }
+
     public long getVersion() {
         return version;
     }

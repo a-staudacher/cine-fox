@@ -28,7 +28,7 @@ export class MovieFormComponent implements OnInit {
       'director': new FormControl()
     });
 
-    /*this.genreService.getAll()
+    this.genreService.getAll()
       .subscribe(genre => {
         this.genreOptions = genre;
       });
@@ -41,7 +41,7 @@ export class MovieFormComponent implements OnInit {
     this.kategorieService.getAll()
       .subscribe(kategorien => {
         this.kategorieOptions = kategorien;
-      });*/
+      });
 
     this.personService.getAll()
       .subscribe(persons => {
