@@ -67,8 +67,18 @@ public class Genre {
         return version;
     }
 
+    public Set<Serie> getSeries() {
+        return series;
+    }
+
+    public void setSeries(Set<Serie> series) {
+        this.series = series;
+    }
+
     public void setVersion(long version) {
         this.version = version;
+
+
     }
 
     @Override
