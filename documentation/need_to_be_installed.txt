@@ -1,0 +1,6 @@
+0)
+npm install
+1) NG2-File-Upload:
+
+	- npm i ng2-file-upload --save
+	- Hinzufügen im NgModule

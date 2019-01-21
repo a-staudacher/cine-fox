@@ -3,9 +3,9 @@ package at.fh.ima.swengs.cineFoxDB.model;
 import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.*;
+import org.hibernate.annotations.Cascade;
+import java.util.*;
 
 @Entity
 @JsonIdentityInfo(
@@ -19,6 +19,7 @@ public class Person {
 
     private String vorname;
     private String nachname;
+    private String beschreibung;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dayOfBirth;
@@ -28,6 +29,10 @@ public class Person {
 
     @OneToMany(mappedBy = "person")
     private Set<Director> directors;
+
+    @OneToMany(mappedBy = "person")
+    private Set<Media> pictures = new HashSet<>();
+
 
     @Version
     @JsonIgnore
@@ -40,6 +45,13 @@ public class Person {
         this.vorname = vorname;
         this.nachname = nachname;
         this.dayOfBirth = dayOfBirth;
+    }
+
+    public Person(String vorname, String nachname, Date dayOfBirth, String beschreibung) {
+        this.vorname = vorname;
+        this.nachname = nachname;
+        this.dayOfBirth = dayOfBirth;
+        this.beschreibung = beschreibung;
     }
 
     public long getId() {
@@ -98,17 +110,34 @@ public class Person {
         this.dayOfBirth = dayOfBirth;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        at.fh.ima.swengs.cineFoxDB.model.Person person = (at.fh.ima.swengs.cineFoxDB.model.Person) o;
-        return id == person.id;
+    public Set<Media> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(Set<Media> pictures) {
+        this.pictures = pictures;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return getId() == person.getId();
+    }
+
+
+    @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
     @Override
