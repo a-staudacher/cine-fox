@@ -13,6 +13,7 @@ export interface IMedia {
   originalFileName?: string;
   contentType?: string;
   size?: number;
+  movie?: any;
 }
 
 @Component({
@@ -27,7 +28,6 @@ export class LandingpageComponent implements OnInit {
   resourceUrl = 'api/medias';
   movies = [];
 
-  previews = [];
   medias: IMedia[];
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private mediasService: MediaService,
@@ -54,15 +54,19 @@ export class LandingpageComponent implements OnInit {
 
   initPreviews() {
     this.medias.forEach((media, index) => {
-      if (media.id && !this.previews[index]) {
+      if (media.id && !this.movies[index]) {
         this.http.get(`${this.resourceUrl}/${media.id}`, {
           responseType:
             'blob'
         }).subscribe((blob: Blob) => {
           const fileURL = URL.createObjectURL(blob);
-          this.previews[index] = fileURL;
+          this.movies[index].url = fileURL;
 
-          this.movies[0].url = fileURL;
+          this.movies.forEach((movie, index_mov) => {
+            if (movie.id === media.movie.id) {
+              movie.url = fileURL;
+            }
+          });
         });
       }
     });
