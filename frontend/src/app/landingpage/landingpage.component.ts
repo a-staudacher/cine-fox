@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MediaService} from '../service/media.service';
 import {MovieService} from '../service/movie.service';
+import {Genre} from '../api/genre';
 
 
 export interface IMedia {
@@ -24,9 +25,11 @@ export interface IMedia {
 export class LandingpageComponent implements OnInit {
 
   landingpageForm;
- /* moviename = 'Tarzan the Ape Man';*/
-  resourceUrl = 'api/medias';
   movies = [];
+  test7 = {url: ''};
+  moviePictures = [];
+  joinedMovies = [];
+  genremovies;
 
   medias: IMedia[];
 
@@ -36,26 +39,43 @@ export class LandingpageComponent implements OnInit {
   ngOnInit() {
 
     this.landingpageForm = new FormGroup({
-      'id': new FormControl(),
-      'name': new FormControl()
+      'series': new FormControl(),
+      'favourite': new FormControl(),
     });
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
-      this.initPreviews();
+      // this.initPreviews();
     });
 
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
+        this.landingpageForm.setValue(movies._embedded.series);
+        alert('ttt');
+        /*this.movies.forEach((movie) => {
+          this.http.get(movie._links.genres.href).subscribe()
+          this.joinedMovies.push({movie: movie, genres: });
+        });*/
       });
 
+
+    this.http.get('/api/media/1', {responseType:
+        'blob'}).subscribe((blob: Blob) => {
+      const fileURL = URL.createObjectURL(blob);
+      this.test7.url = fileURL;
+    });
   }
+
+ /* getUrl(movieid) {
+    return this.moviePictures.filter({movieID: movie.id} === media.movie.url);
+    // suchst den Eintrag der die movieID hat, und von diesem gibst du die URL zurück.
+  }*/
 
   initPreviews() {
     this.medias.forEach((media, index) => {
       if (media.id && !this.movies[index]) {
-        this.http.get(`${this.resourceUrl}/${media.id}`, {
+        this.http.get('api/medias' + media.id, {
           responseType:
             'blob'
         }).subscribe((blob: Blob) => {
@@ -63,8 +83,9 @@ export class LandingpageComponent implements OnInit {
           this.movies[index].url = fileURL;
 
           this.movies.forEach((movie, index_mov) => {
-            if (movie.id === media.movie.id) {
-              movie.url = fileURL;
+            if (true) {
+              // movie.url = fileURL;
+              this.moviePictures.push({movieID: movie.id, url: fileURL});
             }
           });
         });

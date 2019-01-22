@@ -25,7 +25,8 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="hs_blog_box1_main_wrapper">
                 <div class="hs_blog_box1_img_wrapper">
-                  <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                  <img [src]="movieBild | safeUrl"
+                       class="img-fluid">
                 </div>
                 <div class="hs_blog_box1_cont_main_wrapper">
 

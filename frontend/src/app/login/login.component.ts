@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {UserService} from '../service/user.service';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   user: any;
 
-  constructor(private userService: UserService, private router: Router) {
+
+  constructor(private userService: UserService, private router: Router, private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -26,8 +28,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(this.user)
       .subscribe((res: any) => {
+        this.router.navigate(['/index']);
       }, (error) => {
-        alert('wrong username or password');
+        this.toastr.error('wrong username or password');
       });
+
   }
 }

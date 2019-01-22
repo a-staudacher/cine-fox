@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Profile} from '../api/profile';
+import {User} from '../api/user';
 import {map} from 'rxjs/operators';
 
 
@@ -13,29 +13,29 @@ export class ProfileEditService {
   }
 
   getById(id: string) {
-    return this.http.get('/api/profile/' + id).pipe(map((res: any) => {
+    return this.http.get('/api/dto/user/' + id).pipe(map((res: any) => {
       return res;
     }));
   }
 
   getAll() {
-    return this.http.get('/api/profile').pipe(
+    return this.http.get('/api/user').pipe(
       map((response: any) => {
-        return response._embedded.profile;
+        return response._embedded.user;
       })
     );
   }
 
-  delete(profile) {
-    return this.http.delete('/api/profile/' + profile.id);
+  delete(user) {
+    return this.http.delete('/api/user/' + user.id);
   }
 
-  update(profile: Profile) {
-    return this.http.put('/api/profile/' + profile.id, profile);
+  update(user: User) {
+    return this.http.put('/api/user/' + user.id, user);
   }
 
-  create(profile: Profile) {
-    return this.http.post('/api/profile', profile);
+  create(user: User) {
+    return this.http.post('/api/user', user);
   }
 
 }

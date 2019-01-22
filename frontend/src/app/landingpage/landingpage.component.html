@@ -107,12 +107,14 @@
                  <!-- ____________________________________________________-->
 
                   <!--*ngFor="let movie of movies"-->
-
+                  Bild<br>
+                  <img [src]="test7.url | safeUrl" class="img-fluid">
+                  bild<br>
                   <div *ngFor = "let movie of movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
                         <!--<img src="assets/images/1.jpg" alt="movie_img" />-->
-                        <img [src]="movie.url | safeUrl" *ngIf="movie.url" class="img-fluid">
+                        <img [src]="moviePictures | safeUrl" class="img-fluid">
                         <div class="prs_upcom_movie_img_overlay"></div>
                         <div class="prs_upcom_movie_img_btn_wrapper">
                           <ul>
@@ -126,7 +128,7 @@
                       <div class="prs_upcom_movie_content_box">
                         <div class="prs_upcom_movie_content_box_inner">
                           <h2><a onclick="reload_js()" [routerLink]="'/movie-show'">{{movie.name}}</a></h2>
-                          <p>Genre</p>	<i class="fa fa-star"></i>
+                          <!--<p>Genre </p>--> <div *ngFor="let genre of movies.genre" > </div> {{movies4Genre(genre)}}	<i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-o"></i>
@@ -134,7 +136,7 @@
                         </div>
                         <div class="prs_upcom_movie_content_box_inner_icon">
                           <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i></a>
+                            <li><button type="submit" ><i class="fa fa-heart"></i></button>
                             </li>
                           </ul>
                         </div>
@@ -143,6 +145,7 @@
                   </div>
 
 
+<!--
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_second">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
@@ -373,7 +376,8 @@
               </div>
 
 
-              <div class="item">
+
+            <div class="item">
                 <div class="row">
                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
@@ -641,7 +645,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="prs_animate_btn1 prs_upcom_main_wrapper">
                 <ul>
-                  <li><a href="#" class="button button--tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
+                  <li><a href="#" class="button button&#45;&#45;tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
                   </li>
                 </ul>
               </div>
@@ -1181,7 +1185,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="prs_animate_btn1 prs_upcom_main_wrapper">
                 <ul>
-                  <li><a href="#" class="button button--tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
+                  <li><a href="#" class="button button&#45;&#45;tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
                   </li>
                 </ul>
               </div>
@@ -1713,15 +1717,20 @@
                       </div>
                     </div>
                   </div>
+                -->
                 </div>
               </div>
             </div>
           </div>
+
+
+
+
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="prs_animate_btn1 prs_upcom_main_wrapper">
                 <ul>
-                  <li><a href="#" class="button button--tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
+                  <li><a href="#" class="button button&#45;&#45;tamaya prs_upcom_main_btn" data-text="view all"><span>View All</span></a>
                   </li>
                 </ul>
               </div>
@@ -1732,7 +1741,11 @@
     </div>
   </div>
 </div>
-<!-- prs upcomung Slider End -->
+<!-- prs upcomung Slider End ------------------------------------------------------------->
+
+
+
+
 <!-- prs video section Start -->
 <div class="prs_video_section_main_wrapper">
   <div class="container">
@@ -1749,6 +1762,9 @@
   </div>
 </div>
 <!-- prs video section End -->
+
+
+
 <!-- prs web series Slider Start -->
 <div class="prs_upcom_slider_main_wrapper">
   <div class="container">
