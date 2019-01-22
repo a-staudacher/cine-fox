@@ -9,7 +9,7 @@
         <div class="prs_title_heading_wrapper">
           <h2>PROFILE EDIT</h2>
           <ul>
-            <li><a [routerLink]="'/index'">Home</a>
+            <li><a onclick="reload_js()" [routerLink]="'/index'">Home</a>
             </li>
             <li>&nbsp;&nbsp; >&nbsp;&nbsp; Profile Edit</li>
           </ul>
@@ -25,7 +25,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="prs_es_about_left_wrapper">
-          <h2>{{username}}</h2>
+          <h2>{{profileeditForm.username}}</h2>
           <h4>Upload Your Profile Picture:</h4>
           &nbsp;
           &nbsp;
@@ -81,28 +81,17 @@
           <h2>Manage Your Favourites</h2>
         </div>
       </div>
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="prs_es_tabs_wrapper">
-          <ul class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#home">Favourites<br> <span>01</span></a>
-            </li>
-            <li><a data-toggle="pill" href="#menu1">Favourites<br> <span>02</span></a>
-            </li>
-            <li><a data-toggle="pill" href="#menu2">Favourites<br> <span>03</span></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-10 col-lg-offset-1 col-lg-offset-right-1 col-md-9 col-md-offset-1 col-md-offset-right-1 col-sm-12 col-xs-12">
-        <div class="prs_es_tabs_cont_main_wrapper">
+       <div class="prs_es_tabs_cont_main_wrapper">
           <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
+
+           <!-- *ngFor = "let movie of movies"-->
+
               <div class="prs_es_tabs_event_sche_main_box_wrapper">
                 <div class="prs_es_tabs_event_sche_img_wrapper">
                   <img src="assets/images/1.jpg" alt="event_img">
                 </div>
                 <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
+                 <!-- <h2>{{movie.name}}</h2>-->
                   <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
                   <div class="row">
                     &nbsp;
@@ -113,7 +102,8 @@
                   </ul>
                 </div>
               </div>
-              <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
+
+         <!--     <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
                 <div class="prs_es_tabs_event_sche_img_wrapper">
                   <img src="assets/images/2.jpg" alt="event_img">
                 </div>
@@ -129,6 +119,7 @@
                   </ul>
                 </div>
               </div>
+
               <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
                 <div class="prs_es_tabs_event_sche_img_wrapper">
                   <img src="assets/images/3.jpg" alt="event_img">
@@ -143,112 +134,20 @@
                   <ul>
                     <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
                   </ul>
-                </div>
-              </div>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <div class="prs_es_tabs_event_sche_main_box_wrapper">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/4.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-              <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/5.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-              <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/6.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <div class="prs_es_tabs_event_sche_main_box_wrapper">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/7.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-              <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/8.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-              <div class="prs_es_tabs_event_sche_main_box_wrapper prs_es_tabs_event_sche_main_box_wrapper2">
-                <div class="prs_es_tabs_event_sche_img_wrapper">
-                  <img src="assets/images/9.jpg" alt="event_img">
-                </div>
-                <div class="prs_es_tabs_event_sche_img_cont_wrapper">
-                  <h2>Movie Name</h2>
-                  <h3><i class="fa fa-location-arrow"></i> &nbsp;&nbsp; Categorie &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-user"></i> &nbsp;&nbsp; <span>Genre</span></h3>
-                  <div class="row">
-                    &nbsp;
-                    &nbsp;
-                  </div>
-                  <ul>
-                    <button type="submit" (click)="deleteFavourite()" class="btn btn-danger">Remove Favourite</button>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                </div>-->
+
+         <!--   </div>-->
+
+
+      <!--    </div>-->
+
+
+
           </div>
         </div>
-      </div>
+      <!--</div>-->
+
+
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="hs_kd_six_sec_btn prs_es_evnt_sche_btn_wrapper">
           <ul>

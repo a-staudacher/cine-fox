@@ -15,7 +15,7 @@ export class ProfileEditComponent implements OnInit {
   shouldNavigateToList: boolean
   favorite = [];
 
-  constructor(private profileeditService: ProfileEditService, private route: ActivatedRoute, private router: Router, private favoriteService: FavoriteService) { }
+  constructor(private profileEditService: ProfileEditService, private route: ActivatedRoute, private router: Router, private favoriteService: FavoriteService) { }
 
   ngOnInit() {
 
@@ -27,9 +27,10 @@ export class ProfileEditComponent implements OnInit {
     });
 
     const id = this.route.snapshot.paramMap.get('id');
+    alert(id);
 
     if (id) {
-      this.profileeditService.getById(id)
+      this.profileEditService.getById(id)
         .subscribe((response) => {
           this.profileeditForm.setValue(response);
         });
@@ -41,7 +42,7 @@ export class ProfileEditComponent implements OnInit {
 
     const profile = this.profileeditForm.value;
     if (profile.id) {
-      this.profileeditService.update(profile)
+      this.profileEditService.update(profile)
         .subscribe((response) => {
           alert('updated successfully');
           this.profileeditForm.setValue(response);
@@ -54,4 +55,6 @@ export class ProfileEditComponent implements OnInit {
   navigateToList() {
     this.router.navigate(['/profileedit-form']);
   }
+
+  deleteFavourite() {}
 }
