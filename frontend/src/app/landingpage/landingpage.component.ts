@@ -44,19 +44,26 @@ export class LandingpageComponent implements OnInit {
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
-      alert('got medias' + this.medias.length);
-    /*  this.mediaInit = true;*/
+      /*alert('got medias' + this.medias.length);
+      this.mediaInit = true;*/
       this.initPreviews();
     });
 
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
-        alert('got movies' + this.movies.length);
-     /*   this.moviesInit = true;*/
+        /*alert('got movies' + this.movies.length);
+        this.moviesInit = true;*/
         this.initPreviews();
       });
 
+      this.http.get(`${this.resourceUrl}/${1}`, {
+        responseType:
+          'blob'
+      }).subscribe((blob: Blob) => {
+        const fileURL = URL.createObjectURL(blob);
+        this.movies[0].url = fileURL;
+      });
   }
 
   initPreviews() {
