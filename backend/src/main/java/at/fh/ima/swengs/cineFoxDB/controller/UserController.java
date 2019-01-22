@@ -1,5 +1,6 @@
 package at.fh.ima.swengs.cineFoxDB.controller;
 
+import at.fh.ima.swengs.cineFoxDB.dto.UserCreateDTO;
 import at.fh.ima.swengs.cineFoxDB.dto.UserDTO;
 import at.fh.ima.swengs.cineFoxDB.facade.UserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class UserController {
     }
 
     @PostMapping("/dto/user")
-    UserDTO create(@RequestBody @Valid UserDTO dto) {
+    UserCreateDTO create(@RequestBody @Valid UserCreateDTO dto) {
         return userFacade.create(dto);
     }
 
@@ -31,5 +32,7 @@ public class UserController {
 
     @GetMapping("/dto/users")
     Set<UserDTO> getAll() {return userFacade.getAll();}
+
+
 
 }
