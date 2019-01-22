@@ -27,6 +27,8 @@ export class LandingpageComponent implements OnInit {
  /* moviename = 'Tarzan the Ape Man';*/
   resourceUrl = 'api/medias';
   movies = [];
+/*  moviesInit = false;
+  mediaInit = false;*/
 
   medias: IMedia[];
 
@@ -42,33 +44,40 @@ export class LandingpageComponent implements OnInit {
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
+      alert('got medias' + this.medias.length);
+    /*  this.mediaInit = true;*/
       this.initPreviews();
     });
 
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
+        alert('got movies' + this.movies.length);
+     /*   this.moviesInit = true;*/
+        this.initPreviews();
       });
 
   }
 
   initPreviews() {
-    this.medias.forEach((media, index) => {
-      if (media.id && !this.movies[index]) {
-        this.http.get(`${this.resourceUrl}/${media.id}`, {
-          responseType:
-            'blob'
-        }).subscribe((blob: Blob) => {
-          const fileURL = URL.createObjectURL(blob);
-          this.movies[index].url = fileURL;
+  /*  if (this.mediaInit && this.moviesInit) {*/
+      this.medias.forEach((media, index) => {
+        if (media.id && !this.movies[index]) {
+          this.http.get(`${this.resourceUrl}/${media.id}`, {
+            responseType:
+              'blob'
+          }).subscribe((blob: Blob) => {
+            const fileURL = URL.createObjectURL(blob);
+            this.movies[index].url = fileURL;
 
-          this.movies.forEach((movie, index_mov) => {
-            if (movie.id === media.movie.id) {
-              movie.url = fileURL;
-            }
+            this.movies.forEach((movie, index_mov) => {
+              if (true/*movie.id === media.movie.id*/) {
+                movie.url = fileURL;
+              }
+            });
           });
-        });
-      }
-    });
+        }
+      });
+ /*   }*/
   }
 }
