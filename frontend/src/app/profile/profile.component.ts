@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
 
   proflieForm;
   username = 'Max Mustermann'
+  favorite = [];
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 

@@ -13,9 +13,7 @@ import {UserService} from './service/user.service';
 export class UsernameValidator implements AsyncValidator {
   constructor(private userService: UserService) {}
 
- /* validate(control: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
-    return of({ uniqueUsername: true });
-  }*/
+
 
   validate(
     ctrl: AbstractControl
