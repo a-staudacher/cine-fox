@@ -7,6 +7,7 @@ import at.fh.ima.swengs.cineFoxDB.model.SerieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service()
@@ -22,4 +23,7 @@ public class SeriesService {
     public Serie save(Serie entity) {
         return serieRepository.save(entity);
     }
+
+
+    public List<Serie> getAll() {return serieRepository.findAll();}
 }

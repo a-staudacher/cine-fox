@@ -7,11 +7,11 @@ import java.util.Set;
 
 public class SeriesDTO {
 
-    private long id;
+    private Long id;
     private String name;
     private String trailer;
     private Date releaseDate;
-    private Set<Genre> genres;
+    private Set<String> genres;
     private Hersteller hersteller;
     private Kategorie kategorie;
     private Set<Serien_Rating> serien_ratings;
@@ -20,11 +20,11 @@ public class SeriesDTO {
     private Set<Review> reviews;
     private Set<Media> pictures;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -52,11 +52,11 @@ public class SeriesDTO {
         this.releaseDate = releaseDate;
     }
 
-    public Set<Genre> getGenres() {
+    public Set<String> getGenres() {
         return genres;
     }
 
-    public void setGenres(Set<Genre> genres) {
+    public void setGenres(Set<String> genres) {
         this.genres = genres;
     }
 

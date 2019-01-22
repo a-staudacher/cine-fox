@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Set;
 
 @RestController
 public class SerieController {
@@ -26,6 +27,11 @@ public class SerieController {
     @PutMapping("/dto/series/{id}")
     SeriesDTO update(@RequestBody @Valid SeriesDTO dto, @PathVariable long id) {
         return seriesFacade.update(id, dto);
+    }
+
+    @GetMapping("/dto/series")
+    Set<SeriesDTO> getAll() {
+        return seriesFacade.getAll();
     }
 
 }
