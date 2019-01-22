@@ -11,8 +11,8 @@ export class MovieService {
   constructor(private http: HttpClient) {
   }
 
-  getById(id: string) {
-    return this.http.get('/api/dto/series/' + id).pipe(map((res: any) => {
+  getById(id: number) {
+    return this.http.get('/api/dto/series/' + id.toString()).pipe(map((res: any) => {
       if (res.releaseDate) {
         res.releaseDate = new Date(res.releaseDate);
       }

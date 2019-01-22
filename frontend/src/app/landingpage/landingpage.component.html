@@ -108,13 +108,13 @@
 
                   <!--*ngFor="let movie of movies"-->
                   Bild<br>
-                  <img [src]="test | safeUrl" class="img-fluid">
+                  <img [src]="test7.url | safeUrl" class="img-fluid">
                   bild<br>
                   <div *ngFor = "let movie of movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
                         <!--<img src="assets/images/1.jpg" alt="movie_img" />-->
-                        <img [src]="movie.url | safeUrl" class="img-fluid">
+                        <img [src]="moviePictures | safeUrl" class="img-fluid">
                         <div class="prs_upcom_movie_img_overlay"></div>
                         <div class="prs_upcom_movie_img_btn_wrapper">
                           <ul>
@@ -128,7 +128,7 @@
                       <div class="prs_upcom_movie_content_box">
                         <div class="prs_upcom_movie_content_box_inner">
                           <h2><a onclick="reload_js()" [routerLink]="'/movie-show'">{{movie.name}}</a></h2>
-                          <!--<p>Genre </p>--> <div *ngFor="let genre of movies.genre" > </div> {{genre}}	<i class="fa fa-star"></i>
+                          <!--<p>Genre </p>--> <div *ngFor="let genre of movies.genre" > </div> {{movies4Genre(genre)}}	<i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-o"></i>
@@ -136,7 +136,7 @@
                         </div>
                         <div class="prs_upcom_movie_content_box_inner_icon">
                           <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i></a>
+                            <li><button type="submit" ><i class="fa fa-heart"></i></button>
                             </li>
                           </ul>
                         </div>
