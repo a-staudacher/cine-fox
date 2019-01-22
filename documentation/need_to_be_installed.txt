@@ -4,3 +4,5 @@ npm install
 
 	- npm i ng2-file-upload --save
 	- Hinzufügen im NgModule
+2) webstomp-client
+	-npm install --save webstomp-client

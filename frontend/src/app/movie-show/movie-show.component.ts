@@ -5,6 +5,7 @@ import {Person} from '../api/person';
 import {PersonService} from '../service/person.service';
 import {MovieService} from '../service/movie.service';
 import {CharacterService} from '../service/character.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-show',
@@ -14,14 +15,21 @@ import {CharacterService} from '../service/character.service';
 export class MovieShowComponent implements OnInit {
   movieRateForm;
   addActorForm;
+  movieBild;
   movie = {name: '', charakters: [], ratings: []};
   personOptions;
   id;
 
   constructor(private movieService: MovieService, private router: Router, private route: ActivatedRoute,
-              private characterService: CharacterService, private personService: PersonService) { }
+              private characterService: CharacterService, private personService: PersonService, private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('/api/media/1', {responseType:
+        'blob'}).subscribe((blob: Blob) => {
+      const fileURL = URL.createObjectURL(blob);
+      this.movieBild = fileURL;
+    });
+
     this.movieRateForm = new FormGroup({
       'rating': new FormControl(),
       'avgRating': new FormControl()

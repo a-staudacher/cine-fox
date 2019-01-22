@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map, reduce} from 'rxjs/operators';
 import {Router} from '@angular/router';
-import {Subject} from 'rxjs';
+import {Observable, of, Subject} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import {Person} from '../api/person';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -50,4 +52,23 @@ export class UserService {
     this.router.navigate(['']);
   }
 
+  getAll() {
+    return this.http.get('/api/dto/users');
+  }
+
+
+  isUsernameTaken(value: string, duplicate = false): Observable<boolean> {
+    return this.getAll().pipe(map((res: any) => {
+      for (let usr of res) {
+        if (usr.username === value) {
+          duplicate = true;
+        }
+      }
+      return duplicate;
+    }));
+  }
+
+  create(user) {
+    return this.http.post('/api/dto/user', user);
+  }
 }

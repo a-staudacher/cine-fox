@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProfileEditService} from '../service/profile-edit.service';
+import {FavoriteService} from '../service/favorite.service';
 
 @Component({
   selector: 'app-profile-edit',
@@ -11,16 +12,28 @@ import {ProfileEditService} from '../service/profile-edit.service';
 export class ProfileEditComponent implements OnInit {
 
   profileeditForm;
-  username = 'Max Mustermann'
+  shouldNavigateToList: boolean
+  favorite = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, private profileeditService: ProfileEditService) { }
+  constructor(private profileeditService: ProfileEditService, private route: ActivatedRoute, private router: Router, private favoriteService: FavoriteService) { }
 
   ngOnInit() {
 
     this.profileeditForm = new FormGroup({
       'id': new FormControl(),
-      'name': new FormControl()
+      'username': new FormControl(),
+      'profilePicture': new FormControl(),
+      'favorite': new FormControl()
     });
+
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+      this.profileeditService.getById(id)
+        .subscribe((response) => {
+          this.profileeditForm.setValue(response);
+        });
+    }
   }
 
 
@@ -32,19 +45,9 @@ export class ProfileEditComponent implements OnInit {
         .subscribe((response) => {
           alert('updated successfully');
           this.profileeditForm.setValue(response);
-          /*if (this.shouldNavigateToList) {
+          if (this.shouldNavigateToList) {
             this.navigateToList();
-          }*/
-        });
-    } else {
-      this.profileeditService.create(profile)
-        .subscribe((response: any) => {
-          alert('created successfully');
-          /*if (this.shouldNavigateToList) {
-            this.navigateToList();
-          } else {
-            this.router.navigate(['/profileedit-form', response.id]);
-          }*/
+          }
         });
     }
   }

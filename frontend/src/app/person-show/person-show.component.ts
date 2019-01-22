@@ -22,8 +22,8 @@ export class PersonShowComponent implements OnInit {
       'id': new FormControl(),
       'vorname': new FormControl(),
       'nachname': new FormControl(),
-      //'charakters': new FormControl(),
-      //'directors': new FormControl(),
+      'charakters': new FormControl(),
+      'directors': new FormControl(),
       'picture': new FormControl(),
       'dayOfBirth': new FormControl()
     });

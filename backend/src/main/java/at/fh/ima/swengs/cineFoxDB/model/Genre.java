@@ -55,16 +55,16 @@ public class Genre {
         this.name = name;
     }
 
+    public long getVersion() {
+        return version;
+    }
+
     public Set<Serie> getSeries() {
         return series;
     }
 
     public void setSeries(Set<Serie> series) {
         this.series = series;
-    }
-
-    public long getVersion() {
-        return version;
     }
 
     public void setVersion(long version) {
