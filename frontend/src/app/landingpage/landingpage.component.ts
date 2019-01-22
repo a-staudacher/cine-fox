@@ -25,8 +25,8 @@ export class LandingpageComponent implements OnInit {
 
   landingpageForm;
  /* moviename = 'Tarzan the Ape Man';*/
-  resourceUrl = 'api/medias';
   movies = [];
+  test;
 /*  moviesInit = false;
   mediaInit = false;*/
 
@@ -46,7 +46,7 @@ export class LandingpageComponent implements OnInit {
       this.medias = medias;
       /*alert('got medias' + this.medias.length);
       this.mediaInit = true;*/
-      this.initPreviews();
+      //this.initPreviews();
     });
 
     this.movieService.getAll()
@@ -54,15 +54,15 @@ export class LandingpageComponent implements OnInit {
         this.movies = movies;
         /*alert('got movies' + this.movies.length);
         this.moviesInit = true;*/
-        this.initPreviews();
+       // this.initPreviews();
       });
 
-      this.http.get(`${this.resourceUrl}/${1}`, {
+      this.http.get('api/medias/1', {
         responseType:
           'blob'
       }).subscribe((blob: Blob) => {
         const fileURL = URL.createObjectURL(blob);
-        this.movies[0].url = fileURL;
+        this.test = fileURL;
       });
   }
 
@@ -70,7 +70,7 @@ export class LandingpageComponent implements OnInit {
   /*  if (this.mediaInit && this.moviesInit) {*/
       this.medias.forEach((media, index) => {
         if (media.id && !this.movies[index]) {
-          this.http.get(`${this.resourceUrl}/${media.id}`, {
+          this.http.get('api/medias' + media.id, {
             responseType:
               'blob'
           }).subscribe((blob: Blob) => {
