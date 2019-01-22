@@ -27,7 +27,7 @@ export class MediaService {
   }
 
   delete(media) {
-    return this.http.delete('/api/mediass/' + media.id);
+    return this.http.delete('/api/medias/' + media.id);
   }
 
   update(media) {
