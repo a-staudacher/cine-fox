@@ -50,11 +50,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/dto/user").permitAll()
                 .antMatchers(HttpMethod.GET, "/series").permitAll()
                 .antMatchers(HttpMethod.GET, "/genres").permitAll()
-                .antMatchers(HttpMethod.GET, "/media").permitAll()
+                .antMatchers(HttpMethod.GET, "/media/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/charakters").permitAll()
                 .antMatchers(HttpMethod.GET, "/herstellers").permitAll()
                 .antMatchers(HttpMethod.GET, "/kategories").permitAll()
                 .antMatchers(HttpMethod.GET, "/persons").permitAll()
+                .antMatchers(HttpMethod.GET, "/medias/**").permitAll()
                 // must be an admin if trying to access admin area (authentication is also required here)
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 // any other requests must be authenticated
