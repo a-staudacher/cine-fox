@@ -11,4 +11,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public interface CharakterRepository extends PagingAndSortingRepository<Charakter, Long>, JpaRepository<Charakter, Long>, CrudRepository<Charakter, Long> {
 
+    Charakter findByName(String name);
 }

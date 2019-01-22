@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Route} from '@angular/router';
 
 
 @Injectable({
@@ -8,11 +10,11 @@ import {map} from 'rxjs/operators';
 })
 export class CharacterService {
 
-  constructor(private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
   }
 
-  getById(id: string) {
-    return this.http.get('/api/dto/charakters/' + id).pipe(map((res: any) => {
+  getById(id: number) {
+    return this.http.get('/api/dto/charakters/' + id.toString()).pipe(map((res: any) => {
       return res;
     }));
   }
@@ -36,6 +38,5 @@ export class CharacterService {
   create(charakters) {
     return this.http.post('/api/dto/charakters', charakters);
   }
-
 }
 

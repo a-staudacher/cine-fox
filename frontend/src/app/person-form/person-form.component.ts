@@ -14,6 +14,7 @@ import {format} from 'util';
 import {IMedia, MediainputComponent} from '../mediainput/mediainput.component';
 import {DirectorsService} from '../service/directors.service';
 import {FileUploader} from 'ng2-file-upload';
+import {MediaService} from '../service/media.service';
 
 @Component({
   selector: 'app-person-form',
@@ -28,7 +29,7 @@ export class PersonFormComponent implements OnInit {
   charaktersOptions;
 
   constructor(private personService: PersonService, private route: ActivatedRoute, private router: Router, private charactersService: CharacterService,
-              private directorsService: DirectorsService) { }
+              private directorsService: DirectorsService, private mediaService: MediaService) { }
 
   ngOnInit() {
 
