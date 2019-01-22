@@ -52,8 +52,9 @@ export class UserService {
   }
 
   getAll() {
-    return this.http.get('/user');
+    return this.http.get('/api/user');
   }
+
 
   isUsernameTaken(value: string, userList = []): Observable<boolean> {
     this.getAll().pipe(reduce((acc: any, val: any) => {
