@@ -37,7 +37,7 @@
                           </label>
                           <div *ngIf="registryForm.controls.username.pending">Validating...</div>
                           <div *ngIf="registryForm.controls.username.invalid" class="alert alert-danger">
-                            <div *ngIf="username.errors?.uniqueUsername">
+                            <div>
                               Username is already taken.
                             </div>
                           </div>
@@ -51,16 +51,15 @@
                           </label>
                           <br>
                           <br>
+                          <label> Password: &nbsp; </label>
                           <label>
-                            Password: &nbsp;
+                            <input type="password" name="password2" #password2 class="form-control"/>
                           </label>
-                          <label>
-                            <input type="password" name="password" formControlName="password" class="form-control"/>
-                          </label>
+                          <div *ngIf="!(registryForm.controls.password.value === password2.value)">Passwords are not matching.</div>
                           <br>
                           <br>
                           <div>
-                            <button type="submit" class="btn btn-secondary btn-lg">
+                            <button [disabled]="registryForm.controls.username.invalid || !(registryForm.controls.password.value === password2.value)" type="submit" class="btn btn-secondary btn-lg">
                               Registrieren
                             </button>
                           </div>

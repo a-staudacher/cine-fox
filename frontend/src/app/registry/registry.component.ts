@@ -28,6 +28,7 @@ export class RegistryComponent implements OnInit {
   }
 
   register() {
+    this.user = this.registryForm.value;
     this.userService.create(this.user)
       .subscribe((response: any) => {
         alert('user created successfully');
