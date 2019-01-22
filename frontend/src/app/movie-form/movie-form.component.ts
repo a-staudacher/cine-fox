@@ -3,6 +3,9 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {PersonService} from '../service/person.service';
 import {MovieService} from '../service/movie.service';
 import {Router} from '@angular/router';
+import {GenreService} from '../service/genre.service';
+import {HerstellerService} from '../service/hersteller.service';
+import {KategorieService} from '../service/kategorie.service';
 
 @Component({
   selector: 'app-movie-form',
@@ -16,7 +19,9 @@ export class MovieFormComponent implements OnInit {
   kategorieOptions;
   directorOptions;
   shouldNavigateToList: boolean;
-  constructor(private personService: PersonService, private movieService: MovieService, private router: Router) { }
+  constructor(private personService: PersonService, private movieService: MovieService, private router: Router,
+              private genreService: GenreService, private herstellerService: HerstellerService,
+              private kategorieService: KategorieService) { }
 
   ngOnInit() {
     this.movieForm = new FormGroup({
@@ -28,7 +33,7 @@ export class MovieFormComponent implements OnInit {
       'director': new FormControl()
     });
 
-    /*this.genreService.getAll()
+    this.genreService.getAll()
       .subscribe(genre => {
         this.genreOptions = genre;
       });
@@ -41,7 +46,7 @@ export class MovieFormComponent implements OnInit {
     this.kategorieService.getAll()
       .subscribe(kategorien => {
         this.kategorieOptions = kategorien;
-      });*/
+      });
 
     this.personService.getAll()
       .subscribe(persons => {
