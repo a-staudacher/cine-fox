@@ -46,7 +46,7 @@ public class MediaController {
         InputStreamResource resource = new InputStreamResource(new FileInputStream(mediaFile));
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + media.getOriginalFileName())
-                .contentType(MediaType.parseMediaType(media.getContentType())).contentLength(media.getSize())
+                .contentType(MediaType.parseMediaType(media.getContentType()))/*.contentLength(media.getSize())*/
                 .body(resource);
     }
 }
