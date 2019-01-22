@@ -64,8 +64,8 @@ export class MovieShowComponent implements OnInit {
 
   rateMovie() {
     alert(this.movieRateForm.value.rating);
-    //this.movie.ratings.push(this.movieRateForm.value.rating);
-    //this.movieService.update(this.movie);
+    // this.movie.ratings.push(this.movieRateForm.value.rating);
+    // this.movieService.update(this.movie);
   }
 
   editMovie() {

@@ -23,7 +23,7 @@ export interface IMedia {
 })
 export class LandingpageComponent implements OnInit {
 
-  landingpageForm;
+  movieForm;
  /* moviename = 'Tarzan the Ape Man';*/
   resourceUrl = 'api/medias';
   movies = [];
@@ -37,10 +37,15 @@ export class LandingpageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.landingpageForm = new FormGroup({
+    this.movieForm = new FormGroup({
       'id': new FormControl(),
-      'name': new FormControl()
+      'name': new FormControl(),
+      'trailer': new FormControl(),
+      'anzahl': new FormControl(),
+      'releaseDate': new FormControl(),
+      'genres': new FormControl()
     });
+
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
@@ -54,6 +59,8 @@ export class LandingpageComponent implements OnInit {
         this.movies = movies;
         /*alert('got movies' + this.movies.length);
         this.moviesInit = true;*/
+        this.movieForm.setValue(movies[0]);
+        alert('test');
         this.initPreviews();
       });
 
