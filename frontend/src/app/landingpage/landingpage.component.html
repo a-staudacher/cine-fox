@@ -1,6 +1,4 @@
 
-<form [formGroup]="personForm" >
-
 <!-- prs Slider Start -->
 <div class="prs_main_slider_wrapper">
   <div id="rev_slider_41_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="food-carousel26" data-source="gallery" style="margin:0px auto;padding:0px;margin-top:0px;margin-bottom:0px;">
@@ -110,10 +108,11 @@
 
                   <!--*ngFor="let movie of movies"-->
 
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
+                  <div *ngFor = "let movie of movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
-                        <img src="assets/images/1.jpg" alt="movie_img" />
+                        <!--<img src="assets/images/1.jpg" alt="movie_img" />-->
+                        <img [src]="movie.url | safeUrl" *ngIf="movie.url" class="img-fluid">
                         <div class="prs_upcom_movie_img_overlay"></div>
                         <div class="prs_upcom_movie_img_btn_wrapper">
                           <ul>
@@ -126,8 +125,8 @@
                       </div>
                       <div class="prs_upcom_movie_content_box">
                         <div class="prs_upcom_movie_content_box_inner">
-                          <h2><a onclick="reload_js()" [routerLink]="'/movie-show'">{{moviename}}</a></h2>
-                          <p>Drama , Acation</p>	<i class="fa fa-star"></i>
+                          <h2><a onclick="reload_js()" [routerLink]="'/movie-show'">{{movie.name}}</a></h2>
+                          <p>Genre</p>	<i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-o"></i>
@@ -3718,8 +3717,6 @@
   </div>
 </div>
 <!-- prs patner slider End -->
-
-</form>
 
 
 

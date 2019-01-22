@@ -24,7 +24,7 @@ public class User {
     @ManyToOne
     private Role role;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "serie_user",
             joinColumns = @JoinColumn(name = "serie_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))

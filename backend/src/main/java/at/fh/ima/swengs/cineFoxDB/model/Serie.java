@@ -30,7 +30,7 @@ public class Serie {
     private Date releaseDate;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "genre_serie",
+    @JoinTable(name = "Serie_has_Genre",
             joinColumns = @JoinColumn(name = "serie_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
