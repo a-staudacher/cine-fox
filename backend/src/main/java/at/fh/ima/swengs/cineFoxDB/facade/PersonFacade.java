@@ -23,18 +23,19 @@ public class PersonFacade {
     private DirectorService directorService;
 
     @Autowired
-    private SeriesService seriesService;
+    private CharakterService charakterService;
 
     @Autowired
-    private CharakterService charakterService;
+    private SeriesService seriesService;
 
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, at.fh.ima.swengs.cineFoxDB.model.Person entity) {
             entity.setVorname(dto.getVorname());
             entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
             entity.setBeschreibung(dto.getBeschreibung());
-            entity.setDirectors(directorService.getDirectors(seriesService.getSerieNames(dto.getDirectors())));
-            entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
+            entity.setDirectors(seriesService.getDirectors((dto.getDirectors())));
+            entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));;
+            //--------------
             entity.setPictures(dto.getPictures());
         }
 
@@ -44,8 +45,7 @@ public class PersonFacade {
             dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
             dto.setBeschreibung(entity.getBeschreibung());
-            //dto.setDirectors(directorService.getSerieNames((seriesService.getSeries(entity.getDirectors())))).stream().map((m) -> m.()).collect(Collectors.toSet()))));
-            //dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getSerie()).collect(Collectors.toSet()));
+            dto.setDirectors(seriesService.getNames(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet())));
             dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getName()).collect(Collectors.toSet()));
             dto.setPictures(entity.getPictures());
         }

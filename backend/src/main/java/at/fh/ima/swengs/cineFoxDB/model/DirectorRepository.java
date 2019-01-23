@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,9 +16,7 @@ import java.util.Set;
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public interface DirectorRepository extends PagingAndSortingRepository<Director, Long>, JpaRepository<Director, Long>, CrudRepository<Director, Long> {
 
-    Director findDirectorByPerson(Serie person);
-
-    Director findByName (String name);
+    //Director findDirectorByPerson(Serie person);
 
 
 }
