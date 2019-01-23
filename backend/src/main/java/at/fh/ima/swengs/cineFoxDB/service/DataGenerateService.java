@@ -1705,7 +1705,7 @@ public class DataGenerateService {
         //---------Directors ------------
 
             Director dir0 = new Director();
-            dir0.setPerson(null);
+            dir0.setPerson(pers4);
             dir0.setSerie(null);
             directorRepository.save(dir0);
 
@@ -1715,17 +1715,18 @@ public class DataGenerateService {
             directorRepository.save(dir1);
 
             Director dir2 = new Director();
-            dir2.setPerson(null);
+            dir2.setPerson(pers2);
+            dir2.setPerson(pers0);
             dir2.setSerie(null);
             directorRepository.save(dir2);
 
             Director dir3 = new Director();
-            dir3.setPerson(null);
+            dir3.setPerson(pers1);
             dir3.setSerie(null);
             directorRepository.save(dir3);
 
             Director dir4 = new Director();
-            dir4.setPerson(null);
+            dir4.setPerson(pers0);
             dir4.setSerie(null);
             directorRepository.save(dir4);
 

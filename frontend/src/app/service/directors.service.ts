@@ -15,6 +15,12 @@ export class DirectorsService {
     }));
   }
 
+  getById(id: number) {
+    return this.http.get('/api/dto/directors/' + id.toString()).pipe(map((res: any) => {
+      return res;
+    }));
+  }
+
 }
 
 

@@ -4,6 +4,8 @@ import {FileItem, FileUploader, ParsedResponseHeaders} from 'ng2-file-upload';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../service/user.service';
 import {ActivatedRoute} from '@angular/router';
+import {PersonFormComponent} from '../person-form/person-form.component';
+import {PersonService} from '../service/person.service';
 
 export interface IMedia {
   id?: number;
@@ -42,8 +44,8 @@ export class MediainputComponent implements OnInit, ControlValueAccessor {
       url: this.resourceUrl,
       authToken: 'Bearer ' + localStorage.getItem(this.userService.accessTokenLocalStorageKey),
       autoUpload: true
+
     });
-    const id = this.route.snapshot.paramMap.get('id');
 
     this.uploader.onBeforeUploadItem = (item: FileItem) => {
       if (!this.medias) {
@@ -58,6 +60,7 @@ export class MediainputComponent implements OnInit, ControlValueAccessor {
     this.uploader.onSuccessItem = (item: FileItem, response: string, status: number, headers: ParsedResponseHeaders) => {
       const uploadedMedia = <IMedia>JSON.parse(response);
       this.medias.find(media => !media.id && media.originalFileName === uploadedMedia.originalFileName).id = uploadedMedia.id;
+
     };
     this.uploader.onCompleteAll = () => {
       this.onChange(this.medias);

@@ -15,4 +15,6 @@ import java.util.Set;
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public interface CharakterRepository extends PagingAndSortingRepository<Charakter, Long>, JpaRepository<Charakter, Long>, CrudRepository<Charakter, Long> {
     public List<Charakter> findBySerieId(@Param("id") long serie);
+
+    Charakter findByName(String name);
 }

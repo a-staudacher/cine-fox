@@ -15,10 +15,10 @@ public class CharakterService {
     @Autowired
     private CharakterRepository charakterRepository;
 
-    public Set<Charakter> getCharakters(Set<Long> dtos) {
+    public Set<Charakter> getCharakters(Set<String> dtos) {
         Set<Charakter> entities = new HashSet<>();
         if (dtos != null) {
-            dtos.forEach((dto) -> entities.add(charakterRepository.findById(dto).get()));
+            dtos.forEach((dto) -> entities.add(charakterRepository.findByName(dto)));
         }
         return entities;
     }

@@ -37,11 +37,11 @@ export class MovieShowComponent implements OnInit {
       'rating': new FormControl(),
       'avgRating': new FormControl()
     });
-
     this.addActorForm = new FormGroup({
       'name': new FormControl(),
       'person': new FormControl()
     });
+
 
     this.personService.getAll()
       .subscribe(persons => {
