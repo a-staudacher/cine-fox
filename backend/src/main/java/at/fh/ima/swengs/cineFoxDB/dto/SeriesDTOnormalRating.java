@@ -5,7 +5,7 @@ import at.fh.ima.swengs.cineFoxDB.model.*;
 import java.util.Date;
 import java.util.Set;
 
-public class SeriesDTO {
+public class SeriesDTOnormalRating {
 
     private Long id;
     private String name;
@@ -14,10 +14,10 @@ public class SeriesDTO {
     private Set<String> genres;
     private Hersteller hersteller;
     private Kategorie kategorie;
-    private Set<Series_RatingDTO> serien_ratings;
-    //private Set<Charakter> charakters;
+    private Set<Serien_Rating> serien_ratings;
+    private Set<Charakter> charakters;
     private Set<Director> directors;
-    //private Set<Review> reviews;
+    private Set<Review> reviews;
     private Set<Media> pictures;
 
     public Long getId() {
@@ -76,21 +76,21 @@ public class SeriesDTO {
         this.kategorie = kategorie;
     }
 
-    public Set<Series_RatingDTO> getSerien_ratings() {
+    public Set<Serien_Rating> getSerien_ratings() {
         return serien_ratings;
     }
 
-    public void setSerien_ratings(Set<Series_RatingDTO> serien_ratings) {
+    public void setSerien_ratings(Set<Serien_Rating> serien_ratings) {
         this.serien_ratings = serien_ratings;
     }
 
-    /*public Set<Charakter> getCharakters() {
+    public Set<Charakter> getCharakters() {
         return charakters;
     }
 
     public void setCharakters(Set<Charakter> charakters) {
         this.charakters = charakters;
-    }*/
+    }
 
     public Set<Director> getDirectors() {
         return directors;
@@ -100,13 +100,13 @@ public class SeriesDTO {
         this.directors = directors;
     }
 
-    /*public Set<Review> getReviews() {
+    public Set<Review> getReviews() {
         return reviews;
     }
 
     public void setReviews(Set<Review> reviews) {
         this.reviews = reviews;
-    }*/
+    }
 
     public Set<Media> getPictures() {
         return pictures;

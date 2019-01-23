@@ -34,6 +34,12 @@
                         <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
                       </div>
                     </div>
+                    <div class="col" *ngIf="person.pictures">
+                      <div class="hs_blog_box1_img_wrapper">
+                        <td>
+                          <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col">
                         <div class="form-group">
@@ -64,17 +70,23 @@
                       </div>
                     </div>
 
-                    <div class="row" *ngIf="person.directors">
+                    <!--<div class="row">
                       <div class="col">
-                        <label for="director">Movies directed:</label>
-                        <div id="director" *ngFor="let director of person.directors"> {{director}}</div>
+                        <label for="directors">Movies directed:</label>
+                        <div id="directors" *ngFor="let director of person.directors">
+                          <td *ngFor="let movie of getDirectorSerie(director)">
+                            {{movie}}
+                          </td>
+                        </div>
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="row">
                       <div class="col">
                         <label for="charakters">Characters played:</label>
-                        <div id="charakters" *ngFor="let charakter of person.charakters"> {{charakter}}</div>
+                        <div id="charakters" *ngFor="let charakter of person.charakters">
+                            {{charakter}}
+                        </div>
                       </div>
                     </div>
 

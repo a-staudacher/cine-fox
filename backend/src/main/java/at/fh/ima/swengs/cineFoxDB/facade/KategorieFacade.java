@@ -17,13 +17,13 @@ public class KategorieFacade {
 
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.KategorieDTO dto, at.fh.ima.swengs.cineFoxDB.model.Kategorie entity) {
             entity.setBezeichnung(dto.getBezeichnung());
-            entity.setSeries(dto.getSeries());
+            //entity.setSeries(dto.getSeries());
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Kategorie entity, at.fh.ima.swengs.cineFoxDB.dto.KategorieDTO dto) {
             dto.setId(entity.getId());
             dto.setBezeichnung(entity.getBezeichnung());
-            dto.setSeries(entity.getSeries());
+            //dto.setSeries(entity.getSeries());
         }
 
         public at.fh.ima.swengs.cineFoxDB.dto.KategorieDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.KategorieDTO dto) {

@@ -24,7 +24,9 @@ export interface IMedia {
 })
 export class LandingpageComponent implements OnInit {
 
-  landingpageForm;
+  movieForm;
+ /* moviename = 'Tarzan the Ape Man';*/
+  resourceUrl = 'api/medias';
   movies = [];
   test7 = {url: ''};
   moviePictures = [];
@@ -38,10 +40,6 @@ export class LandingpageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.landingpageForm = new FormGroup({
-      'series': new FormControl(),
-      'favourite': new FormControl(),
-    });
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
@@ -51,8 +49,10 @@ export class LandingpageComponent implements OnInit {
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
-        this.landingpageForm.setValue(movies._embedded.series);
-        alert('ttt');
+        //alert(JSON.stringify(this.movies[0]));
+        /*alert('got movies' + this.movies.length);
+        this.moviesInit = true;*/
+        this.initPreviews();
         /*this.movies.forEach((movie) => {
           this.http.get(movie._links.genres.href).subscribe()
           this.joinedMovies.push({movie: movie, genres: });
@@ -73,23 +73,16 @@ export class LandingpageComponent implements OnInit {
   }*/
 
   initPreviews() {
-    this.medias.forEach((media, index) => {
-      if (media.id && !this.movies[index]) {
-        this.http.get('api/medias' + media.id, {
-          responseType:
-            'blob'
-        }).subscribe((blob: Blob) => {
-          const fileURL = URL.createObjectURL(blob);
-          this.movies[index].url = fileURL;
-
-          this.movies.forEach((movie, index_mov) => {
-            if (true) {
-              // movie.url = fileURL;
-              this.moviePictures.push({movieID: movie.id, url: fileURL});
-            }
-          });
-        });
-      }
+    this.movies.forEach((movie, index) => {
+      this.http.get('/api/media/' + movie.pictures[0].id, {responseType:
+          'blob'}).subscribe((blob: Blob) => {
+        const fileURL = URL.createObjectURL(blob);
+        this.moviePictures.push({movie: movie, url: fileURL})
+      });
     });
+  }
+
+  addFav(movId) {
+    alert('Add mov to fav ' + movId);
   }
 }

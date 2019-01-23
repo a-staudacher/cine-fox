@@ -30,8 +30,8 @@ public class Media implements Serializable {
     @ManyToOne
     private Person person;
 
-    @ManyToOne
-    private Serie serie;
+    //@ManyToOne
+    //private Serie serie;
 
     @ManyToOne
     private User user;
@@ -91,13 +91,13 @@ public class Media implements Serializable {
         this.person = person;
     }
 
-    public Serie getSerie() {
+    /*public Serie getSerie() {
         return serie;
     }
 
     public void setSerie(Serie serie) {
         this.serie = serie;
-    }
+    }*/
 
     public User getUser() {
         return user;

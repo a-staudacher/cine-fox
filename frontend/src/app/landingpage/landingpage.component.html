@@ -107,28 +107,25 @@
                  <!-- ____________________________________________________-->
 
                   <!--*ngFor="let movie of movies"-->
-                  Bild<br>
-                  <img [src]="test7.url | safeUrl" class="img-fluid">
-                  bild<br>
-                  <div *ngFor = "let movie of movies" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
+                  <div *ngFor = "let moviePic of moviePictures" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 prs_upcom_slide_first">
                     <div class="prs_upcom_movie_box_wrapper">
                       <div class="prs_upcom_movie_img_box">
                         <!--<img src="assets/images/1.jpg" alt="movie_img" />-->
-                        <img [src]="moviePictures | safeUrl" class="img-fluid">
+                        <img [src]="moviePic.url | safeUrl" class="img-fluid">
                         <div class="prs_upcom_movie_img_overlay"></div>
                         <div class="prs_upcom_movie_img_btn_wrapper">
                           <ul>
                             <li><a class="test-popup-link button" rel='external' href="https://www.youtube.com/embed/DLzxrzFCyOs">View Trailer</a>
                             </li>
-                            <li><a onclick="reload_js()" [routerLink]="'/movie-show'">View Details</a>
+                            <li><a onclick="reload_js()" [routerLink]="'/movie-show/' + moviePic.movie.id">View Details</a>
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div class="prs_upcom_movie_content_box">
                         <div class="prs_upcom_movie_content_box_inner">
-                          <h2><a onclick="reload_js()" [routerLink]="'/movie-show'">{{movie.name}}</a></h2>
-                          <!--<p>Genre </p>--> <div *ngFor="let genre of movies.genre" > </div> {{movies4Genre(genre)}}	<i class="fa fa-star"></i>
+                          <h2><a onclick="reload_js()" [routerLink]="'/movie-show/' + moviePic.movie.id">{{moviePic.movie.name}}</a></h2>
+                          <!--<p>Genre </p>--> <div *ngFor="let genre of moviePic.movie.genres" > {{genre}} </div>	<i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star"></i>
                           <i class="fa fa-star-o"></i>
@@ -136,7 +133,7 @@
                         </div>
                         <div class="prs_upcom_movie_content_box_inner_icon">
                           <ul>
-                            <li><button type="submit" ><i class="fa fa-heart"></i></button>
+                            <li><button (click)="addFav(moviePic.movie.id)" type="submit" ><i class="fa fa-heart"></i></button>
                             </li>
                           </ul>
                         </div>

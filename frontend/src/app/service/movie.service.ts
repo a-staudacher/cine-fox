@@ -21,9 +21,9 @@ export class MovieService {
   }
 
   getAll() {
-    return this.http.get('/api/series').pipe(
+    return this.http.get('/api/dto/series/').pipe(
       map((response: any) => {
-        return response._embedded.series;
+        return response;
       })
     );
   }

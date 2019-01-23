@@ -15,6 +15,8 @@ export class UserService {
   isLoggedIn = false;
   loggedInChange: Subject<boolean> = new Subject<boolean>();
   jwtHelperService: JwtHelperService;
+  loggedInUser;
+  loggedInUserId;
 
   accessTokenLocalStorageKey = 'access_token';
 
@@ -25,6 +27,10 @@ export class UserService {
       console.log('Token expiration date: '
         + this.jwtHelperService.getTokenExpirationDate(token));
       this.isLoggedIn = !this.jwtHelperService.isTokenExpired(token);
+      this.loggedInUser = this.jwtHelperService.decodeToken(token).sub;
+      this.getUserByUsername(this.loggedInUser).subscribe((usr: any) => {
+        this.loggedInUserId = usr.id;
+      })
     }
     this.loggedInChange.subscribe((value) => {
       this.isLoggedIn = value;
@@ -39,7 +45,10 @@ export class UserService {
     }).pipe(map((res: any) => {
       const token = res.headers.get('Authorization').replace(/^Bearer /, '');
       localStorage.setItem(this.accessTokenLocalStorageKey, token);
-      console.log(this.jwtHelperService.decodeToken(token));
+      this.loggedInUser = this.jwtHelperService.decodeToken(token).sub;
+      this.getUserByUsername(this.loggedInUser).subscribe((usr: any) => {
+        this.loggedInUserId = usr.id;
+      })
       this.loggedInChange.next(true);
       this.router.navigate(['']);
       return res;
@@ -56,6 +65,9 @@ export class UserService {
     return this.http.get('/api/dto/users');
   }
 
+  getUserByUsername(username) {
+    return this.http.get('api/users/search/findByUsername?username=' + username);
+  }
 
   isUsernameTaken(value: string, duplicate = false): Observable<boolean> {
     return this.getAll().pipe(map((res: any) => {

@@ -62,7 +62,7 @@ const routes: Routes = [
     path: 'profile', component: ProfileComponent
   },
   {
-    path: 'profile-edit', component: ProfileEditComponent
+    path: 'profile-edit/:id', component: ProfileEditComponent
   }
 ];
 

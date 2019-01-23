@@ -16,10 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.swing.*;
 import java.lang.reflect.Array;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service("dataGenerateService")   // It has to be annotated with @Service.
 public class DataGenerateService {
@@ -220,196 +217,6 @@ public class DataGenerateService {
 
 
 
-            //----------Reviews-----------
-            Review review1 = new Review();
-            review1.setReviewText("Beschter Film allerzeitn oida");
-            review1.setSerie(null);
-            review1.setUser(null);
-            reviewRepository.save(review1);
-
-            Review review2 = new Review();
-            review2.setReviewText("Könnte besser sein ");
-            review2.setSerie(null);
-            review2.setUser(null);
-            reviewRepository.save(review2);
-
-            Review review3 = new Review();
-            review3.setReviewText("Der film war gut nur die anderen Kinobesucher sind zu laut gewesen");
-            review3.setSerie(null);
-            review3.setUser(null);
-            reviewRepository.save(review3);
-
-            Review review4 = new Review();
-            review4.setReviewText("Der Film ist für den Inhalt nicht mal 1 Cent wert");
-            review4.setSerie(null);
-            review4.setUser(null);
-            reviewRepository.save(review4);
-
-            Review review5 = new Review();
-            review5.setReviewText("Hab schon besseres gesehen");
-            review5.setSerie(null);
-            review5.setUser(null);
-            reviewRepository.save(review5);
-
-            Review review6 = new Review();
-            review6.setReviewText("Diesen Film kann ich nur weiterempfehlen");
-            review6.setSerie(null);
-            review6.setUser(null);
-            reviewRepository.save(review6);
-
-            Review review7 = new Review();
-            review7.setReviewText("Noch eine Fortsetzung nach die niemand gefragt hat");
-            review7.setSerie(null);
-            review7.setUser(null);
-            reviewRepository.save(review7);
-
-            Review review8 = new Review();
-            review8.setReviewText("Der Sitz war unbeguem, aber sonst war der Film nicht schlecht");
-            review8.setSerie(null);
-            review8.setUser(null);
-            reviewRepository.save(review8);
-
-            Review review9 = new Review();
-            review9.setReviewText("Mein Popcorn war versalzen");
-            review9.setSerie(null);
-            review9.setUser(null);
-            reviewRepository.save(review9);
-
-            Review review10 = new Review();
-            review10.setReviewText("Also für Blinde ist dieser Film nicht zu empfehlen");
-            review10.setSerie(null);
-            review10.setUser(null);
-            reviewRepository.save(review10);
-
-            Review review11 = new Review();
-            review11.setReviewText("Ich hätte mir die Ohren zu halten sollen bei diesem Film");
-            review11.setSerie(null);
-            review11.setUser(null);
-            reviewRepository.save(review11);
-
-            Review review12 = new Review();
-            review12.setReviewText("Seit wann sind Hunde im Kino erlaubt");
-            review12.setSerie(null);
-            review12.setUser(null);
-            reviewRepository.save(review12);
-
-            Review review13 = new Review();
-            review13.setReviewText("Ich glaub das ist alles erfunden");
-            review13.setSerie(null);
-            review13.setUser(null);
-            reviewRepository.save(review13);
-
-            Review review14 = new Review();
-            review14.setReviewText("Toller Film, wenn man entspannen will");
-            review14.setSerie(null);
-            review14.setUser(null);
-            reviewRepository.save(review14);
-
-
-
-
-
-
-
-
-            //----------Serien Rating-----------
-
-            //-----Serie 1-------
-            Serien_Rating rating1 = new Serien_Rating();
-            rating1.setRating(2);
-            rating1.setSerie(null);
-            rating1.setUser(null);
-            serien_ratingRepository.save(rating1);
-
-            Serien_Rating rating2 = new Serien_Rating();
-            rating2.setRating(5);
-            rating2.setSerie(null);
-            rating2.setUser(null);
-            serien_ratingRepository.save(rating2);
-
-            Serien_Rating rating3 = new Serien_Rating();
-            rating3.setRating(4);
-            rating3.setSerie(null);
-            rating3.setUser(null);
-            serien_ratingRepository.save(rating3);
-
-            //-----Serie 2-------
-            Serien_Rating rating4 = new Serien_Rating();
-            rating4.setRating(1);
-            rating4.setSerie(null);
-            rating4.setUser(null);
-            serien_ratingRepository.save(rating4);
-
-            Serien_Rating rating5 = new Serien_Rating();
-            rating5.setRating(3);
-            rating5.setSerie(null);
-            rating5.setUser(null);
-            serien_ratingRepository.save(rating5);
-
-            Serien_Rating rating6 = new Serien_Rating();
-            rating6.setRating(5);
-            rating6.setSerie(null);
-            rating6.setUser(null);
-            serien_ratingRepository.save(rating6);
-
-            //-----Serie 3-------
-            Serien_Rating rating7 = new Serien_Rating();
-            rating7.setRating(5);
-            rating7.setSerie(null);
-            rating7.setUser(null);
-            serien_ratingRepository.save(rating7);
-
-            Serien_Rating rating8 = new Serien_Rating();
-            rating8.setRating(5);
-            rating8.setSerie(null);
-            rating8.setUser(null);
-            serien_ratingRepository.save(rating8);
-
-            Serien_Rating rating9 = new Serien_Rating();
-            rating9.setRating(5);
-            rating9.setSerie(null);
-            rating9.setUser(null);
-            serien_ratingRepository.save(rating9);
-
-            //-----Serie 4-------
-            Serien_Rating rating10 = new Serien_Rating();
-            rating10.setRating(2);
-            rating10.setSerie(null);
-            rating10.setUser(null);
-            serien_ratingRepository.save(rating10);
-
-            Serien_Rating rating11 = new Serien_Rating();
-            rating11.setRating(4);
-            rating11.setSerie(null);
-            rating11.setUser(null);
-            serien_ratingRepository.save(rating11);
-
-            Serien_Rating rating12 = new Serien_Rating();
-            rating12.setRating(1);
-            rating12.setSerie(null);
-            rating12.setUser(null);
-            serien_ratingRepository.save(rating12);
-
-            //-----Serie 5-------
-            Serien_Rating rating13 = new Serien_Rating();
-            rating13.setRating(3);
-            rating13.setSerie(null);
-            rating13.setUser(null);
-            serien_ratingRepository.save(rating13);
-
-            Serien_Rating rating14 = new Serien_Rating();
-            rating14.setRating(1);
-            rating14.setSerie(null);
-            rating14.setUser(null);
-            serien_ratingRepository.save(rating14);
-
-            Serien_Rating rating15 = new Serien_Rating();
-            rating15.setRating(5);
-            rating15.setSerie(null);
-            rating15.setUser(null);
-            serien_ratingRepository.save(rating15);
-
-
 
 
             /*Media picture1 = new Media();
@@ -422,9 +229,9 @@ public class DataGenerateService {
 
             Serie movie1 = new Serie();
             movie1.setName("Tarzan the Ape Man");
-            movie1.setHersteller(null);
+            movie1.setHersteller(her_20century);
             movie1.setReleaseDate(new Date());
-            movie1.setKategorie(null);
+            movie1.setKategorie(kat_movie);
             movie1.setReviews(null);
             movie1.setFav_users(null);
             movie1.setTrailer("undefined");
@@ -433,9 +240,9 @@ public class DataGenerateService {
 
             Serie movie2 = new Serie();
             movie2.setName("Attack of the 50 ft. Woman");
-            movie2.setHersteller(null);
+            movie2.setHersteller(her_alliedArtist);
             movie2.setReleaseDate(new Date());
-            movie2.setKategorie(null);
+            movie2.setKategorie(kat_anime);
             movie2.setReviews(null);
             movie2.setFav_users(null);
             movie2.setTrailer("undefined");
@@ -444,9 +251,9 @@ public class DataGenerateService {
 
             Serie movie3 = new Serie();
             movie3.setName("Betrayed Woman");
-            movie3.setHersteller(null);
+            movie3.setHersteller(her_bernhard);
             movie3.setReleaseDate(new Date());
-            movie3.setKategorie(null);
+            movie3.setKategorie(kat_series);
             movie3.setReviews(null);
             movie3.setFav_users(null);
             movie3.setTrailer("undefined");
@@ -455,9 +262,9 @@ public class DataGenerateService {
 
             Serie movie4 = new Serie();
             movie4.setName("Carmen");
-            movie4.setHersteller(null);
+            movie4.setHersteller(her_charles);
             movie4.setReleaseDate(new Date());
-            movie4.setKategorie(null);
+            movie4.setKategorie(kat_movie);
             movie4.setReviews(null);
             movie4.setFav_users(null);
             movie4.setTrailer("undefined");
@@ -466,9 +273,9 @@ public class DataGenerateService {
 
             Serie movie5 = new Serie();
             movie5.setName("The Circus Girl");
-            movie5.setHersteller(null);
+            movie5.setHersteller(her_cinema);
             movie5.setReleaseDate(new Date());
-            movie5.setKategorie(null);
+            movie5.setKategorie(kat_movie);
             movie5.setReviews(null);
             movie5.setFav_users(null);
             movie5.setTrailer("undefined");
@@ -477,9 +284,9 @@ public class DataGenerateService {
 
             Serie movie6 = new Serie();
             movie6.setName("The Clubs Baby");
-            movie6.setHersteller(null);
+            movie6.setHersteller(her_cuyahoga);
             movie6.setReleaseDate(new Date());
-            movie6.setKategorie(null);
+            movie6.setKategorie(kat_movie);
             movie6.setReviews(null);
             movie6.setFav_users(null);
             movie6.setTrailer("undefined");
@@ -488,9 +295,9 @@ public class DataGenerateService {
 
             Serie movie7 = new Serie();
             movie7.setName("The Cocaine Friends");
-            movie7.setHersteller(null);
+            movie7.setHersteller(her_gartner);
             movie7.setReleaseDate(new Date());
-            movie7.setKategorie(null);
+            movie7.setKategorie(kat_movie);
             movie7.setReviews(null);
             movie7.setFav_users(null);
             movie7.setTrailer("undefined");
@@ -499,9 +306,9 @@ public class DataGenerateService {
 
             Serie movie8 = new Serie();
             movie8.setName("An Arizona Cowboy 1");
-            movie8.setHersteller(null);
+            movie8.setHersteller(her_georg);
             movie8.setReleaseDate(new Date());
-            movie8.setKategorie(null);
+            movie8.setKategorie(kat_movie);
             movie8.setReviews(null);
             movie8.setFav_users(null);
             movie8.setTrailer("undefined");
@@ -510,9 +317,9 @@ public class DataGenerateService {
 
             Serie movie9 = new Serie();
             movie9.setName("An Arizona Cowboy 2");
-            movie9.setHersteller(null);
+            movie9.setHersteller(her_george);
             movie9.setReleaseDate(new Date());
-            movie9.setKategorie(null);
+            movie9.setKategorie(kat_movie);
             movie9.setReviews(null);
             movie9.setFav_users(null);
             movie9.setTrailer("undefined");
@@ -521,9 +328,9 @@ public class DataGenerateService {
 
             Serie movie10 = new Serie();
             movie10.setName("An Arizona Cowboy 3");
-            movie10.setHersteller(null);
+            movie10.setHersteller(her_jacob);
             movie10.setReleaseDate(new Date());
-            movie10.setKategorie(null);
+            movie10.setKategorie(kat_movie);
             movie10.setReviews(null);
             movie10.setFav_users(null);
             movie10.setTrailer("undefined");
@@ -532,9 +339,9 @@ public class DataGenerateService {
 
             Serie movie11 = new Serie();
             movie11.setName("Creature from the Black Lagoon");
-            movie11.setHersteller(null);
+            movie11.setHersteller(her_martin);
             movie11.setReleaseDate(new Date());
-            movie11.setKategorie(null);
+            movie11.setKategorie(kat_movie);
             movie11.setReviews(null);
             movie11.setFav_users(null);
             movie11.setTrailer("undefined");
@@ -1080,181 +887,6 @@ public class DataGenerateService {
 
 
 
-
-            //----------Genres-----------
-            Genre genre0 = new Genre();
-            genre0.setName("Anime");
-            genreRepository.save(genre0);
-
-            Genre genre1 = new Genre();
-            Set<Serie> movieforGenre1 = new HashSet<>();
-            movieforGenre1.add(movie1);
-            movieforGenre1.add(movie24);
-            movieforGenre1.add(movie26);
-            movieforGenre1.add(movie44);
-            movieforGenre1.add(movie45);
-            movieforGenre1.add(movie51);
-            movieforGenre1.add(movie52);
-            movieforGenre1.add(movie58);
-            genre1.setSeries(movieforGenre1);
-            genre1.setName("Action");
-            genreRepository.save(genre1);
-
-            Genre genre2 = new Genre();
-            Set<Serie> movieforGenre2 = new HashSet<>();
-            movieforGenre2.add(movie29);
-            movieforGenre2.add(movie34);
-            movieforGenre2.add(movie39);
-            movieforGenre2.add(movie54);
-            genre2.setSeries(movieforGenre2);
-            genre2.setName("Adventure");
-            genreRepository.save(genre2);
-
-            Genre genre3 = new Genre();
-            Set<Serie> movieforGenre3 = new HashSet<>();
-            movieforGenre3.add(movie20);
-            genre3.setSeries(movieforGenre3);
-            genre3.setName("Comedy");
-            genreRepository.save(genre3);
-
-            Genre genre4 = new Genre();
-            Set<Serie> movieforGenre4 = new HashSet<>();
-            movieforGenre4.add(movie7);
-            movieforGenre4.add(movie19);
-            movieforGenre4.add(movie23);
-            movieforGenre4.add(movie24);
-            movieforGenre4.add(movie25);
-            genre4.setSeries(movieforGenre4);
-            genre4.setName("Crime");
-            genreRepository.save(genre4);
-
-            Genre genre5 = new Genre();
-            Set<Serie> movieforGenre5 = new HashSet<>();
-            movieforGenre5.add(movie3);
-            movieforGenre5.add(movie5);
-            movieforGenre5.add(movie6);
-            movieforGenre5.add(movie18);
-            movieforGenre5.add(movie29);
-            movieforGenre5.add(movie55);
-            movieforGenre5.add(movie56);
-            genre5.setSeries(movieforGenre5);
-            genre5.setName("Drama");
-            genreRepository.save(genre5);
-
-            Genre genre6 = new Genre();
-            Set<Serie> movieforGenre6 = new HashSet<>();
-            movieforGenre6.add(movie33);
-            movieforGenre6.add(movie37);
-            movieforGenre6.add(movie38);
-            movieforGenre6.add(movie41);
-            genre6.setSeries(movieforGenre6);
-            genre6.setName("Fantasy");
-            genreRepository.save(genre6);
-
-            Genre genre7 = new Genre();
-            Set<Serie> movieforGenre7 = new HashSet<>();
-            movieforGenre7.add(movie28);
-            movieforGenre7.add(movie54);
-            movieforGenre7.add(movie55);
-            movieforGenre7.add(movie57);
-            genre7.setSeries(movieforGenre7);
-            genre7.setName("Historical");
-            genreRepository.save(genre7);
-
-            Genre genre8 = new Genre();
-            Set<Serie> movieforGenre8 = new HashSet<>();
-            movieforGenre8.add(movie2);
-            movieforGenre8.add(movie6);
-            movieforGenre8.add(movie11);
-            movieforGenre8.add(movie16);
-            movieforGenre8.add(movie17);
-            movieforGenre8.add(movie21);
-            movieforGenre8.add(movie27);
-            movieforGenre8.add(movie35);
-            movieforGenre8.add(movie37);
-            movieforGenre8.add(movie40);
-            movieforGenre8.add(movie44);
-            movieforGenre8.add(movie48);
-            movieforGenre8.add(movie50);
-            movieforGenre8.add(movie59);
-            genre8.setSeries(movieforGenre8);
-            genre8.setName("Horror");
-            genreRepository.save(genre8);
-
-            Genre genre9 = new Genre();
-            Set<Serie> movieforGenre9 = new HashSet<>();
-            movieforGenre9.add(movie3);
-            movieforGenre9.add(movie7);
-            movieforGenre9.add(movie16);
-            movieforGenre9.add(movie17);
-            movieforGenre9.add(movie32);
-            movieforGenre9.add(movie36);
-            movieforGenre9.add(movie46);
-            genre9.setSeries(movieforGenre9);
-            genre9.setName("Mystery");
-            genreRepository.save(genre9);
-
-            Genre genre10 = new Genre();
-            Set<Serie> movieforGenre10 = new HashSet<>();
-            movieforGenre10.add(movie4);
-            movieforGenre10.add(movie5);
-            movieforGenre10.add(movie13);
-            movieforGenre10.add(movie19);
-            movieforGenre10.add(movie23);
-            movieforGenre10.add(movie26);
-            movieforGenre10.add(movie32);
-            movieforGenre10.add(movie43);
-            movieforGenre10.add(movie46);
-            movieforGenre10.add(movie51);
-            movieforGenre10.add(movie56);
-            movieforGenre10.add(movie59);
-            genre10.setSeries(movieforGenre10);
-            genre10.setName("Romance");
-            genreRepository.save(genre10);
-
-            Genre genre11 = new Genre();
-            Set<Serie> movieforGenre11 = new HashSet<>();
-            movieforGenre11.add(movie2);
-            movieforGenre11.add(movie12);
-            movieforGenre11.add(movie14);
-            movieforGenre11.add(movie15);
-            movieforGenre11.add(movie27);
-            movieforGenre11.add(movie38);
-            movieforGenre11.add(movie41);
-            movieforGenre11.add(movie42);
-            movieforGenre11.add(movie45);
-            movieforGenre11.add(movie50);
-            movieforGenre11.add(movie52);
-            movieforGenre11.add(movie58);
-            movieforGenre11.add(movie60);
-            genre11.setSeries(movieforGenre11);
-            genre11.setName("Science fiction");
-            genreRepository.save(genre11);
-
-            Genre genre12 = new Genre();
-            Set<Serie> movieforGenre12 = new HashSet<>();
-            movieforGenre12.add(movie8);
-            movieforGenre12.add(movie9);
-            movieforGenre12.add(movie10);
-            movieforGenre12.add(movie60);
-            genre12.setSeries(movieforGenre12);
-            genre12.setName("Thriller");
-            genreRepository.save(genre12);
-
-            Genre genre13 = new Genre();
-            Set<Serie> movieforGenre13 = new HashSet<>();
-            movieforGenre13.add(movie22);
-            movieforGenre13.add(movie30);
-            movieforGenre13.add(movie31);
-            movieforGenre13.add(movie34);
-            movieforGenre13.add(movie39);
-            movieforGenre13.add(movie47);
-            movieforGenre13.add(movie49);
-            movieforGenre13.add(movie53);
-            genre13.setSeries(movieforGenre13);
-            genre13.setName("Western");
-            genreRepository.save(genre13);
-
             //----------Favourites-----------
 
             //-----Favorite Staudi------------
@@ -1293,133 +925,354 @@ public class DataGenerateService {
 
             //----------------Pictures Movies---------------
 
+            Media[] moviePictures = new Media[61];
+            for(int i=1;i<=60;i++)
+            {
+                moviePictures[i] = new Media();
+                moviePictures[i].setContentType("image/jpeg");
+                moviePictures[i].originalFileName("");
+                moviePictures[i].size((long)2);
+                moviePictures[i].setSavedAt("p"+i+".jpg");
+                mediaRepository.save(moviePictures[i]);
+            }
+
+            List<Set<Media>> picForMov = new ArrayList<Set<Media>>();
+            picForMov.add(0,new HashSet<Media>());
+            for(int j=1;j<=60;j++)
+            {
+                Set<Media>zwischen = new HashSet<Media>();
+                zwischen.add(moviePictures[j]);
+                picForMov.add(j,zwischen);
+            }
+
+            movie1.setPictures(picForMov.get(1));
+            serieRepository.save(movie1);
+            movie2.setPictures(picForMov.get(2));
+            serieRepository.save(movie2);
+            movie3.setPictures(picForMov.get(3));
+            serieRepository.save(movie3);
+            movie4.setPictures(picForMov.get(4));
+            serieRepository.save(movie4);
+            movie5.setPictures(picForMov.get(5));
+            serieRepository.save(movie5);
+            movie6.setPictures(picForMov.get(6));
+            serieRepository.save(movie6);
+            movie7.setPictures(picForMov.get(7));
+            serieRepository.save(movie7);
+            movie8.setPictures(picForMov.get(8));
+            serieRepository.save(movie8);
+            movie9.setPictures(picForMov.get(9));
+            serieRepository.save(movie9);
+            movie10.setPictures(picForMov.get(10));
+            serieRepository.save(movie10);
+            movie11.setPictures(picForMov.get(11));
+            serieRepository.save(movie11);
+            movie12.setPictures(picForMov.get(12));
+            serieRepository.save(movie12);
+            movie13.setPictures(picForMov.get(13));
+            serieRepository.save(movie13);
+            movie14.setPictures(picForMov.get(14));
+            serieRepository.save(movie14);
+            movie15.setPictures(picForMov.get(15));
+            serieRepository.save(movie15);
+            movie16.setPictures(picForMov.get(16));
+            serieRepository.save(movie16);
+            movie17.setPictures(picForMov.get(17));
+            serieRepository.save(movie17);
+            movie18.setPictures(picForMov.get(18));
+            serieRepository.save(movie18);
+            movie19.setPictures(picForMov.get(19));
+            serieRepository.save(movie19);
+            movie20.setPictures(picForMov.get(20));
+            serieRepository.save(movie20);
+            movie21.setPictures(picForMov.get(21));
+            serieRepository.save(movie21);
+            movie22.setPictures(picForMov.get(22));
+            serieRepository.save(movie22);
+            movie23.setPictures(picForMov.get(23));
+            serieRepository.save(movie23);
+            movie24.setPictures(picForMov.get(24));
+            serieRepository.save(movie24);
+            movie25.setPictures(picForMov.get(25));
+            serieRepository.save(movie25);
+            movie26.setPictures(picForMov.get(26));
+            serieRepository.save(movie26);
+            movie27.setPictures(picForMov.get(27));
+            serieRepository.save(movie27);
+            movie28.setPictures(picForMov.get(28));
+            serieRepository.save(movie28);
+            movie29.setPictures(picForMov.get(29));
+            serieRepository.save(movie29);
+            movie30.setPictures(picForMov.get(30));
+            serieRepository.save(movie30);
+            movie31.setPictures(picForMov.get(31));
+            serieRepository.save(movie31);
+            movie32.setPictures(picForMov.get(32));
+            serieRepository.save(movie32);
+            movie33.setPictures(picForMov.get(33));
+            serieRepository.save(movie33);
+            movie34.setPictures(picForMov.get(34));
+            serieRepository.save(movie34);
+            movie35.setPictures(picForMov.get(35));
+            serieRepository.save(movie35);
+            movie36.setPictures(picForMov.get(36));
+            serieRepository.save(movie36);
+            movie37.setPictures(picForMov.get(37));
+            serieRepository.save(movie37);
+            movie38.setPictures(picForMov.get(38));
+            serieRepository.save(movie38);
+            movie39.setPictures(picForMov.get(39));
+            serieRepository.save(movie39);
+            movie40.setPictures(picForMov.get(40));
+            serieRepository.save(movie40);
+            movie41.setPictures(picForMov.get(41));
+            serieRepository.save(movie41);
+            movie42.setPictures(picForMov.get(42));
+            serieRepository.save(movie42);
+            movie43.setPictures(picForMov.get(43));
+            serieRepository.save(movie43);
+            movie44.setPictures(picForMov.get(44));
+            serieRepository.save(movie44);
+            movie45.setPictures(picForMov.get(45));
+            serieRepository.save(movie45);
+            movie46.setPictures(picForMov.get(46));
+            serieRepository.save(movie46);
+            movie47.setPictures(picForMov.get(47));
+            serieRepository.save(movie47);
+            movie48.setPictures(picForMov.get(48));
+            serieRepository.save(movie48);
+            movie49.setPictures(picForMov.get(49));
+            serieRepository.save(movie49);
+            movie50.setPictures(picForMov.get(50));
+            serieRepository.save(movie50);
+            movie51.setPictures(picForMov.get(51));
+            serieRepository.save(movie51);
+            movie52.setPictures(picForMov.get(52));
+            serieRepository.save(movie52);
+            movie53.setPictures(picForMov.get(53));
+            serieRepository.save(movie53);
+            movie54.setPictures(picForMov.get(54));
+            serieRepository.save(movie54);
+            movie55.setPictures(picForMov.get(55));
+            serieRepository.save(movie55);
+            movie56.setPictures(picForMov.get(56));
+            serieRepository.save(movie56);
+            movie57.setPictures(picForMov.get(57));
+            serieRepository.save(movie57);
+            movie58.setPictures(picForMov.get(58));
+            serieRepository.save(movie58);
+            movie59.setPictures(picForMov.get(59));
+            serieRepository.save(movie59);
+            movie60.setPictures(picForMov.get(60));
+            serieRepository.save(movie60);
+
+            /*
             Media picture1 = new Media();
             picture1.setContentType("image/jpeg");
             picture1.originalFileName("");
             picture1.size((long)2);
             picture1.setSavedAt("p1.jpg");
-            picture1.setSerie(movie1);
+
             mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<Media>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture2 = new Media();
             picture2.setContentType("image/jpeg");
             picture2.originalFileName("");
             picture2.size((long)2);
             picture2.setSavedAt("p2.jpg");
-            picture2.setSerie(movie2);
+
             mediaRepository.save(picture2);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov2 = new HashSet<>();
+            picForMov2.add(picture2);
+            movie1.setPictures(picForMov2);
+            serieRepository.save(movie2);
 
             Media picture3 = new Media();
             picture3.setContentType("image/jpeg");
             picture3.originalFileName("");
             picture3.size((long)2);
             picture3.setSavedAt("p3.jpg");
-            picture3.setSerie(movie3);
-            mediaRepository.save(picture3);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture4 = new Media();
             picture4.setContentType("image/jpeg");
             picture4.originalFileName("");
             picture4.size((long)2);
             picture4.setSavedAt("p4.jpg");
-            picture4.setSerie(movie4);
-            mediaRepository.save(picture4);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture5 = new Media();
             picture5.setContentType("image/jpeg");
             picture5.originalFileName("");
             picture5.size((long)2);
             picture5.setSavedAt("p5.jpg");
-            picture5.setSerie(movie5);
-            mediaRepository.save(picture5);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture6 = new Media();
             picture6.setContentType("image/jpeg");
             picture6.originalFileName("");
             picture6.size((long)2);
             picture6.setSavedAt("p6.jpg");
-            picture6.setSerie(movie6);
-            mediaRepository.save(picture6);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture7 = new Media();
             picture7.setContentType("image/jpeg");
             picture7.originalFileName("");
             picture7.size((long)2);
             picture7.setSavedAt("p7.jpg");
-            picture7.setSerie(movie7);
-            mediaRepository.save(picture7);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture8 = new Media();
             picture8.setContentType("image/jpeg");
             picture8.originalFileName("");
             picture8.size((long)2);
             picture8.setSavedAt("p8.jpg");
-            picture8.setSerie(movie8);
-            mediaRepository.save(picture8);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture9 = new Media();
             picture9.setContentType("image/jpeg");
             picture9.originalFileName("");
             picture9.size((long)2);
             picture9.setSavedAt("p9.jpg");
-            picture9.setSerie(movie9);
-            mediaRepository.save(picture9);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture10 = new Media();
             picture10.setContentType("image/jpeg");
             picture10.originalFileName("");
             picture10.size((long)2);
             picture10.setSavedAt("p10.jpg");
-            picture10.setSerie(movie10);
-            mediaRepository.save(picture10);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture11 = new Media();
             picture11.setContentType("image/jpeg");
             picture11.originalFileName("");
             picture11.size((long)2);
             picture11.setSavedAt("p11.jpg");
-            picture11.setSerie(movie11);
-            mediaRepository.save(picture11);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture12 = new Media();
             picture12.setContentType("image/jpeg");
             picture12.originalFileName("");
             picture12.size((long)2);
             picture12.setSavedAt("p12.jpg");
-            picture12.setSerie(movie12);
-            mediaRepository.save(picture12);
 
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
             Media picture13 = new Media();
             picture13.setContentType("image/jpeg");
             picture13.originalFileName("");
             picture13.size((long)2);
             picture13.setSavedAt("p13.jpg");
-            picture13.setSerie(movie13);
-            mediaRepository.save(picture13);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture14 = new Media();
             picture14.setContentType("image/jpeg");
             picture14.originalFileName("");
             picture14.size((long)2);
             picture14.setSavedAt("p14.jpg");
-            picture14.setSerie(movie14);
-            mediaRepository.save(picture14);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture15 = new Media();
             picture15.setContentType("image/jpeg");
             picture15.originalFileName("");
             picture15.size((long)2);
             picture15.setSavedAt("p15.jpg");
-            picture15.setSerie(movie15);
-            mediaRepository.save(picture15);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture16 = new Media();
             picture16.setContentType("image/jpeg");
             picture16.originalFileName("");
             picture16.size((long)2);
             picture16.setSavedAt("p16.jpg");
-            picture16.setSerie(movie16);
-            mediaRepository.save(picture16);
+
+            mediaRepository.save(picture1);
+            //picture1.setSerie(movie1);
+            Set<Media>picForMov1 = new HashSet<>();
+            picForMov1.add(picture1);
+            movie1.setPictures(picForMov1);
+            serieRepository.save(movie1);
 
             Media picture17 = new Media();
             picture17.setContentType("image/jpeg");
@@ -1771,7 +1624,7 @@ public class DataGenerateService {
             picture60.size((long)2);
             picture60.setSavedAt("p60.jpg");
             picture60.setSerie(movie60);
-            mediaRepository.save(picture60);
+            mediaRepository.save(picture60);*/
 
 
 
@@ -1822,37 +1675,37 @@ public class DataGenerateService {
             Charakter char0 = new Charakter();
             char0.setName("Biggus Dickus");
             char0.setPerson(pers4);
-            char0.setSerie(null);
+            char0.setSerie(movie1);
             charakterRepository.save(char0);
 
             Charakter char1 = new Charakter();
             char1.setName("Aragorn");
             char1.setPerson(pers3);
-            char1.setSerie(null);
+            char1.setSerie(movie1);
             charakterRepository.save(char1);
 
             Charakter char2 = new Charakter();
             char2.setName("Deine Mutter");
             char2.setPerson(pers2);
-            char2.setSerie(null);
+            char2.setSerie(movie1);
             charakterRepository.save(char2);
 
             Charakter char3 = new Charakter();
             char3.setName("Son Goku");
             char3.setPerson(pers1);
-            char3.setSerie(null);
+            char3.setSerie(movie2);
             charakterRepository.save(char3);
 
             Charakter char4 = new Charakter();
             char4.setName("Darth Vaders behinderter kleiner Bruder");
             char4.setPerson(pers0);
-            char4.setSerie(null);
+            char4.setSerie(movie2);
             charakterRepository.save(char4);
 
         //---------Directors ------------
 
             Director dir0 = new Director();
-            dir0.setPerson(null);
+            dir0.setPerson(pers4);
             dir0.setSerie(null);
             directorRepository.save(dir0);
 
@@ -1862,19 +1715,381 @@ public class DataGenerateService {
             directorRepository.save(dir1);
 
             Director dir2 = new Director();
-            dir2.setPerson(null);
+            dir2.setPerson(pers2);
+            dir2.setPerson(pers0);
             dir2.setSerie(null);
             directorRepository.save(dir2);
 
             Director dir3 = new Director();
-            dir3.setPerson(null);
+            dir3.setPerson(pers1);
             dir3.setSerie(null);
             directorRepository.save(dir3);
 
             Director dir4 = new Director();
-            dir4.setPerson(null);
+            dir4.setPerson(pers0);
             dir4.setSerie(null);
             directorRepository.save(dir4);
+
+
+            //----------Genres-----------
+            Genre genre0 = new Genre();
+            genre0.setName("Anime");
+            genreRepository.save(genre0);
+
+            Genre genre1 = new Genre();
+            Set<Serie> movieforGenre1 = new HashSet<>();
+            movieforGenre1.add(movie1);
+            movieforGenre1.add(movie24);
+            movieforGenre1.add(movie26);
+            movieforGenre1.add(movie44);
+            movieforGenre1.add(movie45);
+            movieforGenre1.add(movie51);
+            movieforGenre1.add(movie52);
+            movieforGenre1.add(movie58);
+            genre1.setSeries(movieforGenre1);
+            genre1.setName("Action");
+            genreRepository.save(genre1);
+
+            Genre genre2 = new Genre();
+            Set<Serie> movieforGenre2 = new HashSet<>();
+            movieforGenre2.add(movie29);
+            movieforGenre2.add(movie34);
+            movieforGenre2.add(movie39);
+            movieforGenre2.add(movie54);
+            genre2.setSeries(movieforGenre2);
+            genre2.setName("Adventure");
+            genreRepository.save(genre2);
+
+            Genre genre3 = new Genre();
+            Set<Serie> movieforGenre3 = new HashSet<>();
+            movieforGenre3.add(movie20);
+            genre3.setSeries(movieforGenre3);
+            genre3.setName("Comedy");
+            genreRepository.save(genre3);
+
+            Genre genre4 = new Genre();
+            Set<Serie> movieforGenre4 = new HashSet<>();
+            movieforGenre4.add(movie7);
+            movieforGenre4.add(movie19);
+            movieforGenre4.add(movie23);
+            movieforGenre4.add(movie24);
+            movieforGenre4.add(movie25);
+            genre4.setSeries(movieforGenre4);
+            genre4.setName("Crime");
+            genreRepository.save(genre4);
+
+            Genre genre5 = new Genre();
+            Set<Serie> movieforGenre5 = new HashSet<>();
+            movieforGenre5.add(movie3);
+            movieforGenre5.add(movie5);
+            movieforGenre5.add(movie6);
+            movieforGenre5.add(movie18);
+            movieforGenre5.add(movie29);
+            movieforGenre5.add(movie55);
+            movieforGenre5.add(movie56);
+            genre5.setSeries(movieforGenre5);
+            genre5.setName("Drama");
+            genreRepository.save(genre5);
+
+            Genre genre6 = new Genre();
+            Set<Serie> movieforGenre6 = new HashSet<>();
+            movieforGenre6.add(movie33);
+            movieforGenre6.add(movie37);
+            movieforGenre6.add(movie38);
+            movieforGenre6.add(movie41);
+            genre6.setSeries(movieforGenre6);
+            genre6.setName("Fantasy");
+            genreRepository.save(genre6);
+
+            Genre genre7 = new Genre();
+            Set<Serie> movieforGenre7 = new HashSet<>();
+            movieforGenre7.add(movie28);
+            movieforGenre7.add(movie54);
+            movieforGenre7.add(movie55);
+            movieforGenre7.add(movie57);
+            genre7.setSeries(movieforGenre7);
+            genre7.setName("Historical");
+            genreRepository.save(genre7);
+
+            Genre genre8 = new Genre();
+            Set<Serie> movieforGenre8 = new HashSet<>();
+            movieforGenre8.add(movie2);
+            movieforGenre8.add(movie6);
+            movieforGenre8.add(movie11);
+            movieforGenre8.add(movie16);
+            movieforGenre8.add(movie17);
+            movieforGenre8.add(movie21);
+            movieforGenre8.add(movie27);
+            movieforGenre8.add(movie35);
+            movieforGenre8.add(movie37);
+            movieforGenre8.add(movie40);
+            movieforGenre8.add(movie44);
+            movieforGenre8.add(movie48);
+            movieforGenre8.add(movie50);
+            movieforGenre8.add(movie59);
+            genre8.setSeries(movieforGenre8);
+            genre8.setName("Horror");
+            genreRepository.save(genre8);
+
+            Genre genre9 = new Genre();
+            Set<Serie> movieforGenre9 = new HashSet<>();
+            movieforGenre9.add(movie3);
+            movieforGenre9.add(movie7);
+            movieforGenre9.add(movie16);
+            movieforGenre9.add(movie17);
+            movieforGenre9.add(movie32);
+            movieforGenre9.add(movie36);
+            movieforGenre9.add(movie46);
+            genre9.setSeries(movieforGenre9);
+            genre9.setName("Mystery");
+            genreRepository.save(genre9);
+
+            Genre genre10 = new Genre();
+            Set<Serie> movieforGenre10 = new HashSet<>();
+            movieforGenre10.add(movie4);
+            movieforGenre10.add(movie5);
+            movieforGenre10.add(movie13);
+            movieforGenre10.add(movie19);
+            movieforGenre10.add(movie23);
+            movieforGenre10.add(movie26);
+            movieforGenre10.add(movie32);
+            movieforGenre10.add(movie43);
+            movieforGenre10.add(movie46);
+            movieforGenre10.add(movie51);
+            movieforGenre10.add(movie56);
+            movieforGenre10.add(movie59);
+            genre10.setSeries(movieforGenre10);
+            genre10.setName("Romance");
+            genreRepository.save(genre10);
+
+            Genre genre11 = new Genre();
+            Set<Serie> movieforGenre11 = new HashSet<>();
+            movieforGenre11.add(movie2);
+            movieforGenre11.add(movie12);
+            movieforGenre11.add(movie14);
+            movieforGenre11.add(movie15);
+            movieforGenre11.add(movie27);
+            movieforGenre11.add(movie38);
+            movieforGenre11.add(movie41);
+            movieforGenre11.add(movie42);
+            movieforGenre11.add(movie45);
+            movieforGenre11.add(movie50);
+            movieforGenre11.add(movie52);
+            movieforGenre11.add(movie58);
+            movieforGenre11.add(movie60);
+            genre11.setSeries(movieforGenre11);
+            genre11.setName("Science fiction");
+            genreRepository.save(genre11);
+
+            Genre genre12 = new Genre();
+            Set<Serie> movieforGenre12 = new HashSet<>();
+            movieforGenre12.add(movie8);
+            movieforGenre12.add(movie9);
+            movieforGenre12.add(movie10);
+            movieforGenre12.add(movie60);
+            genre12.setSeries(movieforGenre12);
+            genre12.setName("Thriller");
+            genreRepository.save(genre12);
+
+            Genre genre13 = new Genre();
+            Set<Serie> movieforGenre13 = new HashSet<>();
+            movieforGenre13.add(movie22);
+            movieforGenre13.add(movie30);
+            movieforGenre13.add(movie31);
+            movieforGenre13.add(movie34);
+            movieforGenre13.add(movie39);
+            movieforGenre13.add(movie47);
+            movieforGenre13.add(movie49);
+            movieforGenre13.add(movie53);
+            genre13.setSeries(movieforGenre13);
+            genre13.setName("Western");
+            genreRepository.save(genre13);
+
+
+            //----------Reviews-----------
+            Review review1 = new Review();
+            review1.setReviewText("Beschter Film allerzeitn oida");
+            review1.setSerie(movie1);
+            review1.setUser(usr_florian);
+            reviewRepository.save(review1);
+
+            Review review2 = new Review();
+            review2.setReviewText("Könnte besser sein ");
+            review2.setSerie(movie2);
+            review2.setUser(usr_georg);
+            reviewRepository.save(review2);
+
+            Review review3 = new Review();
+            review3.setReviewText("Der film war gut nur die anderen Kinobesucher sind zu laut gewesen");
+            review3.setSerie(movie1);
+            review3.setUser(usr_andreas);
+            reviewRepository.save(review3);
+
+            Review review4 = new Review();
+            review4.setReviewText("Der Film ist für den Inhalt nicht mal 1 Cent wert");
+            review4.setSerie(movie1);
+            review4.setUser(usr_martin);
+            reviewRepository.save(review4);
+
+            Review review5 = new Review();
+            review5.setReviewText("Hab schon besseres gesehen");
+            review5.setSerie(movie2);
+            review5.setUser(usr_florian);
+            reviewRepository.save(review5);
+
+            Review review6 = new Review();
+            review6.setReviewText("Diesen Film kann ich nur weiterempfehlen");
+            review6.setSerie(movie2);
+            review6.setUser(usr_martin);
+            reviewRepository.save(review6);
+
+            Review review7 = new Review();
+            review7.setReviewText("Noch eine Fortsetzung nach die niemand gefragt hat");
+            review7.setSerie(movie3);
+            review7.setUser(usr_andreas);
+            reviewRepository.save(review7);
+
+            Review review8 = new Review();
+            review8.setReviewText("Der Sitz war unbeguem, aber sonst war der Film nicht schlecht");
+            review8.setSerie(movie3);
+            review8.setUser(usr_florian);
+            reviewRepository.save(review8);
+
+            Review review9 = new Review();
+            review9.setReviewText("Mein Popcorn war versalzen");
+            review9.setSerie(movie3);
+            review9.setUser(usr_georg);
+            reviewRepository.save(review9);
+
+            Review review10 = new Review();
+            review10.setReviewText("Also für Blinde ist dieser Film nicht zu empfehlen");
+            review10.setSerie(movie4);
+            review10.setUser(usr_martin);
+            reviewRepository.save(review10);
+
+            Review review11 = new Review();
+            review11.setReviewText("Ich hätte mir die Ohren zu halten sollen bei diesem Film");
+            review11.setSerie(movie4);
+            review11.setUser(usr_georg);
+            reviewRepository.save(review11);
+
+            Review review12 = new Review();
+            review12.setReviewText("Seit wann sind Hunde im Kino erlaubt");
+            review12.setSerie(movie4);
+            review12.setUser(usr_florian);
+            reviewRepository.save(review12);
+
+            Review review13 = new Review();
+            review13.setReviewText("Ich glaub das ist alles erfunden");
+            review13.setSerie(movie5);
+            review13.setUser(usr_florian);
+            reviewRepository.save(review13);
+
+            Review review14 = new Review();
+            review14.setReviewText("Toller Film, wenn man entspannen will");
+            review14.setSerie(movie6);
+            review14.setUser(usr_martin);
+            reviewRepository.save(review14);
+
+
+            //----------Serien Rating-----------
+
+            //-----Serie 1-------
+            Serien_Rating rating1 = new Serien_Rating();
+            rating1.setRating(2);
+            rating1.setSerie(movie1);
+            rating1.setUser(usr_andreas);
+            serien_ratingRepository.save(rating1);
+
+            Serien_Rating rating2 = new Serien_Rating();
+            rating2.setRating(5);
+            rating2.setSerie(movie1);
+            rating2.setUser(usr_florian);
+            serien_ratingRepository.save(rating2);
+
+            Serien_Rating rating3 = new Serien_Rating();
+            rating3.setRating(4);
+            rating3.setSerie(movie1);
+            rating3.setUser(usr_georg);
+            serien_ratingRepository.save(rating3);
+
+            //-----Serie 2-------
+            Serien_Rating rating4 = new Serien_Rating();
+            rating4.setRating(1);
+            rating4.setSerie(movie2);
+            rating4.setUser(usr_martin);
+            serien_ratingRepository.save(rating4);
+
+            Serien_Rating rating5 = new Serien_Rating();
+            rating5.setRating(3);
+            rating5.setSerie(movie2);
+            rating5.setUser(usr_georg);
+            serien_ratingRepository.save(rating5);
+
+            Serien_Rating rating6 = new Serien_Rating();
+            rating6.setRating(5);
+            rating6.setSerie(movie2);
+            rating6.setUser(usr_florian);
+            serien_ratingRepository.save(rating6);
+
+            //-----Serie 3-------
+            Serien_Rating rating7 = new Serien_Rating();
+            rating7.setRating(5);
+            rating7.setSerie(movie3);
+            rating7.setUser(usr_andreas);
+            serien_ratingRepository.save(rating7);
+
+            Serien_Rating rating8 = new Serien_Rating();
+            rating8.setRating(5);
+            rating8.setSerie(movie3);
+            rating8.setUser(usr_florian);
+            serien_ratingRepository.save(rating8);
+
+            Serien_Rating rating9 = new Serien_Rating();
+            rating9.setRating(5);
+            rating9.setSerie(movie3);
+            rating9.setUser(usr_georg);
+            serien_ratingRepository.save(rating9);
+
+            //-----Serie 4-------
+            Serien_Rating rating10 = new Serien_Rating();
+            rating10.setRating(2);
+            rating10.setSerie(movie4);
+            rating10.setUser(usr_andreas);
+            serien_ratingRepository.save(rating10);
+
+            Serien_Rating rating11 = new Serien_Rating();
+            rating11.setRating(4);
+            rating11.setSerie(movie4);
+            rating11.setUser(usr_florian);
+            serien_ratingRepository.save(rating11);
+
+            Serien_Rating rating12 = new Serien_Rating();
+            rating12.setRating(1);
+            rating12.setSerie(movie4);
+            rating12.setUser(usr_martin);
+            serien_ratingRepository.save(rating12);
+
+            //-----Serie 5-------
+            Serien_Rating rating13 = new Serien_Rating();
+            rating13.setRating(3);
+            rating13.setSerie(movie5);
+            rating13.setUser(usr_georg);
+            serien_ratingRepository.save(rating13);
+
+            Serien_Rating rating14 = new Serien_Rating();
+            rating14.setRating(1);
+            rating14.setSerie(movie5);
+            rating14.setUser(usr_andreas);
+            serien_ratingRepository.save(rating14);
+
+            Serien_Rating rating15 = new Serien_Rating();
+            rating15.setRating(5);
+            rating15.setSerie(movie5);
+            rating15.setUser(usr_martin);
+            serien_ratingRepository.save(rating15);
+
+
         }
 
     }

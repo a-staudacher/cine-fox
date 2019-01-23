@@ -14,12 +14,12 @@ public class DirectorService {
     @Autowired
     private DirectorRepository directorRepository;
 
-    public Set<Director> getDirectors(Set<Long> dtos) {
+    /*public Set<Director> getDirectors(Set<String> dtos) {
         Set<Director> entities = new HashSet<>();
         if (dtos != null) {
-            dtos.forEach((dto) -> entities.add(directorRepository.findById(dto).get()));
+            dtos.forEach((dto) -> entities.add(directorRepository.findSerieName(dto)));
         }
         return entities;
-    }
+    }*/
 
 }
