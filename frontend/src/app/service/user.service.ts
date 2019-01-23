@@ -17,6 +17,7 @@ export class UserService {
   jwtHelperService: JwtHelperService;
   loggedInUser;
   loggedInUserId;
+  isAdmin;
 
   accessTokenLocalStorageKey = 'access_token';
 
@@ -26,8 +27,14 @@ export class UserService {
     if (token) {
       console.log('Token expiration date: '
         + this.jwtHelperService.getTokenExpirationDate(token));
-      this.isLoggedIn = !this.jwtHelperService.isTokenExpired(token);
       this.loggedInUser = this.jwtHelperService.decodeToken(token).sub;
+      //this.loggedInUser = this.jwtHelperService.decodeToken(token);
+      this.isAdmin = this.jwtHelperService.decodeToken(token).authorities.includes("ROLE_ADMIN");
+      this.isLoggedIn = !this.jwtHelperService.isTokenExpired(token);
+      if(!this.isLoggedIn) {
+        this.isAdmin = false;
+      }
+
       this.getUserByUsername(this.loggedInUser).subscribe((usr: any) => {
         this.loggedInUserId = usr.id;
       })
@@ -46,6 +53,7 @@ export class UserService {
       const token = res.headers.get('Authorization').replace(/^Bearer /, '');
       localStorage.setItem(this.accessTokenLocalStorageKey, token);
       this.loggedInUser = this.jwtHelperService.decodeToken(token).sub;
+      this.isAdmin = this.jwtHelperService.decodeToken(token).authorities.includes("ROLE_ADMIN");
       this.getUserByUsername(this.loggedInUser).subscribe((usr: any) => {
         this.loggedInUserId = usr.id;
       })

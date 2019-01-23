@@ -73,16 +73,30 @@ export class LandingpageComponent implements OnInit {
   }*/
 
   initPreviews() {
+    alert(JSON.stringify(this.movies[0]));
     this.movies.forEach((movie, index) => {
+      if(movie.pictures[0])
+      {
       this.http.get('/api/media/' + movie.pictures[0].id, {responseType:
           'blob'}).subscribe((blob: Blob) => {
         const fileURL = URL.createObjectURL(blob);
         this.moviePictures.push({movie: movie, url: fileURL})
       });
+      }
     });
   }
 
   addFav(movId) {
     alert('Add mov to fav ' + movId);
+  }
+
+  arrayOne(n, avg=0) {
+    if(n.length>0) {
+      for (var i = 0; i < n.length; i++) {
+        avg = avg + n[i].rating;
+      }
+      avg = avg / n.length;
+    }
+    return Array(Math.floor(avg));
   }
 }

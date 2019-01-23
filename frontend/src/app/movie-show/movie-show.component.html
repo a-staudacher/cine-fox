@@ -56,12 +56,13 @@
                   </div>
                   <br>
 
-                    <div class="row">
+                    <div class="row" *ngIf="isLoggedIn()">
                       <div class="col">
                         <label for="rating">Your Rating:</label><br>
                         <rating id="rating"  (onLeave)="rateMovie()" type="text" name="rating" [max]="5" formControlName="rating"></rating>
                       </div>
                     </div>
+                    <div *ngIf="!isLoggedIn()">You need to log in to rate the movie.</div>
                     <br>
                   </form>
 
@@ -74,14 +75,14 @@
                           <tr>
                             <th scope="col">Actor</th>
                             <th scope="col">Character</th>
-                            <th scope="col">Actions</th>
+                            <th *ngIf="isAdmin()" scope="col">Actions</th>
                           </tr>
                           </thead>
                           <tbody>
                           <tr *ngFor="let charakter of actors">
                             <td>{{charakter.person.vorname}} {{charakter.person.nachname}}</td>
                             <td>{{charakter.name}}</td>
-                            <td>
+                            <td *ngIf="isAdmin()">
                               <button type="submit" (click)="editChar(charakter.person.id)" class="btn btn-primary">Edit</button>
                               <button type="submit" (click)="deleteChar(charakter)" class="btn btn-danger">Delete</button>
                             </td>
@@ -90,6 +91,7 @@
                         </table>
                         <br>
 
+                        <div *ngIf="isAdmin()">
                         <form [formGroup]="addActorForm" (ngSubmit)="addActor()">
                         <h2>Add new Actor</h2>
                         <div class="row">
@@ -104,6 +106,7 @@
                               Actor:
                               <ngx-select id="person" [items]="personOptions" name="person" [multiple]="false"
                                           formControlName="person" optionTextField="nachname"></ngx-select>
+                              {{addActorForm.value.person}}
                             </div><!-- /input-group -->
                           </div><!-- /.col-lg-6 -->
                           <div class="col-lg-4">
@@ -114,6 +117,8 @@
                           </div>
                         </div>
                         </form>
+                        </div>
+
                         <br>
                         <label for="titel">Reviews</label>
                         <table class="table table-striped">
@@ -124,19 +129,23 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr *ngFor="let review of reviews">
-                            <td>{{review.user.username}}</td>
-                            <td> {{review.reviewText}}</td>
+                          <tr *ngFor="let review of fullReviews">
+                            <td><a [routerLink]="'/profile/'+review.user.id">{{review.user.username}}</a></td>
+                            <td> {{review.review.reviewText}}</td>
                           </tr>
                           </tbody>
                         </table>
-                        <h2>Post a Review</h2>
-                        <textarea></textarea>
-                        <br>
-                        <button>Submit</button>
-                        <br>
+                        <div *ngIf="isLoggedIn()">
+                        <div class="form-group">
+                          <label for="review">Post a Review:</label>
+                          <textarea #reviewText class="form-control" rows="5" id="review"></textarea>
+                        </div>
+                        <button class="btn btn-success" (click)="postReview(reviewText.value)">Submit</button>
+                        </div>
+                        <div *ngIf="!isLoggedIn()">You need to log in to post a Review.</div>
+                        <br><br>
 
-                        <button type="submit" (click)="editMovie()" class="btn btn-primary">EditMovie</button>
+                        <button *ngIf="isAdmin()" type="submit" (click)="editMovie()" class="btn btn-primary">EditMovie</button>
                       </div>
                     </div>
                     <!--<div class="row">

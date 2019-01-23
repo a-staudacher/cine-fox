@@ -28,14 +28,15 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <div class="hs_blog_box1_main_wrapper">
                 <div class="hs_blog_box1_img_wrapper">
-                  <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
+                  <img [src]="movieBild | safeUrl"
+                       class="img-fluid" style="width: 30%; margin-left: auto; margin-right: auto; display:block;">
                 </div>
                 <div class="hs_blog_box1_cont_main_wrapper">
                   <div class="hs_blog_cont_heading_wrapper">
                     <div class="row">
                       <div class="col">
-                        <app-mediainput name="picture"
-                                        formControlName="picture"></app-mediainput>
+                        <app-mediainput name="pictures"
+                                        formControlName="pictures"></app-mediainput>
                       </div>
                     </div>
                     <!--<input [id]="'field_' + name" type="file" ng2FileSelect [uploader]="uploader" [multiple]="true"/>-->
@@ -45,8 +46,8 @@
                     <br>
                     <h2>Genre</h2>
                     <!-- Genre Auswahl -->
-                    <ngx-select id="genre" [items]="genreOptions" name="genre" [multiple]="true"
-                                formControlName="genre" optionTextField="name"></ngx-select>
+                    <ngx-select id="genres" [items]="genreOptions" name="genres" [multiple]="true"
+                                formControlName="genres" optionTextField="name"></ngx-select>
                     <br>
                     <h2>Hersteller</h2>
                     <!--Hersteller auswahl / eingabe-->
@@ -64,18 +65,14 @@
                     <br> -->
                     <h2>Director</h2>
                     <!--Direktor auswahl-->
-                    <ngx-select id="director" [items]="directorOptions" name="director" [multiple]="false"
-                                formControlName="director" optionTextField="nachname"></ngx-select>
+                    <ngx-select id="directors" [items]="directorOptions" name="directors" [multiple]="false"
+                                formControlName="directors" optionTextField="nachname"></ngx-select>
                     <br>
+                    <div *ngIf="movieForm.invalid">Please first fill out the form. <br>
+                      All fields are required for saving.</div>
                     <div class="btn-group">
-                      <button type="submit" class="btn btn-primary" [disabled]="false">
+                      <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">
                         Save
-                      </button>
-                      <button type="submit" (click)="setShouldNavigateToList()" class="btn btn-primary" [disabled]="false">
-                        Save and Back
-                      </button>
-                      <button type="submit" (click)="navigateToList()" class="btn btn-primary">
-                        Back without saving
                       </button>
                     </div>
 

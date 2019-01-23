@@ -17,6 +17,10 @@ export class GenreService {
     }));
   }
 
+  getByName(name) {
+    return this.http.get('api/genres/search/findByName?name=' + name);
+  }
+
   getAll() {
     return this.http.get('/api/genres').pipe(
       map((response: any) => {

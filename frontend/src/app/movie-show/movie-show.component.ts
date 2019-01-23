@@ -10,6 +10,7 @@ import {Series_ratingService} from '../service/series_rating.service';
 import {UserService} from '../service/user.service';
 import {map} from 'rxjs/operators';
 import {forEach} from '@angular/router/src/utils/collection';
+import {ReviewService} from '../service/review.service';
 
 @Component({
   selector: 'app-movie-show',
@@ -21,6 +22,8 @@ export class MovieShowComponent implements OnInit {
   addActorForm;
   movieBild;
   movie;
+  reviews = [];
+  fullReviews = [];
   personOptions;
   id;
   avgRating = 0;
@@ -30,7 +33,8 @@ export class MovieShowComponent implements OnInit {
 
   constructor(private movieService: MovieService, private router: Router, private route: ActivatedRoute,
               private characterService: CharacterService, private personService: PersonService, private http: HttpClient,
-              private series_ratingService: Series_ratingService, private userService: UserService) { }
+              private series_ratingService: Series_ratingService, private userService: UserService,
+              private reviewService: ReviewService) { }
 
   ngOnInit() {
     this.movieRateForm = new FormGroup({
@@ -61,7 +65,6 @@ export class MovieShowComponent implements OnInit {
               if(this.userService.loggedInUserId === usr.id) {
                 this.ownRating = rating.rating;
                 this.ownRatingId = rating.id;
-                alert(this.ownRatingId);
                 this.movieRateForm.controls.rating.setValue(rating.rating);
               }
             })
@@ -78,6 +81,14 @@ export class MovieShowComponent implements OnInit {
             this.movieBild = fileURL;
           });
         });
+      this.reviewService.getBySerie(this.id).subscribe((reviews: any) => {
+        this.reviews = reviews;
+        this.reviews.forEach((rev)=> {
+          this.reviewService.getReviewUserById(rev.id).subscribe((usr) => {
+            this.fullReviews.push({review: rev, user: usr});
+          });
+        });
+      });
       this.characterService.getBySerie(this.id).subscribe(chars => {
         chars.forEach((char)=> {
           this.characterService.getById(char.id).subscribe((fullChar => {
@@ -132,6 +143,14 @@ export class MovieShowComponent implements OnInit {
     this.router.navigate(['/person-form/' + id]);
   }
 
+  isLoggedIn() {
+    return this.userService.isLoggedIn;
+  }
+
+  isAdmin() {
+    return this.userService.isAdmin;
+  }
+
   deleteChar(charakter) {
     this.characterService.delete(charakter).subscribe( () => {
       alert('Character deleted.');
@@ -144,13 +163,27 @@ export class MovieShowComponent implements OnInit {
   addActor() {
     this.characterService.create({
       name: this.addActorForm.value.name,
-      person: this.addActorForm.value.person,
-      serie: this.movie
+      person: 'http://localhost:8080/persons/' + this.addActorForm.value.person,
+      serie: 'http://localhost:8080/series/' + this.id
       }
-    );
-    alert(this.addActorForm.value.name);
-    alert(this.addActorForm.value.person);
+    ).subscribe((acc: any) => {
+      this.characterService.getById(acc.id).subscribe((fullChar => {
+        this.actors.push(fullChar);
+      }));
+    });
     // this.characterService.create(this.addActorForm.value);
+  }
+
+  postReview(reviewText) {
+    this.reviewService.create({
+      "reviewText": reviewText,
+      user: 'http://localhost:8080/users/' + this.userService.loggedInUserId,
+      serie: 'http://localhost:8080/series/' + this.id
+    }).subscribe((newReview: any) => {
+      this.reviewService.getReviewUserById(newReview.id).subscribe((usr) => {
+        this.fullReviews.push({review: newReview, user: usr});
+      });
+    });
   }
 
 }

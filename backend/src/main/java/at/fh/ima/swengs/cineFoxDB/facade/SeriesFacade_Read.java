@@ -39,7 +39,8 @@ public class SeriesFacade_Read {
             Set<Serien_Rating> sR = entity.getSerien_ratings();
             dto.setSerien_ratings(sR.stream().map((m) -> new Series_RatingDTO(m.getId(),m.getRating())).collect(Collectors.toSet()));
             //dto.setCharakters(entity.getCharakters());
-            dto.setDirectors(entity.getDirectors());
+            dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
+
             //dto.setReviews(entity.getReviews());
             dto.setPictures(entity.getPictures());
         }

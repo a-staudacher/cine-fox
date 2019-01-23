@@ -29,7 +29,7 @@ const routes: Routes = [
     path: 'movie-form', component: MovieFormComponent
   },
   {
-    path: 'movie-form/:id', component: MovieFormComponent
+    path: 'movie-form/:id', component: MovieFormComponent, canActivate: [AuthGuard]
   },
   {
     path: 'movie-show', component: MovieShowComponent
@@ -60,6 +60,9 @@ const routes: Routes = [
   },
   {
     path: 'profile', component: ProfileComponent
+  },
+  {
+    path: 'profile/:id', component: ProfileComponent
   },
   {
     path: 'profile-edit/:id', component: ProfileEditComponent

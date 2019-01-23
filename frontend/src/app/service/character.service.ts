@@ -36,7 +36,7 @@ export class CharacterService {
   }
 
   create(charakters) {
-    return this.http.post('/api/dto/charakters', charakters);
+    return this.http.post('/api/charakters', charakters);
   }
 
   getBySerie(id) {

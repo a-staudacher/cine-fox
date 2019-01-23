@@ -29,6 +29,14 @@
                 <div class="hs_blog_box1_cont_main_wrapper">
                   <div class="hs_blog_cont_heading_wrapper">
                     <div class="prs_title_heading_wrapper">
+                      <form class="form-inline">
+                      <div class="form-group mx-sm-3 mb-2">
+                        <label for="searchinput" class="sr-only">Search here:</label>
+                        <input id="searchinput" class="form-control" type="text" #searchText placeholder="Search Movie">
+                      </div>
+                      <button (click)="searchMovies(searchText.value)" type="button" class="btn btn-warning mb-2">Search</button>
+                      </form>
+                      <br><br>
                       <h3 style="color: black">Search-Results</h3>
                       <br>
                       <table class="table table-striped">

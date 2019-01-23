@@ -4,6 +4,7 @@ import at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO;
 import at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating;
 import at.fh.ima.swengs.cineFoxDB.dto.UserDTO;
 import at.fh.ima.swengs.cineFoxDB.model.Serie;
+import at.fh.ima.swengs.cineFoxDB.service.DirectorService;
 import at.fh.ima.swengs.cineFoxDB.service.GenreService;
 import at.fh.ima.swengs.cineFoxDB.service.SeriesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class SeriesFacade {
 
     @Autowired
     private GenreService genreService;
+
+    @Autowired
+    private DirectorService directorService;
     /*
         @Autowired
         private MovieService movieService;*/
@@ -37,7 +41,9 @@ public class SeriesFacade {
             entity.setKategorie(dto.getKategorie());
             entity.setSerien_ratings(dto.getSerien_ratings());
             entity.setCharakters(dto.getCharakters());
-            entity.setDirectors(dto.getDirectors());
+
+            entity.setDirectors(directorService.getDirectors(dto.getDirectors()));
+
             entity.setReviews(dto.getReviews());
             entity.setPictures(dto.getPictures());
         }
@@ -52,7 +58,7 @@ public class SeriesFacade {
             dto.setKategorie(entity.getKategorie());
             dto.setSerien_ratings(entity.getSerien_ratings());
             dto.setCharakters(entity.getCharakters());
-            dto.setDirectors(entity.getDirectors());
+            dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
             dto.setReviews(entity.getReviews());
             dto.setPictures(entity.getPictures());
         }
