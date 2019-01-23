@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../service/user.service';
 import {FormBuilder, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
 import {UsernameValidator} from '../usernameValidator';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-registry',
@@ -15,7 +16,7 @@ export class RegistryComponent implements OnInit {
   user;
 
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router,
-  private usernameValidator: UsernameValidator) {}
+  private usernameValidator: UsernameValidator, private toastr: ToastrService) {}
 
   ngOnInit() {
 
@@ -31,7 +32,7 @@ export class RegistryComponent implements OnInit {
     this.user = this.registryForm.value;
     this.userService.create(this.user)
       .subscribe((response: any) => {
-        alert('user created successfully');
+        this.toastr.success('Account was created');
         this.router.navigate(['/index', response.id]);
       });
   }

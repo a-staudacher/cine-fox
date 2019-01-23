@@ -59,7 +59,7 @@
                           <br>
                           <br>
                           <div>
-                            <button [disabled]="registryForm.controls.username.invalid || !(registryForm.controls.password.value === password2.value)" type="submit" class="btn btn-secondary btn-lg">
+                            <button [disabled]="registryForm.controls.username.invalid || !(registryForm.controls.password.value === password2.value)" onclick="reload_js()" type="submit" class="btn btn-secondary btn-lg">
                               Registrieren
                             </button>
                           </div>
