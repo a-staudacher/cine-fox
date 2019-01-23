@@ -30,7 +30,7 @@ public class PersonFacade {
             entity.setDayOfBirth(dto.getDayOfBirth());
             entity.setBeschreibung(dto.getBeschreibung());
             entity.setDirectors(directorService.getDirectors(dto.getDirectors()));
-            entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
+            //entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
             entity.setPictures(dto.getPictures());
         }
 
@@ -41,7 +41,7 @@ public class PersonFacade {
             dto.setDayOfBirth(entity.getDayOfBirth());
             dto.setBeschreibung(entity.getBeschreibung());
             dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
-            dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
+            //dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
             dto.setPictures(entity.getPictures());
         }
 

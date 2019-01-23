@@ -62,7 +62,14 @@ public class Serie {
     private Set<Review> reviews;
 
 
-    @OneToMany(mappedBy = "serie")
+    @ManyToMany
+    @JoinTable(name =
+            "serie_media"
+            ,
+            joinColumns = @JoinColumn(name =
+                    "serie_id"),
+            inverseJoinColumns = @JoinColumn(name =
+                    "media_id"))
     private Set<Media> pictures = new HashSet<>();
 
 

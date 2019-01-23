@@ -17,13 +17,11 @@ public class HerstellerFacade {
 
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.HerstellerDTO dto, at.fh.ima.swengs.cineFoxDB.model.Hersteller entity) {
             entity.setBezeichnung(dto.getBezeichnung());
-            entity.setSeries(dto.getSeries());
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Hersteller entity, at.fh.ima.swengs.cineFoxDB.dto.HerstellerDTO dto) {
             dto.setId(entity.getId());
             dto.setBezeichnung(entity.getBezeichnung());
-            dto.setSeries(entity.getSeries());
         }
 
         public at.fh.ima.swengs.cineFoxDB.dto.HerstellerDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.HerstellerDTO dto) {

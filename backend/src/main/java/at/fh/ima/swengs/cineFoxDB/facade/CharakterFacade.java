@@ -1,6 +1,7 @@
 package at.fh.ima.swengs.cineFoxDB.facade;
 
 import at.fh.ima.swengs.cineFoxDB.dto.CharakterDTO;
+import at.fh.ima.swengs.cineFoxDB.model.Serie;
 import at.fh.ima.swengs.cineFoxDB.service.CharakterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,14 +20,18 @@ public class CharakterFacade {
         void mapDtoToEntity(CharakterDTO dto, at.fh.ima.swengs.cineFoxDB.model.Charakter entity) {
             entity.setName(dto.getName());
             entity.setPerson(dto.getPerson());
-            entity.setSerie(dto.getSerie());
+            Serie serie = new Serie();
+            serie.setId(dto.getId());
+            serie.setName(dto.getName());
+            entity.setSerie(serie);
         }
 
         private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Charakter entity, CharakterDTO dto) {
             dto.setId(entity.getId());
             dto.setName(entity.getName());
             dto.setPerson(entity.getPerson());
-            dto.setSerie(entity.getSerie());
+            dto.setSerie_id(entity.getSerie().getId());
+            dto.setSerie_name(entity.getSerie().getName());
         }
 
         public CharakterDTO update(Long id, CharakterDTO dto) {

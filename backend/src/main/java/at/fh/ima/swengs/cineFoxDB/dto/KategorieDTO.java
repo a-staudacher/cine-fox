@@ -8,7 +8,7 @@ public class KategorieDTO {
 
     private long id;
     private String bezeichnung;
-    private Set<Serie> series;
+    //private Set<Serie> series;
 
     public long getId() {
         return id;
@@ -26,11 +26,11 @@ public class KategorieDTO {
         this.bezeichnung = bezeichnung;
     }
 
-    public Set<Serie> getSeries() {
+    /*public Set<Serie> getSeries() {
         return series;
     }
 
     public void setSeries(Set<Serie> series) {
         this.series = series;
-    }
+    }*/
 }

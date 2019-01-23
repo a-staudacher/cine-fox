@@ -37,5 +37,13 @@ export class CharacterService {
     return this.http.post('/api/dto/charakters', charakters);
   }
 
+  getBySerie(id) {
+    return this.http.get('/api/charakters/search/findBySerieId?id=' + id).pipe(
+      map((response: any) => {
+        return response._embedded.charakters;
+      })
+    );
+  }
+
 }
 

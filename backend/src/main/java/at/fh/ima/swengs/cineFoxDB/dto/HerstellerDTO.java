@@ -8,7 +8,6 @@ public class HerstellerDTO {
 
     private long id;
     private String bezeichnung;
-    private Set<Serie> series;
 
     public long getId() {
         return id;
@@ -26,11 +25,4 @@ public class HerstellerDTO {
         this.bezeichnung = bezeichnung;
     }
 
-    public Set<Serie> getSeries() {
-        return series;
-    }
-
-    public void setSeries(Set<Serie> series) {
-        this.series = series;
-    }
 }

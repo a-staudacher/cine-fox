@@ -23,8 +23,8 @@ public class Hersteller {
 
     private String bezeichnung;
 
-    @OneToMany(mappedBy= "hersteller", fetch=FetchType.EAGER)
-    private Set<Serie> series;
+    /*@OneToMany(mappedBy= "hersteller", fetch=FetchType.EAGER)
+    private Set<Serie> series;*/
 
     @Version
     @JsonIgnore
@@ -62,13 +62,13 @@ public class Hersteller {
         this.version = version;
     }
 
-    public Set<Serie> getSeries() {
+    /*public Set<Serie> getSeries() {
         return series;
     }
 
     public void setSeries(Set<Serie> series) {
         this.series = series;
-    }
+    }*/
 
     @Override
     public String toString() {

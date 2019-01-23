@@ -61,7 +61,7 @@ public class Serien_Rating {
     }
 
     public void setSerie(at.fh.ima.swengs.cineFoxDB.model.Serie serie) {
-        serie = serie;
+        this.serie = serie;
     }
 
     public at.fh.ima.swengs.cineFoxDB.model.User getUser() {
@@ -69,7 +69,7 @@ public class Serien_Rating {
     }
 
     public void setUser(at.fh.ima.swengs.cineFoxDB.model.User user) {
-        user = user;
+        this.user = user;
     }
 
     public long getVersion() {

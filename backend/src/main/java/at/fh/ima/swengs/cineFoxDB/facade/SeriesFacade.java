@@ -1,6 +1,7 @@
 package at.fh.ima.swengs.cineFoxDB.facade;
 
 import at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO;
+import at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating;
 import at.fh.ima.swengs.cineFoxDB.dto.UserDTO;
 import at.fh.ima.swengs.cineFoxDB.model.Serie;
 import at.fh.ima.swengs.cineFoxDB.service.GenreService;
@@ -27,7 +28,7 @@ public class SeriesFacade {
         @Autowired
         private MovieService movieService;*/
 
-        void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO dto, at.fh.ima.swengs.cineFoxDB.model.Serie entity) {
+        void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating dto, at.fh.ima.swengs.cineFoxDB.model.Serie entity) {
             entity.setName(dto.getName());
             entity.setTrailer(dto.getTrailer());
             entity.setReleaseDate(dto.getReleaseDate());
@@ -41,7 +42,7 @@ public class SeriesFacade {
             entity.setPictures(dto.getPictures());
         }
 
-        private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Serie entity, at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO dto) {
+        private void mapEntityToDto(at.fh.ima.swengs.cineFoxDB.model.Serie entity, at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating dto) {
             dto.setId(entity.getId());
             dto.setName(entity.getName());
             dto.setTrailer(entity.getTrailer());
@@ -56,36 +57,36 @@ public class SeriesFacade {
             dto.setPictures(entity.getPictures());
         }
 
-        public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO update(Long id, at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO dto) {
+        public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating update(Long id, at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating dto) {
             at.fh.ima.swengs.cineFoxDB.model.Serie entity = seriesService.findById(id).get();
             mapDtoToEntity(dto, entity);
             mapEntityToDto(seriesService.save(entity), dto);
             return dto;
         }
 
-    public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO create(at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO dto) {
+    public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating create(at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating dto) {
         at.fh.ima.swengs.cineFoxDB.model.Serie entity = new at.fh.ima.swengs.cineFoxDB.model.Serie();
         mapDtoToEntity(dto, entity);
         mapEntityToDto(seriesService.save(entity), dto);
         return dto;
     }
 
-    public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO getById(Long id) {
+    public at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating getById(Long id) {
         at.fh.ima.swengs.cineFoxDB.model.Serie entity = seriesService.findById(id).get();
-        at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO dto = new at.fh.ima.swengs.cineFoxDB.dto.SeriesDTO();
+        at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating dto = new at.fh.ima.swengs.cineFoxDB.dto.SeriesDTOnormalRating();
         mapEntityToDto(entity, dto);
         return dto;
     }
 
-    public Set<SeriesDTO> getAll() {
+    public Set<SeriesDTOnormalRating> getAll() {
         List<Serie> entityList = seriesService.getAll();
         // at.fh.ima.swengs.cineFoxDB.model.User entity = userService.findById(id).get();
-        Set<SeriesDTO> dtoSet = new HashSet<SeriesDTO>();
-        SeriesDTO dto;
+        Set<SeriesDTOnormalRating> dtoSet = new HashSet<SeriesDTOnormalRating>();
+        SeriesDTOnormalRating dto;
 
         for(int i = 0; i < entityList.size(); i++)
         {
-            dto = new SeriesDTO();
+            dto = new SeriesDTOnormalRating();
             mapEntityToDto(entityList.get(i),dto);
             dtoSet.add(dto);
         }
