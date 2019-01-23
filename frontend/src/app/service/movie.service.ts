@@ -33,13 +33,20 @@ export class MovieService {
   }
 
   update(serie) {
-    alert(JSON.stringify(serie));
     return this.http.put('/api/series/' + serie.id, serie);
   }
 
   create(serie) {
-    alert(JSON.stringify(serie));
     return this.http.post('/api/series', serie);
+  }
+
+
+  searchMovieByName(search) {
+    return this.http.get('/api/series/search/findByNameContainingAllIgnoreCase?name=' + search).pipe(
+      map((response: any) => {
+        return response._embedded.series;
+      })
+    );
   }
 
 }

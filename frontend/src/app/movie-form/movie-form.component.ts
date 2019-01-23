@@ -131,8 +131,4 @@ export class MovieFormComponent implements OnInit {
         });
     }
   }
-
-  debuug() {
-    return JSON.stringify(this.movieForm.value.pictures);
-  }
 }

@@ -193,9 +193,9 @@
 
               <li class="parent organgebox"><a href="#">pages</a>
                 <ul class="lg-submenu">
-                  <li class="parent"><a [routerLink]="'/search-results'">Search A Movie</a>
+                  <li *ngIf="isAdmin()" class="parent"><a [routerLink]="'/movie-form'">Create Movie</a>
                   </li>
-                  <li class="parent"><a [routerLink]="'/person-form'">Create Person</a>
+                  <li *ngIf="isAdmin()" class="parent"><a [routerLink]="'/person-form'">Create Person</a>
                     <ul class="lg-submenu">
                     </ul>
                   </li>

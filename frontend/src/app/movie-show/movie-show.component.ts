@@ -143,6 +143,14 @@ export class MovieShowComponent implements OnInit {
     this.router.navigate(['/person-form/' + id]);
   }
 
+  isLoggedIn() {
+    return this.userService.isLoggedIn;
+  }
+
+  isAdmin() {
+    return this.userService.isAdmin;
+  }
+
   deleteChar(charakter) {
     this.characterService.delete(charakter).subscribe( () => {
       alert('Character deleted.');
