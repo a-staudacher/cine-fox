@@ -104,6 +104,7 @@
                               Actor:
                               <ngx-select id="person" [items]="personOptions" name="person" [multiple]="false"
                                           formControlName="person" optionTextField="nachname"></ngx-select>
+                              {{addActorForm.value.person}}
                             </div><!-- /input-group -->
                           </div><!-- /.col-lg-6 -->
                           <div class="col-lg-4">
@@ -124,17 +125,18 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <tr *ngFor="let review of reviews">
-                            <td>{{review.user.username}}</td>
-                            <td> {{review.reviewText}}</td>
+                          <tr *ngFor="let review of fullReviews">
+                            <td><a [routerLink]="'/profile/'+review.user.id">{{review.user.username}}</a></td>
+                            <td> {{review.review.reviewText}}</td>
                           </tr>
                           </tbody>
                         </table>
-                        <h2>Post a Review</h2>
-                        <textarea></textarea>
-                        <br>
-                        <button>Submit</button>
-                        <br>
+                        <div class="form-group">
+                          <label for="review">Post a Review:</label>
+                          <textarea #reviewText class="form-control" rows="5" id="review"></textarea>
+                        </div>
+                        <button class="btn btn-success" (click)="postReview(reviewText.value)">Submit</button>
+                        <br><br>
 
                         <button type="submit" (click)="editMovie()" class="btn btn-primary">EditMovie</button>
                       </div>

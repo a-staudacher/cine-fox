@@ -30,6 +30,7 @@ public class CharakterFacade {
             dto.setId(entity.getId());
             dto.setName(entity.getName());
             dto.setPerson(entity.getPerson());
+            dto.getPerson().setDirectors(null);
             dto.setSerie_id(entity.getSerie().getId());
             dto.setSerie_name(entity.getSerie().getName());
         }

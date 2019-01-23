@@ -126,10 +126,7 @@
                         <div class="prs_upcom_movie_content_box_inner">
                           <h2><a onclick="reload_js()" [routerLink]="'/movie-show/' + moviePic.movie.id">{{moviePic.movie.name}}</a></h2>
                           <!--<p>Genre </p>--> <div *ngFor="let genre of moviePic.movie.genres" > {{genre}} </div>	<i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star-o"></i>
-                          <i class="fa fa-star-o"></i>
+                          <span *ngFor="let item of arrayOne(moviePic.movie.serien_ratings)"><i class="fa fa-star"></i></span>
                         </div>
                         <div class="prs_upcom_movie_content_box_inner_icon">
                           <ul>

@@ -1706,28 +1706,28 @@ public class DataGenerateService {
 
             Director dir0 = new Director();
             dir0.setPerson(pers4);
-            dir0.setSerie(null);
+            dir0.setSerie(movie1);
             directorRepository.save(dir0);
 
             Director dir1 = new Director();
             dir1.setPerson(pers1);
-            dir1.setSerie(null);
+            dir1.setSerie(movie2);
             directorRepository.save(dir1);
 
             Director dir2 = new Director();
             dir2.setPerson(pers2);
             dir2.setPerson(pers0);
-            dir2.setSerie(null);
+            dir2.setSerie(movie3);
             directorRepository.save(dir2);
 
             Director dir3 = new Director();
             dir3.setPerson(pers1);
-            dir3.setSerie(null);
+            dir3.setSerie(movie4);
             directorRepository.save(dir3);
 
             Director dir4 = new Director();
             dir4.setPerson(pers0);
-            dir4.setSerie(null);
+            dir4.setSerie(movie5);
             directorRepository.save(dir4);
 
 

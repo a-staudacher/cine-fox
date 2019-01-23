@@ -33,11 +33,13 @@ export class MovieService {
   }
 
   update(serie) {
-    return this.http.put('/api/dto/series/' + serie.id, serie);
+    alert(JSON.stringify(serie));
+    return this.http.put('/api/series/' + serie.id, serie);
   }
 
   create(serie) {
-    return this.http.post('/api/dto/series', serie);
+    alert(JSON.stringify(serie));
+    return this.http.post('/api/series', serie);
   }
 
 }

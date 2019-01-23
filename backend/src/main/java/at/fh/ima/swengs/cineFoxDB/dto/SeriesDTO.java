@@ -16,7 +16,7 @@ public class SeriesDTO {
     private Kategorie kategorie;
     private Set<Series_RatingDTO> serien_ratings;
     //private Set<Charakter> charakters;
-    private Set<Director> directors;
+    private Set<Long> directors;
     //private Set<Review> reviews;
     private Set<Media> pictures;
 
@@ -92,15 +92,15 @@ public class SeriesDTO {
         this.charakters = charakters;
     }*/
 
-    public Set<Director> getDirectors() {
+    public Set<Long> getDirectors() {
         return directors;
     }
 
-    public void setDirectors(Set<Director> directors) {
+    public void setDirectors(Set<Long> directors) {
         this.directors = directors;
     }
 
-    /*public Set<Review> getReviews() {
+ /*public Set<Review> getReviews() {
         return reviews;
     }
 
