@@ -49,7 +49,7 @@ export class LandingpageComponent implements OnInit {
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
-        //alert(JSON.stringify(this.movies[0]));
+
         /*alert('got movies' + this.movies.length);
         this.moviesInit = true;*/
         this.initPreviews();
@@ -90,8 +90,8 @@ export class LandingpageComponent implements OnInit {
     alert('Add mov to fav ' + movId);
   }
 
-  arrayOne(n, avg=0) {
-    if(n.length>0) {
+  arrayOne(n, avg = 0) {
+    if (n.length > 0) {
       for (var i = 0; i < n.length; i++) {
         avg = avg + n[i].rating;
       }

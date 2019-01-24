@@ -1,5 +1,3 @@
-<script>
-
 function reload_js(src)
 {
   var head= document.getElementsByTagName('head')[0];
@@ -7,4 +5,3 @@ function reload_js(src)
   script.src= 'scripts.js';
   head.appendChild(script);
 }
-</script>
