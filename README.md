@@ -5,8 +5,11 @@ This Application was built as part of a course at FH JOANNEUM Ausrtia called "So
 
 # Team Members:
 Staudacher Andreas
+
 Gartner Florian
+
 Schmitzer Georg
+
 Hutter Martin
 
 
