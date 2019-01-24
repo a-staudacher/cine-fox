@@ -4,7 +4,7 @@ This Application was built as part of a course at FH JOANNEUM Ausrtia called "So
 
 
 # Team Members:
-Staudacher Andreas (PROJECT LEADER)
+Staudacher Andreas (PROJECT LEADER)  
 Gartner Florian  
 Schmitzer Georg  
 Hutter Martin  
@@ -39,7 +39,7 @@ MySQL Server
 	- npm i ng2-file-upload --save 
 	- npm install --save webstomp-client  
 6. Start frontend (ng serve)  
-7. Open in webbrowser of your choice (but not Internet Explorer 6 ;) ) http://localhost:4200
+7. Open in webbrowser of your choice (but not Internet Explorer 6 ;) ) http://localhost:4200  
 8. Have Fun!  
 
 
