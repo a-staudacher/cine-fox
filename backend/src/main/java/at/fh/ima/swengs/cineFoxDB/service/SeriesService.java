@@ -26,7 +26,7 @@ public class SeriesService {
 
     public List<Serie> getAll() {return serieRepository.findAll();}
 
-    public Set<String> getNames (Set<Long> directorIds) {
+   /* public Set<String> getNames (Set<Long> directorIds) {
         Set<String> directors = new HashSet<>();
         if (directorIds != null) {
             directorIds.forEach((id) -> directors.add(serieRepository.findNameById(id)));
@@ -34,13 +34,12 @@ public class SeriesService {
         return directors;
     };
 
-    public Set<Serie> getDirectors (Set<String> directorNames) {
-        Set<Serie> directors = new HashSet<>();
-        if (directorNames != null) {
-            directorNames.forEach((director) -> directors.add(serieRepository.findByName(director)));
+    public Set<Director> getDirectors(Set<String> serieName) {
+        Set<Director> series =new HashSet<>();
+        if (serieName != null) {
+            serieName.forEach((serie) -> series.add(serieRepository.findDirectorByName(serie)));
         }
-        return directors;
-    }
-
+        return series;
+    }*/
 
 }

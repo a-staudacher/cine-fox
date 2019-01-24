@@ -13,10 +13,9 @@ import java.util.Set;
 @RepositoryRestResource()
 public interface SerieRepository extends PagingAndSortingRepository<Serie,Long>, JpaRepository<Serie, Long>, CrudRepository<Serie, Long> {
 
-    String findNameById (Long director_id);
+    //String findNameById (Long director_id);
 
-    @Query("select d from Director d where d.name = :name")
-    Serie findByName (@Param("name")String name);
+    //Director findDirectorByName (String serie);
 
 
 

@@ -16,7 +16,7 @@ import java.util.Set;
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public interface DirectorRepository extends PagingAndSortingRepository<Director, Long>, JpaRepository<Director, Long>, CrudRepository<Director, Long> {
 
-    //Director findDirectorByPerson(Serie person);
+    //Director findDirectorBySerie (Serie serie);
 
 
 }
