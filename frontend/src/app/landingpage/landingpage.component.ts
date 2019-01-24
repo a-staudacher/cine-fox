@@ -32,14 +32,17 @@ export class LandingpageComponent implements OnInit {
   joinedMovies = [];
   genremovies;
 
+
   medias: IMedia[];
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private mediasService: MediaService,
               private movieService: MovieService) { }
 
   ngOnInit() {
-    declare var reload_js;
-    reload_js();
+
+
+    reload_js('');
+
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
