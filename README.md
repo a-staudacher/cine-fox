@@ -19,11 +19,12 @@ Hutter Martin: CRUD(Persons,Character,Director), Person-Form/Person-Show
 # Required Software
 Follwoing Software is needed to run the application.
 
-JAVA 8 (NOT 9 or 11 !!) SDK
+JAVA 8 SDK
 
 IntelliJ IDEA Install the Spring Boot Plugin  (ALL SPRING Plugins should be enabled)
 
-MySQL Server + MySQLWorkbench
+# Additional Requirements
+MySQL Server
 
 
 
@@ -33,15 +34,13 @@ MySQL Server + MySQLWorkbench
 2. Adapt Application Properties file – connection to MYSQL Database   
 3. Run backend   
 4. Open frontend  
-5. In terminal run npm install  
-6. NG2-File-Upload:  
-	- npm i ng2-file-upload --save  
-	- Hinzufügen im NgModule  
-7. Webstomp-client:  
-	-npm install --save webstomp-client  
-8. Start frontend (ng serve)  
-9. If run with Angular CLI go to URL localhost:4200 (use custom URL when run with a webserver/Chrome etc.)  
-10. Type in Credentials (e.g.: admin/12345)   
+5. In terminal 
+	- run npm install  
+	- npm i ng2-file-upload --save 
+	- npm install --save webstomp-client  
+6. Start frontend (ng serve)  
+7. Open in webbrowser of your choice (but not Internet Explorer 6 ;) ) http://localhost:4200
+8. Have Fun!  
 
 
 
