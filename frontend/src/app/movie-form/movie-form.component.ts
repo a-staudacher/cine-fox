@@ -70,8 +70,12 @@ export class MovieFormComponent implements OnInit {
         .subscribe((response) => {
           this.movie = response;
           this.movie.directors = this.movie.directors[0];
-          this.movie.hersteller = this.movie.hersteller.id;
-          this.movie.kategorie = this.movie.kategorie.id;
+          if (this.movie.hersteller) {
+            this.movie.hersteller = this.movie.hersteller.id;
+          }
+          if (this.movie.kategorie) {
+            this.movie.kategorie = this.movie.kategorie.id;
+          }
           alert(JSON.stringify(this.movie));
           var i = 0;
           this.movie.genres.forEach(gen => {

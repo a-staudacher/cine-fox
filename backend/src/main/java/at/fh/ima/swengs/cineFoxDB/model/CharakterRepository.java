@@ -16,5 +16,5 @@ import java.util.Set;
 public interface CharakterRepository extends PagingAndSortingRepository<Charakter, Long>, JpaRepository<Charakter, Long>, CrudRepository<Charakter, Long> {
     public List<Charakter> findBySerieId(@Param("id") long serie);
 
-    Charakter findByName(String name);
+    Charakter findByName(@Param("name") String name);
 }

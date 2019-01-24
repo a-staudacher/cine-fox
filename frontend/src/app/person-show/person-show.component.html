@@ -70,16 +70,14 @@
                       </div>
                     </div>
 
-                    <!--<div class="row">
+                    <div class="row">
                       <div class="col">
                         <label for="directors">Movies directed:</label>
-                        <div id="directors" *ngFor="let director of person.directors">
-                          <td *ngFor="let movie of getDirectorSerie(director)">
-                            {{movie}}
-                          </td>
+                        <div id="directors" *ngFor="let directed of person.directors">
+                          {{directed}}
                         </div>
                       </div>
-                    </div>-->
+                    </div>
 
                     <div class="row">
                       <div class="col">
@@ -90,10 +88,13 @@
                       </div>
                     </div>
 
-                    <button type="button" class="btn btn-primary" [routerLink] = "'/person-form/' + person.id">
-                      Edit
-                    </button>
-
+                    &nbsp;
+                    &nbsp;
+                    <div>
+                      <button type="button" class="btn btn-primary" [routerLink] = "'/person-form/' + person.id">
+                        Edit
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

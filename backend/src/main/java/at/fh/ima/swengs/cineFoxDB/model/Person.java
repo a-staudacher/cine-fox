@@ -24,8 +24,8 @@ public class Person {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dayOfBirth;
 
-    //@OneToMany(mappedBy = "person")
-    //private Set<Charakter> charakters;
+    @OneToMany(mappedBy = "person")
+    private Set<Charakter> charakters;
 
     @OneToMany(mappedBy = "person")
     private Set<Director> directors;
@@ -70,13 +70,13 @@ public class Person {
         this.version = version;
     }
 
-    /*public Set<Charakter> getCharakters() {
+    public Set<Charakter> getCharakters() {
         return charakters;
     }
 
     public void setCharakters(Set<Charakter> charakters) {
         this.charakters = charakters;
-    }*/
+    }
 
     public Set<Director> getDirectors() {
         return directors;

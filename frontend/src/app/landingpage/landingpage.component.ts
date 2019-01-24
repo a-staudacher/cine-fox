@@ -8,7 +8,6 @@ import {MediaService} from '../service/media.service';
 import {MovieService} from '../service/movie.service';
 import {Genre} from '../api/genre';
 
-
 export interface IMedia {
   id?: number;
   originalFileName?: string;
@@ -33,12 +32,16 @@ export class LandingpageComponent implements OnInit {
   joinedMovies = [];
   genremovies;
 
+
   medias: IMedia[];
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private mediasService: MediaService,
               private movieService: MovieService) { }
 
   ngOnInit() {
+
+
+    reload_js('');
 
     this.mediasService.getAll()
       .subscribe((medias: any) => {
@@ -49,7 +52,7 @@ export class LandingpageComponent implements OnInit {
     this.movieService.getAll()
       .subscribe((movies) => {
         this.movies = movies;
-        //alert(JSON.stringify(this.movies[0]));
+
         /*alert('got movies' + this.movies.length);
         this.moviesInit = true;*/
         this.initPreviews();
@@ -90,8 +93,8 @@ export class LandingpageComponent implements OnInit {
     alert('Add mov to fav ' + movId);
   }
 
-  arrayOne(n, avg=0) {
-    if(n.length>0) {
+  arrayOne(n, avg = 0) {
+    if (n.length > 0) {
       for (var i = 0; i < n.length; i++) {
         avg = avg + n[i].rating;
       }

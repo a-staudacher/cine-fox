@@ -33,7 +33,7 @@ export class RegistryComponent implements OnInit {
     this.userService.create(this.user)
       .subscribe((response: any) => {
         this.toastr.success('Account was created');
-        this.router.navigate(['/index', response.id]);
+        this.router.navigate(['/login']);
       });
   }
 }
