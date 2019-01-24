@@ -8,7 +8,6 @@ import {MediaService} from '../service/media.service';
 import {MovieService} from '../service/movie.service';
 import {Genre} from '../api/genre';
 
-
 export interface IMedia {
   id?: number;
   originalFileName?: string;
@@ -39,7 +38,8 @@ export class LandingpageComponent implements OnInit {
               private movieService: MovieService) { }
 
   ngOnInit() {
-
+    declare var reload_js;
+    reload_js();
     this.mediasService.getAll()
       .subscribe((medias: any) => {
       this.medias = medias;
