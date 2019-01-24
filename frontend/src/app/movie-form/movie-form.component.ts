@@ -76,7 +76,6 @@ export class MovieFormComponent implements OnInit {
           if (this.movie.kategorie) {
             this.movie.kategorie = this.movie.kategorie.id;
           }
-          alert(JSON.stringify(this.movie));
           var i = 0;
           this.movie.genres.forEach(gen => {
             this.genreService.getByName(gen).subscribe(fullGen => {
@@ -84,7 +83,6 @@ export class MovieFormComponent implements OnInit {
               this.genre_zwischen.push(fullGen);
               if(this.movie.genres.length === i) {
                 this.movie.genres = this.genre_zwischen;
-                alert(JSON.stringify(this.genre_zwischen));
                 this.movie.genres = this.movie.genres.map(ele => {
                   return ele.id;
                 });
