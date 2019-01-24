@@ -2,6 +2,7 @@ package at.fh.ima.swengs.cineFoxDB.service;
 
 import at.fh.ima.swengs.cineFoxDB.model.Director;
 import at.fh.ima.swengs.cineFoxDB.model.DirectorRepository;
+import at.fh.ima.swengs.cineFoxDB.model.Serie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

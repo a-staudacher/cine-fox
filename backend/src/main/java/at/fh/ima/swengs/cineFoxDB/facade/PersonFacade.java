@@ -3,6 +3,7 @@ package at.fh.ima.swengs.cineFoxDB.facade;
 import at.fh.ima.swengs.cineFoxDB.model.DirectorRepository;
 import at.fh.ima.swengs.cineFoxDB.service.CharakterService;
 import at.fh.ima.swengs.cineFoxDB.service.DirectorService;
+import at.fh.ima.swengs.cineFoxDB.service.SeriesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,18 +25,15 @@ public class PersonFacade {
     @Autowired
     private CharakterService charakterService;
 
+    @Autowired
+    private SeriesService seriesService;
+
         void mapDtoToEntity(at.fh.ima.swengs.cineFoxDB.dto.PersonDTO dto, at.fh.ima.swengs.cineFoxDB.model.Person entity) {
             entity.setVorname(dto.getVorname());
             entity.setNachname(dto.getNachname());
             entity.setDayOfBirth(dto.getDayOfBirth());
             entity.setBeschreibung(dto.getBeschreibung());
-            //---------------
-            //entity.setDirectors(directorService.getDirectors(dto.getDirectors()));
-            //entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
-            //_---------------
-            //entity.setDirectors(directorService.getDirectors(dto.getDirectors()));
-            //entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));
-            //--------------
+            entity.setCharakters(charakterService.getCharakters(dto.getCharakters()));;
             entity.setPictures(dto.getPictures());
         }
 
@@ -45,13 +43,7 @@ public class PersonFacade {
             dto.setNachname(entity.getNachname());
             dto.setDayOfBirth(entity.getDayOfBirth());
             dto.setBeschreibung(entity.getBeschreibung());
-            //_--------------
-            //dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
-            //dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getId()).collect(Collectors.toSet()));
-            //-------------
-            //dto.setDirectors(entity.getDirectors().stream().map((m) -> m.getSerie()).collect(Collectors.toSet()));
-            //dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getName()).collect(Collectors.toSet()));
-            //_-------------
+            dto.setCharakters(entity.getCharakters().stream().map((m) -> m.getName()).collect(Collectors.toSet()));
             dto.setPictures(entity.getPictures());
         }
 
