@@ -42,5 +42,9 @@ export class PersonService {
     return this.http.post('/api/dto/person', person);
   }
 
+  getDirectedMovies(person: Person) {
+    return this.http.get('/dto/personDirSeries/' + person.id );
+  }
+
 }
 

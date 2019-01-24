@@ -14,13 +14,11 @@ public class PersonDTO {
     private String nachname;
     private Date dayOfBirth;
     private String beschreibung;
-    //-----------
     private Set<Long> directors;
     //private Set<Long> charakters;
     //---Muessen uns da einigen wie wir das am besten machen----------
     //private Set<String> directors;
-    //private Set<String> charakters;
-    //-------------------
+    private Set<String> charakters;
     private Set<Media> pictures;
 
     public Long getId() {
@@ -71,22 +69,15 @@ public class PersonDTO {
         this.directors = directors;
     }
 
-    /*public Set<String> getDirectors() {
-        return directors;
-    }
 
-    public void setDirectors(Set<String> directors) {
-        this.directors = directors;
-    }*/
-
-    /*public Set<String> getCharakters() {
+    public Set<String> getCharakters() {
         return charakters;
     }
 
     public void setCharakters(Set<String> charakters) {
         this.charakters = charakters;
     }
-*/
+
     public Set<Media> getPictures() {
         return pictures;
     }
