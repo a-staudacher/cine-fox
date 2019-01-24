@@ -199,7 +199,7 @@
                     <ul class="lg-submenu">
                     </ul>
                   </li>
-                  <li class="parent"><a [routerLink]="'/profile-edit'">Profile Edit</a>
+                  <li *ngIf="isLoggedIn()" class="parent"><a [routerLink]="'/profile-edit'">Profile Edit</a>
                   </li>
                 </ul>
               </li>
