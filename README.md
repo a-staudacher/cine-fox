@@ -4,27 +4,27 @@ This Application was built as part of a course at FH JOANNEUM Ausrtia called "So
 
 
 # Team Members:
-Staudacher Andreas (PROJECT LEADER)  
-Gartner Florian  
-Schmitzer Georg  
-Hutter Martin  
+* Staudacher Andreas (PROJECT LEADER)  
+* Gartner Florian  
+* Schmitzer Georg  
+* Hutter Martin  
 
 
 # Workload Distribution:
-Staudacher Andreas: CRUD(User,Hersteller,Kategorie,Series_Rating), Project Setup, DTOs, Controllers, Movie-Form/Movie-Show, Search-Results  
-Gartner Florian: CRUD(Favourite,Review),  Sign Up/Login, Authentication   
-Schmitzer Georg: CRUD(Series, Genre), Landingpage, Userprofiles, Design/Template  
-Hutter Martin: CRUD(Persons,Character,Director), Person-Form/Person-Show   
+* Staudacher Andreas: CRUD(User,Hersteller,Kategorie,Series_Rating), Project Setup, DTOs, Controllers, Movie-Form/Movie-Show, Search-Results  
+* Gartner Florian: CRUD(Favourite,Review),  Sign Up/Login, Authentication   
+* Schmitzer Georg: CRUD(Series, Genre), Landingpage, Userprofiles, Design/Template  
+* Hutter Martin: CRUD(Persons,Character,Director), Person-Form/Person-Show   
 
 # Required Software
-Follwoing Software is needed to run the application.
+* Follwoing Software is needed to run the application.
 
-JAVA 8 SDK
+* JAVA 8 SDK
 
-IntelliJ IDEA Install the Spring Boot Plugin  (ALL SPRING Plugins should be enabled)
+* IntelliJ IDEA Install the Spring Boot Plugin  (ALL SPRING Plugins should be enabled)
 
 # Additional Requirements
-MySQL Server
+* MySQL Server
 
 
 
@@ -45,11 +45,11 @@ MySQL Server
 
 
 # Available User Credentials (username/password):  
-Username: admin; Password: 12345 -> is an Administrator  
-Username: Andreas; Password: 12345 -> is an Administrator  
-Username: Georg; Password: 12345 -> is normal User  
-Username: Martin; Password: 12345 -> is normal User  
-Username: Florian; Password: 12345 -> is normal User  
+* Username: admin; Password: 12345 -> is an Administrator  
+* Username: Andreas; Password: 12345 -> is an Administrator  
+* Username: Georg; Password: 12345 -> is normal User  
+* Username: Martin; Password: 12345 -> is normal User  
+* Username: Florian; Password: 12345 -> is normal User  
 
 
 
