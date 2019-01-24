@@ -76,7 +76,6 @@ export class LandingpageComponent implements OnInit {
   }*/
 
   initPreviews() {
-    alert(JSON.stringify(this.movies[0]));
     this.movies.forEach((movie, index) => {
       if(movie.pictures[0])
       {
@@ -90,7 +89,7 @@ export class LandingpageComponent implements OnInit {
   }
 
   addFav(movId) {
-    alert('Add mov to fav ' + movId);
+    alert('Add mov to fav ' + movId + "not implemented.");
   }
 
   arrayOne(n, avg = 0) {

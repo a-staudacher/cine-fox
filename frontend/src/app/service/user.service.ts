@@ -65,6 +65,7 @@ export class UserService {
 
   logout() {
     localStorage.removeItem(this.accessTokenLocalStorageKey);
+    this.isAdmin = false;
     this.loggedInChange.next(false);
     this.router.navigate(['']);
   }

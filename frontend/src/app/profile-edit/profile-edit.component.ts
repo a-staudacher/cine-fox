@@ -27,7 +27,6 @@ export class ProfileEditComponent implements OnInit {
     });
 
     const id = this.route.snapshot.paramMap.get('id');
-    alert(id);
 
     if (id) {
       this.profileEditService.getById(id)
