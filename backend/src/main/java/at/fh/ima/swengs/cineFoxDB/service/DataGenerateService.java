@@ -1991,6 +1991,54 @@ public class DataGenerateService {
             review14.setUser(usr_martin);
             reviewRepository.save(review14);
 
+            Review review15 = new Review();
+            review15.setReviewText("Guter Film");
+            review15.setSerie(movie31);
+            review15.setUser(usr_martin);
+            reviewRepository.save(review15);
+
+            Review review16 = new Review();
+            review16.setReviewText("Toller Film");
+            review16.setSerie(movie8);
+            review16.setUser(usr_martin);
+            reviewRepository.save(review16);
+
+            Review review17 = new Review();
+            review17.setReviewText("Toller Film, wenn man entspannen will");
+            review17.setSerie(movie16);
+            review17.setUser(usr_martin);
+            reviewRepository.save(review17);
+
+            Review review18 = new Review();
+            review18.setReviewText("Toller Film, wenn man schlafen will");
+            review18.setSerie(movie26);
+            review18.setUser(usr_martin);
+            reviewRepository.save(review18);
+
+            Review review19 = new Review();
+            review19.setReviewText("Ganz toller Film");
+            review19.setSerie(movie45);
+            review19.setUser(usr_martin);
+            reviewRepository.save(review19);
+
+            Review review20 = new Review();
+            review20.setReviewText("Toller Film, wenn man entspannen will");
+            review20.setSerie(movie46);
+            review20.setUser(usr_martin);
+            reviewRepository.save(review20);
+
+            Review review21 = new Review();
+            review21.setReviewText("Toller Film, wenn man entspannen will");
+            review21.setSerie(movie27);
+            review21.setUser(usr_martin);
+            reviewRepository.save(review21);
+
+            Review review22 = new Review();
+            review22.setReviewText("Toller Film, wenn man entspannen will");
+            review22.setSerie(movie39);
+            review22.setUser(usr_martin);
+            reviewRepository.save(review22);
+
 
             //----------Serien Rating-----------
 

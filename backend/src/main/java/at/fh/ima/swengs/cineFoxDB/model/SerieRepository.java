@@ -21,5 +21,5 @@ public interface SerieRepository extends PagingAndSortingRepository<Serie,Long>,
 
     //This would be exposed under the URL: http://localhost:8080/actors/search/findByFirstNameAndLastName
     //public List<Serie> findByFirstNameAndLastName(@Param("firstName") String firstName, @Param("lastName") String lastName);
-    public List<Serie> findByNameContainingAllIgnoreCase(String name);
+    public List<Serie> findByNameContainingAllIgnoreCase(@Param("name") String name);
 }
