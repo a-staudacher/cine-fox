@@ -11,7 +11,7 @@ Hutter Martin
 
 
 # Workload Distribution:
-Staudacher Andreas: CRUD(User,Hersteller,Kategorie,Series_Rating), Project Setup, DTOs, Controllers  
+Staudacher Andreas: CRUD(User,Hersteller,Kategorie,Series_Rating), Project Setup, DTOs, Controllers, Movie-Form/Movie-Show, Search-Results  
 Gartner Florian: CRUD(Favourite,Review),  Sign Up/Login, Authentication   
 Schmitzer Georg: CRUD(Series, Genre), Landingpage, Userprofiles, Design/Template  
 Hutter Martin: CRUD(Persons,Character,Director), Person-Form/Person-Show   
