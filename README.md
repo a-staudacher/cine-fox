@@ -1,6 +1,16 @@
-# cine-fox
+# Cine-Fox
 FH Joanneum SWENGS Project
 
+# Install
+
+0) npm install
+
+1) NG2-File-Upload:
+	- npm i ng2-file-upload --save
+	- Hinzufügen im NgModule
+  
+2) webstomp-client
+	-npm install --save webstomp-client
 
 # Frontend
 
