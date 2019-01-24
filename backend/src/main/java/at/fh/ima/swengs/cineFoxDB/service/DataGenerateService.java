@@ -2039,6 +2039,13 @@ public class DataGenerateService {
             review22.setUser(usr_martin);
             reviewRepository.save(review22);
 
+            Review review23 = new Review();
+            review23.setReviewText("Die Wuerstlmaenner kommen.");
+            review23.setSerie(movie27);
+            review23.setUser(usr_martin);
+            reviewRepository.save(review23);
+
+
 
             //----------Serien Rating-----------
 
