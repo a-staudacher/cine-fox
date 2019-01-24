@@ -4,10 +4,7 @@ import at.fh.ima.swengs.cineFoxDB.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
-=======
 import java.util.HashSet;
->>>>>>> hutti
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -28,24 +25,5 @@ public class SeriesService {
 
 
     public List<Serie> getAll() {return serieRepository.findAll();}
-<<<<<<< HEAD
-=======
 
-   /* public Set<String> getNames (Set<Long> directorIds) {
-        Set<String> directors = new HashSet<>();
-        if (directorIds != null) {
-            directorIds.forEach((id) -> directors.add(serieRepository.findNameById(id)));
-        }
-        return directors;
-    };
-
-    public Set<Director> getDirectors(Set<String> serieName) {
-        Set<Director> series =new HashSet<>();
-        if (serieName != null) {
-            serieName.forEach((serie) -> series.add(serieRepository.findDirectorByName(serie)));
-        }
-        return series;
-    }*/
-
->>>>>>> hutti
 }
