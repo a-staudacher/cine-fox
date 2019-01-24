@@ -29,12 +29,12 @@
 
                   </div>
                   <div class="hs_blog_box1_cont_main_wrapper">
-                    <div class="col" *ngIf="!person.pictures">
+                    <div class="col">
                       <div class="hs_blog_box1_img_wrapper">
                         <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
                       </div>
                     </div>
-                    <div class="col" *ngIf="person.pictures">
+                    <div class="col">
                       <div class="hs_blog_box1_img_wrapper">
                         <td>
                           <img src="assets/images/content/blog_category/b1.jpg" alt="blog_img">
@@ -50,9 +50,9 @@
 
                       <div class="col">
                         <div class="col">
-                        <label for="nachname">Last name:</label>
-                        <div id="nachname"> {{person.nachname}}</div>
-                      </div>
+                          <label for="nachname">Last name:</label>
+                          <div id="nachname"> {{person.nachname}}</div>
+                        </div>
                       </div>
                     </div>
 
@@ -70,20 +70,20 @@
                       </div>
                     </div>
 
-                    <div class="row">
+                    <!--div class="row">
                       <div class="col">
                         <label for="directors">Movies directed:</label>
                         <div id="directors" *ngFor="let directed of person.directors">
                           {{directed}}
                         </div>
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="row">
                       <div class="col">
                         <label for="charakters">Characters played:</label>
                         <div id="charakters" *ngFor="let charakter of person.charakters">
-                            {{charakter}}
+                          {{charakter}}
                         </div>
                       </div>
                     </div>
